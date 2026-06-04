@@ -1,0 +1,276 @@
+/* ============================================================
+   tokens.css — Design Tokens for Kabir Association of Toronto
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;500;600;700&family=Merriweather+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ─── Custom Properties ──────────────────────────────────── */
+
+:root {
+  /* Neutral — white to near-black */
+  --color-white: #ffffff;
+  --neutral-lightest: #f2f2f2;
+  --neutral-lighter: #d9d9d9;
+  --neutral-light: #b3b4b3;
+  --neutral: #808281;
+  --neutral-dark: #4d504e;
+  --neutral-darker: #1b1e1c;
+  --neutral-darkest: #020503;
+
+  /* Tahiti Gold — primary chromatic accent (warm amber) */
+  --tahiti-gold-lightest: #fbf2e5;
+  --tahiti-gold-lighter: #f7e6cc;
+  --tahiti-gold-light: #e4a74f;
+  --tahiti-gold: #d98204;
+  --tahiti-gold-dark: #ad6803;
+  --tahiti-gold-darker: #563401;
+  --tahiti-gold-darkest: #412701;
+
+  /* Merino — warm ivory / cream */
+  --merino-lightest: #fdfcfb;
+  --merino-lighter: #fcfaf8;
+  --merino-light: #f5efe7;
+  --merino: #f2e9de;
+  --merino-dark: #c1bab1;
+  --merino-darker: #605d58;
+  --merino-darkest: #484542;
+
+  /* Slate Gray */
+  --slate-gray-lightest: #f0f1f3;
+  --slate-gray-lighter: #e1e4e8;
+  --slate-gray-light: #96a2ae;
+  --slate-gray: #6a7b8c;
+  --slate-gray-dark: #546270;
+  --slate-gray-darker: #2a3138;
+  --slate-gray-darkest: #1f242a;
+
+  /* Killarney — deep green */
+  --killarney-lightest: #e9efeb;
+  --killarney-lighter: #d4dfd7;
+  --killarney-light: #6b8f75;
+  --killarney: #2c5f3a;
+  --killarney-dark: #234c2e;
+  --killarney-darker: #112617;
+  --killarney-darkest: #0d1c11;
+
+  /* Alpha tints */
+  --ink-5: color-mix(in srgb, var(--neutral-darkest), transparent 95%);
+  --ink-10: color-mix(in srgb, var(--neutral-darkest), transparent 90%);
+  --ink-15: color-mix(in srgb, var(--neutral-darkest), transparent 85%);
+  --ink-20: color-mix(in srgb, var(--neutral-darkest), transparent 80%);
+  --ink-50: color-mix(in srgb, var(--neutral-darkest), transparent 50%);
+  --white-10: color-mix(in srgb, var(--color-white), transparent 90%);
+  --white-15: color-mix(in srgb, var(--color-white), transparent 85%);
+  --white-20: color-mix(in srgb, var(--color-white), transparent 80%);
+
+  /* Semantic */
+  --bg: var(--color-white);
+  --surface: var(--neutral-lightest);
+  --fg1: var(--neutral-darkest);
+  --fg2: var(--neutral-dark);
+  --fg3: var(--neutral);
+  --accent: var(--tahiti-gold);
+  --accent-ink: var(--color-white);
+  --border: var(--ink-15);
+  --link: var(--neutral-darkest);
+
+  /* Type */
+  --font-heading: 'Cormorant Unicase', 'Cormorant', Georgia, serif;
+  --font-body: 'Merriweather Sans', system-ui, -apple-system, sans-serif;
+
+  --text-h1: 5.25rem;
+  --text-h2: 3.75rem;
+  --text-h3: 3rem;
+  --text-h4: 2.5rem;
+  --text-h5: 2rem;
+  --text-h6: 1.625rem;
+  --text-large: 1.625rem;
+  --text-medium: 1.25rem;
+  --text-regular: 1.125rem;
+  --text-small: 1rem;
+  --text-tiny: 0.75rem;
+
+  --leading-heading: 1.2;
+  --leading-h1: 1.1;
+  --leading-body: 1.6;
+  --tracking-heading: 0.01em;
+
+  /* Shape */
+  --radius-button: 0.75rem;
+  --radius-card: 1rem;
+  --radius-image: 1rem;
+  --radius-badge: 0.75rem;
+  --radius-input: 0.75rem;
+  --radius-checkbox: 0.25rem;
+  --border-width: 1px;
+
+  /* Spacing */
+  --section-pad-y: 7rem;
+  --section-pad-y-md: 6rem;
+  --section-pad-y-sm: 4rem;
+  --page-gutter: 5%;
+  --container-max: 80rem;
+  --container-lg: 48rem;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(2, 5, 3, 0.04);
+  --shadow-md: 0 8px 24px rgba(2, 5, 3, 0.08);
+  --shadow-image: 0 18px 50px -20px rgba(2, 5, 3, 0.35);
+}
+
+/* ─── Responsive overrides ───────────────────────────────── */
+
+@media (max-width: 991px) {
+  :root {
+    --text-h1: 3rem;
+    --text-h2: 2.75rem;
+    --text-h3: 2rem;
+    --text-h4: 1.5rem;
+    --text-h5: 1.25rem;
+    --text-h6: 1.125rem;
+    --text-large: 1.125rem;
+    --text-medium: 1rem;
+    --text-regular: 0.875rem;
+    --text-small: 0.75rem;
+    --text-tiny: 0.625rem;
+    --section-pad-y: 4rem;
+  }
+}
+
+/* ─── Semantic Type Classes ──────────────────────────────── */
+
+.t-h1,
+.t-h2,
+.t-h3,
+.t-h4,
+.t-h5,
+.t-h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  margin: 0;
+}
+
+.t-h1 { font-size: var(--text-h1); line-height: var(--leading-h1); }
+.t-h2 { font-size: var(--text-h2); }
+.t-h3 { font-size: var(--text-h3); }
+.t-h4 { font-size: var(--text-h4); }
+.t-h5 { font-size: var(--text-h5); }
+.t-h6 { font-size: var(--text-h6); }
+
+.t-large {
+  font-family: var(--font-body);
+  font-size: var(--text-large);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.t-medium {
+  font-family: var(--font-body);
+  font-size: var(--text-medium);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.t-regular {
+  font-family: var(--font-body);
+  font-size: var(--text-regular);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.t-small {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.t-tiny {
+  font-family: var(--font-body);
+  font-size: var(--text-tiny);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.t-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-medium);
+  font-weight: 600;
+  line-height: var(--leading-body);
+}
+
+/* ─── Color Schemes ──────────────────────────────────────── */
+
+/* Scheme 1 — dark ink */
+.scheme-1 {
+  --bg: var(--neutral-darkest);
+  --surface: var(--neutral-darker);
+  --fg1: var(--color-white);
+  --fg2: rgba(255, 255, 255, 0.7);
+  --border: var(--white-20);
+  --accent-ink: var(--color-white);
+  background-color: var(--bg);
+  color: var(--fg1);
+}
+
+/* Scheme 2 — warm cream */
+.scheme-2 {
+  --bg: var(--tahiti-gold-lightest);
+  --surface: var(--tahiti-gold-lighter);
+  --fg1: var(--neutral-darkest);
+  --fg2: var(--neutral-dark);
+  --border: var(--ink-15);
+  --accent-ink: var(--color-white);
+  background-color: var(--bg);
+  color: var(--fg1);
+}
+
+/* Scheme 3 — white */
+.scheme-3 {
+  --bg: var(--color-white);
+  --surface: var(--neutral-lightest);
+  --fg1: var(--neutral-darkest);
+  --fg2: var(--neutral-dark);
+  --border: var(--ink-15);
+  --accent-ink: var(--color-white);
+  background-color: var(--bg);
+  color: var(--fg1);
+}
+
+/* Scheme 4 — light gray */
+.scheme-4 {
+  --bg: var(--neutral-lighter);
+  --surface: var(--neutral-lightest);
+  --fg1: var(--neutral-darkest);
+  --fg2: var(--neutral-dark);
+  --border: var(--ink-15);
+  --accent-ink: var(--color-white);
+  background-color: var(--bg);
+  color: var(--fg1);
+}
+
+/* Scheme 5 — dark brown */
+.scheme-5 {
+  --bg: var(--tahiti-gold-darker);
+  --surface: var(--tahiti-gold-darkest);
+  --fg1: var(--color-white);
+  --fg2: rgba(255, 255, 255, 0.7);
+  --border: var(--white-20);
+  --accent-ink: var(--color-white);
+  background-color: var(--bg);
+  color: var(--fg1);
+}
+
+/* Scheme 6 — near black */
+.scheme-6 {
+  --bg: var(--neutral-darker);
+  --surface: var(--neutral-darkest);
+  --fg1: var(--color-white);
+  --fg2: rgba(255, 255, 255, 0.7);
+  --border: var(--white-20);
+  --accent-ink: var(--color-white);
+  background-color: var(--bg);
+  color: var(--fg1);
+}
