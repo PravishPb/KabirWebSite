@@ -2,10 +2,6 @@ import React from 'react';
 import { AnimatedSection } from './ui';
 import { Button, Eyebrow, ChevronLink } from './ui';
 
-function PlaceholderImg({ className = '', style = {}, alt = '', gradient = 'linear-gradient(135deg, #1b1e1c 0%, #563401 50%, #d98204 100%)' }) {
-  return <div className={className} style={{ ...style, background: gradient, width: '100%' }} role="img" aria-label={alt} />;
-}
-
 const TEXT = {
   EN: {
     eyebrow: 'Library',
@@ -86,15 +82,19 @@ export default function LibraryFeature({ lang = 'EN', toast }) {
           </div>
 
           {/* Large Image */}
-          <PlaceholderImg
-            alt="Library collection"
-            gradient="linear-gradient(135deg, #1b1e1c 0%, #2a1a08 30%, #563401 60%, #8b5e0c 100%)"
-            style={{
-              aspectRatio: '16 / 9',
-              borderRadius: 16,
-              boxShadow: '0 8px 40px rgba(0,0,0,0.3)',
-            }}
-          />
+          <div style={{ overflow: 'hidden', borderRadius: 16, boxShadow: '0 8px 40px rgba(0,0,0,0.3)' }}>
+            <img
+              src="/library.png"
+              alt="Library collection"
+              loading="lazy"
+              style={{
+                width: '100%',
+                aspectRatio: '16 / 9',
+                objectFit: 'cover',
+                display: 'block',
+              }}
+            />
+          </div>
         </div>
       </AnimatedSection>
     </section>

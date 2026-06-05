@@ -2,10 +2,6 @@ import React from 'react';
 import { AnimatedSection } from './ui';
 import { Button, ChevronLink } from './ui';
 
-function PlaceholderImg({ className = '', style = {}, alt = '', gradient = 'linear-gradient(135deg, #1b1e1c 0%, #563401 50%, #d98204 100%)' }) {
-  return <div className={className} style={{ ...style, background: gradient, width: '100%' }} role="img" aria-label={alt} />;
-}
-
 const TEXT = {
   EN: {
     h2: 'Come, sit a while with us',
@@ -87,13 +83,19 @@ export default function CTASection({ lang = 'EN', toast }) {
       </AnimatedSection>
 
       {/* Full-bleed Image */}
-      <PlaceholderImg
-        alt="Kabir Association community"
-        gradient="linear-gradient(135deg, #1b1e1c 0%, #3d2508 30%, #6b3f00 60%, #d98204 100%)"
-        style={{
-          height: 'clamp(250px, 40vw, 480px)',
-        }}
-      />
+      <div style={{ overflow: 'hidden' }}>
+        <img
+          src="/above-footer.png"
+          alt="Kabir Association community"
+          loading="lazy"
+          style={{
+            width: '100%',
+            height: 'clamp(250px, 40vw, 480px)',
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
+      </div>
     </section>
   );
 }

@@ -2,9 +2,11 @@ import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './ui';
 import { Button, Eyebrow, Badge, ChevronLink } from './ui';
 
-function PlaceholderImg({ className = '', style = {}, alt = '', gradient = 'linear-gradient(135deg, #1b1e1c 0%, #563401 50%, #d98204 100%)' }) {
-  return <div className={className} style={{ ...style, background: gradient, width: '100%' }} role="img" aria-label={alt} />;
-}
+const BLOG_IMAGES = [
+  '/writings-teaching.png',
+  '/writings-devotion.png',
+  '/writings-community.png',
+];
 
 const TEXT = {
   EN: {
@@ -61,12 +63,6 @@ const TEXT = {
   },
 };
 
-const blogGradients = [
-  'linear-gradient(135deg, #2a1a08 0%, #8b5e0c 100%)',
-  'linear-gradient(135deg, #1b1e1c 0%, #563401 100%)',
-  'linear-gradient(135deg, #3d2508 0%, #d98204 100%)',
-];
-
 export default function BlogSection({ lang = 'EN', toast }) {
   const t = TEXT[lang] || TEXT.EN;
 
@@ -110,6 +106,7 @@ export default function BlogSection({ lang = 'EN', toast }) {
               {t.posts.map((post, i) => (
                 <StaggerItem key={i}>
                   <article
+                    className="blog-card"
                     style={{
                       borderRadius: 12,
                       overflow: 'hidden',
@@ -119,22 +116,29 @@ export default function BlogSection({ lang = 'EN', toast }) {
                       flexDirection: 'column',
                       height: '100%',
                       cursor: 'pointer',
-                      transition: 'transform 0.2s, box-shadow 0.2s',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.12)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 2px 16px rgba(0,0,0,0.06)';
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     }}
                   >
-                    <PlaceholderImg
-                      alt={post.title}
-                      gradient={blogGradients[i]}
-                      style={{ height: 200 }}
-                    />
+                    <div
+                      style={{
+                        overflow: 'hidden',
+                        height: 200,
+                      }}
+                    >
+                      <img
+                        src={BLOG_IMAGES[i]}
+                        alt={post.title}
+                        loading="lazy"
+                        className="blog-card-img"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                          transition: 'transform 0.5s ease',
+                        }}
+                      />
+                    </div>
                     <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
                         <Badge>{post.category}</Badge>
@@ -204,6 +208,13 @@ export default function BlogSection({ lang = 'EN', toast }) {
       </AnimatedSection>
 
       <style>{`
+        .blog-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+        }
+        .blog-card:hover .blog-card-img {
+          transform: scale(1.05);
+        }
         @media (max-width: 768px) {
           .blog-grid { grid-template-columns: 1fr !important; }
         }

@@ -2,10 +2,6 @@ import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './ui';
 import { Button, Eyebrow } from './ui';
 
-function PlaceholderImg({ className = '', style = {}, alt = '', gradient = 'linear-gradient(135deg, #1b1e1c 0%, #563401 50%, #d98204 100%)' }) {
-  return <div className={className} style={{ ...style, background: gradient, width: '100%' }} role="img" aria-label={alt} />;
-}
-
 const TEXT = {
   EN: {
     eyebrow: 'Welcome',
@@ -31,93 +27,99 @@ export default function WelcomeHeader({ lang = 'EN', toast }) {
       className="scheme-1"
       style={{
         position: 'relative',
-        minHeight: '70vh',
-        display: 'flex',
-        alignItems: 'center',
         overflow: 'hidden',
+        background: 'linear-gradient(160deg, #0d0f0e 0%, #1b1e1c 40%, #2a1a08 80%, #3d2508 100%)',
       }}
     >
-      {/* Background */}
-      <PlaceholderImg
-        alt="Welcome background"
-        gradient="linear-gradient(145deg, #1b1e1c 0%, #2a1a08 40%, #3d2508 70%, #563401 100%)"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          height: '100%',
-          zIndex: 0,
-        }}
-      />
-
-      {/* Overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'rgba(0,0,0,0.5)',
-          zIndex: 1,
-        }}
-      />
-
-      {/* Content */}
       <AnimatedSection style={{ position: 'relative', zIndex: 2, width: '100%' }}>
         <StaggerContainer>
           <div
             style={{
               maxWidth: 1280,
               margin: '0 auto',
-              padding: 'clamp(4rem, 10vw, 8rem) 1.5rem',
+              padding: 'clamp(3rem, 8vw, 6rem) 1.5rem',
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
-              gap: '4rem',
+              gap: 'clamp(2rem, 4vw, 4rem)',
               alignItems: 'center',
             }}
             className="welcome-grid"
           >
-            {/* Left Column */}
+            {/* Left Column — Image */}
             <StaggerItem>
-              <div>
-                <Eyebrow style={{ color: 'var(--color-accent, #d98204)' }}>{t.eyebrow}</Eyebrow>
+              <div
+                style={{
+                  position: 'relative',
+                  borderRadius: 'var(--radius-image, 1rem)',
+                  overflow: 'hidden',
+                  aspectRatio: '4 / 5',
+                  boxShadow: '0 20px 60px -15px rgba(0,0,0,0.5)',
+                }}
+              >
+                <img
+                  src="/spiritual-home.png"
+                  alt="A spiritual home, founded in devotion"
+                  loading="lazy"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
+                {/* Subtle gradient vignette on the image edges */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(13,15,14,0.3) 0%, transparent 40%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+              </div>
+            </StaggerItem>
+
+            {/* Right Column — Text */}
+            <StaggerItem>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <Eyebrow style={{ color: 'var(--tahiti-gold, #d98204)', marginBottom: 0 }}>{t.eyebrow}</Eyebrow>
                 <h1
                   style={{
                     fontFamily: 'var(--font-heading, "Cormorant Unicase", serif)',
                     fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
                     fontWeight: 300,
                     lineHeight: 1.15,
-                    color: 'var(--color-text, #f5f0e8)',
+                    color: '#f5f0e8',
+                    margin: 0,
                   }}
                 >
                   {t.h1}
                 </h1>
-              </div>
-            </StaggerItem>
-
-            {/* Right Column */}
-            <StaggerItem>
-              <div>
                 <p
                   style={{
                     fontFamily: 'var(--font-body, sans-serif)',
                     fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
                     lineHeight: 1.8,
                     color: 'rgba(245,240,232,0.75)',
-                    marginBottom: '2rem',
+                    margin: 0,
                   }}
                 >
                   {t.body}
                 </p>
-                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
                   <Button
                     onClick={() => toast && toast(t.learn)}
                     style={{
                       padding: '0.8rem 1.8rem',
                       fontSize: '0.9rem',
                       fontWeight: 600,
-                      background: 'var(--color-accent, #d98204)',
+                      background: 'var(--tahiti-gold, #d98204)',
                       color: '#fff',
                       border: 'none',
                       borderRadius: 8,
                       cursor: 'pointer',
+                      boxShadow: '0 4px 20px rgba(217,130,4,0.25)',
                     }}
                   >
                     {t.learn}
@@ -129,10 +131,11 @@ export default function WelcomeHeader({ lang = 'EN', toast }) {
                       fontSize: '0.9rem',
                       fontWeight: 600,
                       background: 'transparent',
-                      color: 'var(--color-text, #f5f0e8)',
+                      color: '#f5f0e8',
                       border: '1px solid rgba(245,240,232,0.2)',
                       borderRadius: 8,
                       cursor: 'pointer',
+                      backdropFilter: 'blur(6px)',
                     }}
                   >
                     {t.explore}
@@ -147,9 +150,13 @@ export default function WelcomeHeader({ lang = 'EN', toast }) {
       {/* Responsive styles */}
       <style>{`
         @media (max-width: 768px) {
-          .welcome-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .welcome-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
         }
       `}</style>
     </section>
   );
 }
+

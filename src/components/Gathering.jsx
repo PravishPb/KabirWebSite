@@ -2,9 +2,11 @@ import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './ui';
 import { Button, Eyebrow } from './ui';
 
-function PlaceholderImg({ className = '', style = {}, alt = '', gradient = 'linear-gradient(135deg, #1b1e1c 0%, #563401 50%, #d98204 100%)' }) {
-  return <div className={className} style={{ ...style, background: gradient, width: '100%' }} role="img" aria-label={alt} />;
-}
+const GATHERING_IMAGES = [
+  '/gathering-satsang.png',
+  '/gathering-bhajan.png',
+  '/gathering-yoga.png',
+];
 
 const TEXT = {
   EN: {
@@ -54,12 +56,6 @@ const TEXT = {
     ],
   },
 };
-
-const gatheringGradients = [
-  'linear-gradient(135deg, #3d2508 0%, #8b5e0c 50%, #d98204 100%)',
-  'linear-gradient(135deg, #1b1e1c 0%, #4a3010 50%, #c48a1a 100%)',
-  'linear-gradient(135deg, #0d0f0e 0%, #563401 50%, #e8a020 100%)',
-];
 
 export default function Gathering({ lang = 'EN' }) {
   const t = TEXT[lang] || TEXT.EN;
@@ -115,18 +111,36 @@ export default function Gathering({ lang = 'EN' }) {
               {t.items.map((item, i) => (
                 <StaggerItem key={i}>
                   <div
+                    className="gathering-card"
                     style={{
                       borderRadius: 12,
                       overflow: 'hidden',
                       background: 'var(--color-surface, #fff)',
                       boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     }}
                   >
-                    <PlaceholderImg
-                      alt={item.title}
-                      gradient={gatheringGradients[i]}
-                      style={{ height: 220, borderRadius: '12px 12px 0 0' }}
-                    />
+                    <div
+                      style={{
+                        overflow: 'hidden',
+                        borderRadius: '12px 12px 0 0',
+                        height: 240,
+                      }}
+                    >
+                      <img
+                        src={GATHERING_IMAGES[i]}
+                        alt={item.title}
+                        loading="lazy"
+                        className="gathering-img"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                          transition: 'transform 0.5s ease',
+                        }}
+                      />
+                    </div>
                     <div style={{ padding: '1.5rem' }}>
                       <h3
                         style={{
@@ -177,6 +191,13 @@ export default function Gathering({ lang = 'EN' }) {
       </AnimatedSection>
 
       <style>{`
+        .gathering-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+        }
+        .gathering-card:hover .gathering-img {
+          transform: scale(1.05);
+        }
         @media (max-width: 768px) {
           .gathering-grid { grid-template-columns: 1fr !important; }
         }
@@ -184,3 +205,4 @@ export default function Gathering({ lang = 'EN' }) {
     </section>
   );
 }
+

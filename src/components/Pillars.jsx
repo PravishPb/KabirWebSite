@@ -2,9 +2,11 @@ import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './ui';
 import { Button, Eyebrow } from './ui';
 
-function PlaceholderImg({ className = '', style = {}, alt = '', gradient = 'linear-gradient(135deg, #1b1e1c 0%, #563401 50%, #d98204 100%)' }) {
-  return <div className={className} style={{ ...style, background: gradient, width: '100%' }} role="img" aria-label={alt} />;
-}
+const PILLAR_IMAGES = [
+  '/pillar-satsang.png',
+  '/pillar-sumiran.png',
+  '/pillar-sewa.png',
+];
 
 const TEXT = {
   EN: {
@@ -54,12 +56,6 @@ const TEXT = {
     ],
   },
 };
-
-const pillarGradients = [
-  'linear-gradient(135deg, #2a1a08 0%, #563401 50%, #d98204 100%)',
-  'linear-gradient(135deg, #1b1e1c 0%, #3d2508 50%, #b87203 100%)',
-  'linear-gradient(135deg, #0d0f0e 0%, #2a1a08 50%, #c48a1a 100%)',
-];
 
 export default function Pillars({ lang = 'EN' }) {
   const t = TEXT[lang] || TEXT.EN;
@@ -115,18 +111,36 @@ export default function Pillars({ lang = 'EN' }) {
               {t.pillars.map((pillar, i) => (
                 <StaggerItem key={i}>
                   <div
+                    className="pillar-card"
                     style={{
                       borderRadius: 12,
                       overflow: 'hidden',
                       background: 'var(--color-surface, #fff)',
                       boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     }}
                   >
-                    <PlaceholderImg
-                      alt={pillar.title}
-                      gradient={pillarGradients[i]}
-                      style={{ height: 220, borderRadius: '12px 12px 0 0' }}
-                    />
+                    <div
+                      style={{
+                        overflow: 'hidden',
+                        borderRadius: '12px 12px 0 0',
+                        height: 240,
+                      }}
+                    >
+                      <img
+                        src={PILLAR_IMAGES[i]}
+                        alt={pillar.title}
+                        loading="lazy"
+                        className="pillar-img"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                          transition: 'transform 0.5s ease',
+                        }}
+                      />
+                    </div>
                     <div style={{ padding: '1.5rem' }}>
                       <h3
                         style={{
@@ -177,6 +191,13 @@ export default function Pillars({ lang = 'EN' }) {
       </AnimatedSection>
 
       <style>{`
+        .pillar-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+        }
+        .pillar-card:hover .pillar-img {
+          transform: scale(1.05);
+        }
         @media (max-width: 768px) {
           .pillars-grid { grid-template-columns: 1fr !important; }
         }

@@ -2,10 +2,6 @@ import React from 'react';
 import { AnimatedSection } from './ui';
 import { Button, Eyebrow, ChevronLink } from './ui';
 
-function PlaceholderImg({ className = '', style = {}, alt = '', gradient = 'linear-gradient(135deg, #1b1e1c 0%, #563401 50%, #d98204 100%)' }) {
-  return <div className={className} style={{ ...style, background: gradient, width: '100%' }} role="img" aria-label={alt} />;
-}
-
 const TEXT = {
   EN: {
     eyebrow: 'Ritual',
@@ -32,13 +28,19 @@ export default function RitualFeature({ lang = 'EN', toast }) {
       }}
     >
       {/* Full-bleed image */}
-      <PlaceholderImg
-        alt="Chowka Aarti ceremony"
-        gradient="linear-gradient(135deg, #2a1a08 0%, #6b3f00 30%, #d98204 60%, #f0b840 100%)"
-        style={{
-          height: 'clamp(300px, 45vw, 520px)',
-        }}
-      />
+      <div style={{ overflow: 'hidden' }}>
+        <img
+          src="/ritual-chowka.png"
+          alt="Chowka Aarti ceremony"
+          loading="lazy"
+          style={{
+            width: '100%',
+            height: 'clamp(300px, 45vw, 520px)',
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
+      </div>
 
       {/* Text Section */}
       <AnimatedSection>
