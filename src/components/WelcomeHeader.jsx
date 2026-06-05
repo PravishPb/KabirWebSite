@@ -52,7 +52,6 @@ export default function WelcomeHeader({ lang = 'EN', toast }) {
                   position: 'relative',
                   borderRadius: 'var(--radius-image, 1rem)',
                   overflow: 'hidden',
-                  aspectRatio: '4 / 5',
                   boxShadow: '0 20px 60px -15px rgba(0,0,0,0.5)',
                 }}
               >
@@ -62,8 +61,7 @@ export default function WelcomeHeader({ lang = 'EN', toast }) {
                   loading="lazy"
                   style={{
                     width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
+                    height: 'auto',
                     display: 'block',
                   }}
                 />
