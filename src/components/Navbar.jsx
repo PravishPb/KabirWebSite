@@ -39,10 +39,10 @@ const TEXT = {
 };
 
 const dropdownItems = [
-  { key: 'events', icon: 'calendar', to: '/events' },
-  { key: 'library', icon: 'book', to: '/library' },
+  { key: 'events', icon: 'event', to: '/events' },
+  { key: 'library', icon: 'menu_book', to: '/library' },
   { key: 'contact', icon: 'mail', to: '/contact' },
-  { key: 'donate', icon: 'heart', to: '/donate' },
+  { key: 'donate', icon: 'favorite', to: '/donate' },
 ];
 
 const dropdownVariants = {
@@ -97,36 +97,15 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
       >
         {/* Logo */}
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span
-            style={{
-              fontFamily: 'var(--font-heading, "Cormorant Unicase", serif)',
-              fontSize: '1.5rem',
-              fontWeight: 700,
-              color: 'var(--color-text, #f5f0e8)',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-            }}
-          >
-            KAT
-          </span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ opacity: 0.7 }}>
-            <path
-              d="M12 2C12 2 8 6 8 10c0 2 1 3.5 2.5 4.2C10 15 9 16.5 7 18c0 0 3.5 1 5 4 1.5-3 5-4 5-4-2-1.5-3-3-3.5-3.8C15 13.5 16 12 16 10c0-4-4-8-4-8z"
-              fill="var(--color-accent, #d98204)"
-            />
-          </svg>
-          <span
-            style={{
-              fontFamily: 'var(--font-heading, "Cormorant Unicase", serif)',
-              fontSize: '0.75rem',
-              color: 'var(--color-text-muted, rgba(245,240,232,0.6))',
-              letterSpacing: '0.08em',
-              display: 'none',
-            }}
-            className="navbar-logo-full"
-          >
-            Kabir Association
-          </span>
+
+          <img
+            src="/logo-minimal.svg"
+            alt="Kabir Association"
+            width="40"
+            height="40"
+            style={{ opacity: 0.85 }}
+          />
+
         </Link>
 
         {/* Desktop Nav */}
@@ -193,8 +172,8 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
                         onClick={() => setDropdownOpen(false)}
                         style={{
                           display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '0.75rem',
+                          alignItems: 'center',
+                          gap: '1rem',
                           padding: '0.75rem 1rem',
                           borderRadius: 8,
                           textDecoration: 'none',
@@ -204,7 +183,7 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
                         onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.05)')}
                         onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                       >
-                        <span style={{ fontSize: '1.1rem', opacity: 0.6, marginTop: 2 }}>
+                        <span style={{ fontSize: '1.25rem', opacity: 0.6, display: 'flex' }}>
                           <Icon name={item.icon} />
                         </span>
                         <div>
@@ -343,7 +322,7 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
               <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', margin: '0.5rem 0' }} />
               {dropdownItems.map((item) => (
                 <Link key={item.key} to={item.to} onClick={() => setMobileOpen(false)} style={mobileLinkStyle}>
-                  <span style={{ opacity: 0.5, marginRight: '0.5rem' }}><Icon name={item.icon} /></span>
+                  <span style={{ opacity: 0.5, marginRight: '0.75rem', display: 'flex', alignItems: 'center', fontSize: '1.25rem' }}><Icon name={item.icon} /></span>
                   {t[item.key]}
                 </Link>
               ))}

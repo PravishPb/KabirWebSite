@@ -91,23 +91,14 @@ export default function Footer({ lang = 'EN', toast }) {
           >
             {/* Logo */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 2C12 2 8 6 8 10c0 2 1 3.5 2.5 4.2C10 15 9 16.5 7 18c0 0 3.5 1 5 4 1.5-3 5-4 5-4-2-1.5-3-3-3.5-3.8C15 13.5 16 12 16 10c0-4-4-8-4-8z"
-                  fill="var(--color-accent, #d98204)"
-                />
-              </svg>
-              <span
-                style={{
-                  fontFamily: 'var(--font-heading, "Cormorant Unicase", serif)',
-                  fontSize: '1.15rem',
-                  fontWeight: 600,
-                  color: 'var(--color-text, #1b1e1c)',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                Kabir Association
-              </span>
+              <img
+                src="/logo-minimal.svg"
+                alt="Kabir Association"
+                width="40"
+                height="40"
+                style={{ opacity: 0.85 }}
+              />
+
             </div>
 
             {/* Nav Links */}

@@ -57,7 +57,7 @@ export default function WelcomeHeader({ lang = 'EN', toast }) {
                 }}
               >
                 <img
-                  src="/spiritual-home.png"
+                  src="/welcome.jpg"
                   alt="A spiritual home, founded in devotion"
                   loading="lazy"
                   style={{
