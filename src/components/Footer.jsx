@@ -160,6 +160,18 @@ export default function Footer({ lang = 'EN', toast }) {
             </div>
           </div>
 
+          {/* Map Location */}
+          <div style={{ marginBottom: '2.5rem', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+            <iframe 
+              style={{ border: 0, width: '100%', height: '300px', display: 'block' }} 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.1138265902846!2d-79.67037938511895!3d43.66660245958314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3edf4fe32d3d%3A0xed0e07c1e455a386!2s1365%20Mid-Way%20Blvd%20%2338%2C%20Mississauga%2C%20ON%20L5T%202J5!5e0!3m2!1sen!2sca!4v1568599551758!5m2!1sen!2sca" 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Kabir Association of Toronto Location"
+            ></iframe>
+          </div>
+
           {/* Divider */}
           <div
             style={{
