@@ -198,7 +198,7 @@ export default function Hero({ lang = 'EN', toast }) {
 
           <motion.div variants={fadeUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Button
-              onClick={() => toast && toast(t.cta)}
+              onClick={scrollToQuote}
               style={{
                 padding: '0.9rem 2rem',
                 fontSize: '0.95rem',

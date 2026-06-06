@@ -5,6 +5,7 @@ import { Button, Icon } from './ui';
 
 const TEXT = {
   EN: {
+    home: 'Home',
     about: 'About',
     teachings: 'Teachings',
     blog: 'Blog',
@@ -21,6 +22,7 @@ const TEXT = {
     dropdownCta: 'Plan your visit',
   },
   HI: {
+    home: 'होम',
     about: 'परिचय',
     teachings: 'शिक्षाएँ',
     blog: 'ब्लॉग',
@@ -117,6 +119,7 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
           }}
           className="navbar-desktop-links"
         >
+          <Link to="/" style={navLinkStyle}>{t.home}</Link>
           <Link to="/about" style={navLinkStyle}>{t.about}</Link>
           <Link to="/teachings" style={navLinkStyle}>{t.teachings}</Link>
           <Link to="/blog" style={navLinkStyle}>{t.blog}</Link>
@@ -196,10 +199,11 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
                   <div
                     style={{
                       borderTop: '1px solid rgba(255,255,255,0.08)',
-                      padding: '1rem 1.25rem',
+                      padding: '1.25rem',
                       display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      gap: '0.5rem',
                     }}
                   >
                     <span style={{ fontSize: '0.8rem', opacity: 0.5, color: 'var(--color-text, #f5f0e8)' }}>{t.dropdownFooter}</span>
@@ -316,6 +320,7 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
             }}
           >
             <div style={{ padding: '1rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <Link to="/" onClick={() => setMobileOpen(false)} style={mobileLinkStyle}>{t.home}</Link>
               <Link to="/about" onClick={() => setMobileOpen(false)} style={mobileLinkStyle}>{t.about}</Link>
               <Link to="/teachings" onClick={() => setMobileOpen(false)} style={mobileLinkStyle}>{t.teachings}</Link>
               <Link to="/blog" onClick={() => setMobileOpen(false)} style={mobileLinkStyle}>{t.blog}</Link>
@@ -327,7 +332,7 @@ export default function Navbar({ lang = 'EN', setLang, toast }) {
                 </Link>
               ))}
               <div style={{ height: 1, background: 'rgba(255,255,255,0.08)', margin: '0.5rem 0' }} />
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem', padding: '0.5rem 0' }}>
                 <span style={{ fontSize: '0.8rem', opacity: 0.5, color: 'var(--color-text, #f5f0e8)' }}>{t.dropdownFooter}</span>
                 <Link
                   to="/events"
