@@ -1,17 +1,20 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { AppProvider } from './context/AppContext';
+
 import './styles/tokens.css';
 import './styles/kit.css';
-import './styles/layout.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import TeachingsPage from './pages/TeachingsPage';
-import BlogPage from './pages/BlogPage';
+
+// Lazy load pages for performance optimization
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const TeachingsPage = React.lazy(() => import('./pages/TeachingsPage'));
+const BlogPage = React.lazy(() => import('./pages/BlogPage'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -25,8 +28,13 @@ const pageTransition = {
   duration: 0.4,
 };
 
-function AnimatedRoutes({ lang, toast }) {
+function AnimatedRoutes() {
   const location = useLocation();
+
+  // Scroll to top on navigation
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
 
   return (
     <AnimatePresence mode="wait">
@@ -38,50 +46,38 @@ function AnimatedRoutes({ lang, toast }) {
         exit="exit"
         transition={pageTransition}
       >
-        <Routes location={location}>
-          <Route path="/" element={<HomePage lang={lang} toast={toast} />} />
-          <Route path="/about" element={<AboutPage lang={lang} />} />
-          <Route path="/teachings" element={<TeachingsPage lang={lang} />} />
-          <Route path="/blog" element={<BlogPage lang={lang} toast={toast} />} />
-        </Routes>
+        <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>}>
+          <Routes location={location}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/teachings" element={<TeachingsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+          </Routes>
+        </Suspense>
       </motion.div>
     </AnimatePresence>
   );
 }
 
 function AppContent() {
-  const [lang, setLang] = useState('EN');
-  const [toastMsg, setToastMsg] = useState('');
-  const toastTimer = useRef(null);
-
-  const toast = useCallback((msg) => {
-    setToastMsg(msg);
-    if (toastTimer.current) clearTimeout(toastTimer.current);
-    toastTimer.current = setTimeout(() => setToastMsg(''), 2500);
-  }, []);
-
-  // Scroll to top on navigation
-  const location = useLocation();
-  React.useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
-
   return (
     <>
-      <Navbar lang={lang} setLang={setLang} toast={toast} />
+      <Navbar />
       <main>
-        <AnimatedRoutes lang={lang} toast={toast} />
+        <AnimatedRoutes />
       </main>
-      <Footer lang={lang} toast={toast} />
-      <div className={`toast ${toastMsg ? 'show' : ''}`}>{toastMsg}</div>
+      <Footer />
     </>
   );
 }
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
+    <AppProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </AppProvider>
   );
 }
+

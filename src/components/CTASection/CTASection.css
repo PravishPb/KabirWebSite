@@ -1,0 +1,57 @@
+.cta-section {
+  background: var(--color-bg, #f5f0e8);
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+  text-align: center;
+}
+
+.cta-title {
+  font-family: var(--font-heading, "Cormorant Unicase", serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--color-text, #1b1e1c);
+  margin-bottom: 1.25rem;
+}
+
+.cta-lead {
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--color-text-muted, rgba(27,30,28,0.65));
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--color-accent, #d98204);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cta-image-wrapper {
+  overflow: hidden;
+}
+
+.cta-image {
+  width: 100%;
+  height: clamp(250px, 40vw, 480px);
+  object-fit: cover;
+  display: block;
+}

@@ -1,0 +1,71 @@
+.library-section {
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+  background: var(--color-bg, #3d2508);
+  color: var(--color-text, #f5f0e8);
+}
+
+.library-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.library-content {
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+.library-eyebrow {
+  color: var(--color-accent, #d98204);
+}
+
+.library-title {
+  font-family: var(--font-heading, "Cormorant Unicase", serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--color-text, #f5f0e8);
+  margin-bottom: 1rem;
+}
+
+.library-body {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(245,240,232,0.65);
+  margin-bottom: 2rem;
+}
+
+.library-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.library-btn {
+  padding: 0.8rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--color-accent, #d98204);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.library-link {
+  color: var(--color-accent, #d98204);
+}
+
+.library-image-wrapper {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+}
+
+.library-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}

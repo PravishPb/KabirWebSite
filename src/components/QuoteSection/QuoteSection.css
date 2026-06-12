@@ -1,0 +1,49 @@
+.quote-section {
+  padding: clamp(4rem, 10vw, 8rem) 1.5rem;
+  background: var(--color-bg, #f5f0e8);
+}
+
+.quote-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quote-title {
+  font-family: var(--font-heading, "Cormorant Unicase", serif);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--color-text, #1b1e1c);
+  margin-bottom: 2rem;
+}
+
+.quote-blockquote {
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--color-text-muted, rgba(27,30,28,0.7));
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  padding: 0;
+  border: none;
+}
+
+.quote-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.quote-btn {
+  padding: 0.8rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--color-accent, #d98204);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

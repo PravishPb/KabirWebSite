@@ -9,18 +9,18 @@ import BlogSection from '../components/BlogSection';
 import LibraryFeature from '../components/LibraryFeature';
 import CTASection from '../components/CTASection';
 
-export default function HomePage({ lang, toast }) {
+export default function HomePage() {
   return (
     <>
-      <Hero lang={lang} toast={toast} />
-      <QuoteSection lang={lang} />
-      <WelcomeHeader lang={lang} toast={toast} />
-      <Pillars lang={lang} />
-      <Gathering lang={lang} />
-      <RitualFeature lang={lang} toast={toast} />
-      <BlogSection lang={lang} toast={toast} />
-      <LibraryFeature lang={lang} toast={toast} />
-      <CTASection lang={lang} toast={toast} />
+      <Hero />
+      <QuoteSection />
+      <WelcomeHeader />
+      <Pillars />
+      <Gathering />
+      <RitualFeature />
+      <BlogSection />
+      <LibraryFeature />
+      <CTASection />
     </>
   );
 }

@@ -1,25 +1,13 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from './ui';
+import { Button } from '../ui';
+import { useApp } from '../../context/AppContext';
+import { useTranslation } from '../../locales/useTranslation';
+import './Hero.css';
 
 const VIDEO_SRC = '/hero_video_1.mp4';
 const CROSSFADE_DURATION = 1.5; // seconds before end to begin cross-fade
 const FADE_MS = 1200; // CSS transition duration in ms
-
-const TEXT = {
-  EN: {
-    kicker: 'Kabir Association of Toronto',
-    h1: 'A quiet place for the teachings of Kabir',
-    cta: 'Step into stillness',
-    scrollLabel: 'Scroll to explore',
-  },
-  HI: {
-    kicker: 'कबीर एसोसिएशन ऑफ़ टोरंटो',
-    h1: 'कबीर के उपदेशों के लिए एक शांत स्थान',
-    cta: 'ठहराव में प्रवेश करें',
-    scrollLabel: 'और जानें',
-  },
-};
 
 const containerVariants = {
   hidden: {},
@@ -46,8 +34,9 @@ const videoBaseStyle = {
   transition: `opacity ${FADE_MS}ms ease-in-out`,
 };
 
-export default function Hero({ lang = 'EN', toast }) {
-  const t = TEXT[lang] || TEXT.EN;
+export default function Hero() {
+  const { lang, toast } = useApp();
+  const t = useTranslation('Hero');
   const videoARef = useRef(null);
   const videoBRef = useRef(null);
   const swappingRef = useRef(false);            // prevents double-trigger
@@ -91,26 +80,9 @@ export default function Hero({ lang = 'EN', toast }) {
   }, [safePlay]);
 
   return (
-    <section
-      className="scheme-1"
-      style={{
-        position: 'relative',
-        minHeight: '100svh',
-        display: 'flex',
-        alignItems: 'center',
-        overflow: 'hidden',
-      }}
-    >
+    <section className="scheme-1 hero-section">
       {/* Fallback gradient (shows while video loads or if video fails) */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(160deg, #0d0f0e 0%, #1b1e1c 30%, #2a1a08 60%, #563401 100%)',
-          zIndex: 0,
-        }}
-      />
+      <div aria-hidden="true" className="hero-fallback-bg" />
 
       {/* Background Video A */}
       <video
@@ -146,72 +118,28 @@ export default function Hero({ lang = 'EN', toast }) {
       </video>
 
       {/* Cinematic Overlay — multi-layer for depth and text legibility */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          zIndex: 1,
-          background: `
-            linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.25) 70%, rgba(0,0,0,0.65) 100%),
-            linear-gradient(to right,  rgba(0,0,0,0.55) 0%, transparent 60%)
-          `,
-        }}
-      />
+      <div aria-hidden="true" className="hero-overlay" />
 
       {/* Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        style={{
-          position: 'relative',
-          zIndex: 2,
-          maxWidth: 1280,
-          margin: '0 auto',
-          padding: '6rem 1.5rem 4rem',
-          width: '100%',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '3rem',
-          alignItems: 'center',
-        }}
-        className="hero-grid"
+        className="hero-content-grid"
       >
         {/* Left Column */}
         <div>
           <motion.h1
             variants={fadeUp}
-            style={{
-              fontFamily: 'var(--font-heading, "Cormorant Unicase", serif)',
-              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-              fontWeight: 300,
-              lineHeight: 1.1,
-              color: '#f5f0e8',
-              marginBottom: '2rem',
-              letterSpacing: '-0.01em',
-              textShadow: '0 2px 20px rgba(0,0,0,0.4)',
-            }}
+            className="hero-title"
           >
             {t.h1}
           </motion.h1>
 
-          <motion.div variants={fadeUp} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
             <Button
               onClick={scrollToQuote}
-              style={{
-                padding: '0.9rem 2rem',
-                fontSize: '0.95rem',
-                fontWeight: 600,
-                background: 'var(--tahiti-gold, #d98204)',
-                color: '#fff',
-                border: 'none',
-                borderRadius: 8,
-                cursor: 'pointer',
-                letterSpacing: '0.02em',
-                backdropFilter: 'blur(8px)',
-                boxShadow: '0 4px 24px rgba(217,130,4,0.3)',
-              }}
+              className="hero-cta-btn"
             >
               {t.cta}
             </Button>
@@ -219,29 +147,11 @@ export default function Hero({ lang = 'EN', toast }) {
         </div>
 
         {/* Right Column */}
-        <motion.div variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-body, sans-serif)',
-              fontSize: '1rem',
-              fontWeight: 500,
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              color: '#f5f0e8',
-              marginBottom: '1rem',
-              textShadow: '0 1px 8px rgba(0,0,0,0.3)',
-            }}
-          >
+        <motion.div variants={fadeUp} className="flex flex-col justify-center">
+          <p className="hero-kicker">
             {t.kicker}
           </p>
-          <div
-            style={{
-              width: 48,
-              height: 2,
-              background: '#f5f0e8',
-              opacity: 0.4,
-            }}
-          />
+          <div className="hero-kicker-divider" />
         </motion.div>
       </motion.div>
 
@@ -252,26 +162,7 @@ export default function Hero({ lang = 'EN', toast }) {
         transition={{ delay: 1.2, duration: 0.6 }}
         onClick={scrollToQuote}
         aria-label={t.scrollLabel}
-        style={{
-          position: 'absolute',
-          bottom: '2.5rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 2,
-          background: 'rgba(255,255,255,0.05)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
-          border: '1px solid rgba(245,240,232,0.2)',
-          borderRadius: '50%',
-          width: 48,
-          height: 48,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          color: '#f5f0e8',
-          transition: 'border-color 0.3s, background 0.3s',
-        }}
+        className="hero-scroll-btn"
       >
         <motion.svg
           width="16"
@@ -287,13 +178,7 @@ export default function Hero({ lang = 'EN', toast }) {
           <path d="M4 6l4 4 4-4" />
         </motion.svg>
       </motion.button>
-
-      {/* Responsive styles */}
-      <style>{`
-        @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }
+
