@@ -30,9 +30,11 @@ export default function Navbar() {
   const t = useTranslation('Navbar');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [blogDropdownOpen, setBlogDropdownOpen] = useState(false);
+  const [libraryDropdownOpen, setLibraryDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const dropdownRef = useRef(null);
   const blogDropdownRef = useRef(null);
+  const libraryDropdownRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -41,6 +43,9 @@ export default function Navbar() {
       }
       if (blogDropdownRef.current && !blogDropdownRef.current.contains(e.target)) {
         setBlogDropdownOpen(false);
+      }
+      if (libraryDropdownRef.current && !libraryDropdownRef.current.contains(e.target)) {
+        setLibraryDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -106,6 +111,46 @@ export default function Navbar() {
                     </Link>
                     <Link to="/blog?filter=Dr.+J+Das" onClick={() => setBlogDropdownOpen(false)} className="navbar-dropdown-link">
                       Blog (Dr. J Das)
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Library Dropdown */}
+          <div ref={libraryDropdownRef} className="relative">
+            <button
+              onClick={() => setLibraryDropdownOpen((v) => !v)}
+              className="navbar-dropdown-btn"
+              aria-expanded={libraryDropdownOpen}
+              aria-haspopup="true"
+            >
+              Library
+              <svg 
+                width="12" 
+                height="12" 
+                viewBox="0 0 12 12" 
+                fill="currentColor" 
+                className="navbar-dropdown-icon"
+                style={{ transform: libraryDropdownOpen ? 'rotate(180deg)' : 'rotate(0)' }}
+              >
+                <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {libraryDropdownOpen && (
+                <motion.div
+                  variants={dropdownVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="navbar-dropdown-menu left"
+                >
+                  <div style={{ padding: '0.5rem' }}>
+                    <Link to="/library/bhajans" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
+                      Bhajans
                     </Link>
                   </div>
                 </motion.div>
@@ -236,10 +281,15 @@ export default function Navbar() {
               <Link to="/teachings" onClick={() => setMobileOpen(false)} className="navbar-mobile-link">{t.teachings}</Link>
               
               <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>{t.blog}</div>
-              <div style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
                 <Link to="/blog" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">All Blogs</Link>
                 <Link to="/blog?filter=KAOT" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">Blog (KAOT)</Link>
                 <Link to="/blog?filter=Dr.+J+Das" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">Blog (Dr. J Das)</Link>
+              </div>
+
+              <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>Library</div>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
+                <Link to="/library/bhajans" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">Bhajans</Link>
               </div>
 
               <div className="navbar-mobile-divider" />

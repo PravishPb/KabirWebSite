@@ -1,0 +1,720 @@
+/* ============================================================
+   LibraryBhajans.css — Master-Detail Layout
+   ============================================================ */
+
+/* ---- Layout ---- */
+.bhajans-page {
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.bhajans-content-section {
+  padding-top: 2rem !important;
+}
+
+.bhajans-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+  align-items: start;
+  min-height: calc(100vh - 300px);
+}
+
+/* ---- Sidebar TOC ---- */
+.bhajans-sidebar-inner {
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 110px);
+}
+
+.bhajans-sidebar-content {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: calc(100vh - 160px);
+  min-height: 300px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Mobile toggle */
+.bhajans-mobile-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--fg1);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s;
+}
+
+.bhajans-mobile-toggle:hover {
+  background: var(--surface);
+}
+
+/* Search */
+.bhajans-search-box {
+  position: relative;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.bhajans-search-icon {
+  position: absolute;
+  left: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fg3);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.bhajans-search-input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--fg1);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.bhajans-search-input:focus {
+  border-color: var(--tahiti-gold);
+  background: var(--bg);
+  box-shadow: 0 0 0 3px rgba(217, 130, 4, 0.1);
+}
+
+/* TOC toolbar */
+.bhajans-toc-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.bhajans-toc-toolbar-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--fg2);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.bhajans-toc-toolbar-btn:hover {
+  background: var(--surface);
+  color: var(--fg1);
+}
+
+.bhajans-toc-count {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--fg3);
+  white-space: nowrap;
+}
+
+/* TOC tree */
+.bhajans-toc {
+  overflow-y: scroll;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neutral-light) var(--neutral-lightest);
+}
+
+.bhajans-toc::-webkit-scrollbar {
+  width: 8px;
+  background: var(--neutral-lightest);
+}
+
+.bhajans-toc::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-light);
+  border-radius: 10px;
+  border: 2px solid var(--neutral-lightest);
+}
+
+.bhajans-toc::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral);
+}
+
+/* Top-level details */
+.toc-top-details {
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-top-details:last-child {
+  border-bottom: none;
+}
+
+.toc-top-details > summary {
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--fg1);
+  padding: 12px 14px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.toc-top-details > summary:hover {
+  background: var(--surface);
+}
+
+.toc-top-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.toc-top-details > summary::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid var(--fg3);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.toc-top-details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.toc-top-content {
+  padding: 0 0 6px 0;
+}
+
+/* Sub-level details */
+.toc-sub-details > summary {
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--fg2);
+  padding: 6px 14px 6px 30px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.toc-sub-details > summary:hover {
+  background: var(--surface);
+}
+
+.toc-sub-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.toc-sub-details > summary::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid var(--fg3);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.toc-sub-details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+/* TOC items */
+.toc-item-list {
+  list-style: none;
+  margin: 0;
+  padding: 2px 0;
+}
+
+.toc-item {
+  margin: 0;
+}
+
+.toc-item-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 5px 14px 5px 44px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--fg2);
+  cursor: pointer;
+  transition: all 0.15s;
+  border-left: 2px solid transparent;
+}
+
+.toc-item-btn:hover {
+  background: var(--surface);
+  color: var(--tahiti-gold-dark);
+}
+
+.toc-item-btn.active {
+  background: var(--tahiti-gold-lightest);
+  color: var(--tahiti-gold-dark);
+  border-left-color: var(--tahiti-gold);
+  font-weight: 600;
+}
+
+/* Search results */
+.toc-search-results {
+  padding: 8px 0;
+}
+
+.toc-search-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-search-item:last-child {
+  border-bottom: none;
+}
+
+.toc-search-item:hover {
+  background: var(--surface);
+}
+
+.toc-search-title {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--fg1);
+  margin: 0;
+}
+
+.toc-search-category {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--fg3);
+  margin: 2px 0 0;
+}
+
+.toc-search-snippet {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--fg2);
+  margin: 4px 0 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.toc-search-snippet mark {
+  background: var(--tahiti-gold-lighter);
+  color: var(--tahiti-gold-darker);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+.toc-no-results {
+  padding: 24px 14px;
+  text-align: center;
+  color: var(--fg3);
+  font-size: 0.85rem;
+}
+
+/* ---- Main Content Panel ---- */
+.bhajans-main {
+  min-height: 400px;
+}
+
+/* Empty state */
+.bhajans-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  color: var(--fg3);
+  padding: 60px 40px;
+}
+
+.bhajans-empty-icon {
+  font-size: 64px;
+  color: var(--border);
+  margin-bottom: 16px;
+}
+
+.bhajans-empty-state h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--fg2);
+  margin: 0 0 8px;
+}
+
+.bhajans-empty-state p {
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: 300px;
+}
+
+/* Bhajan card */
+.bhajan-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  max-height: calc(100vh - 160px);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bhajan header */
+.bhajan-header {
+  padding: 24px 32px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bhajan-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--fg3);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.bhajan-breadcrumb-sep {
+  font-size: 0.65rem;
+}
+
+.bhajan-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bhajan-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--fg1);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.bhajan-genre {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--tahiti-gold-dark);
+  background: var(--tahiti-gold-lightest);
+  border: 1px solid var(--tahiti-gold-lighter);
+  border-radius: 6px;
+  padding: 3px 10px;
+  margin-top: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Bhajan actions bar */
+.bhajan-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bhajan-action-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--fg2);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.bhajan-action-btn:hover {
+  background: var(--surface);
+  color: var(--fg1);
+}
+
+.bhajan-action-btn .ms {
+  font-size: 16px;
+}
+
+/* Font size controls */
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.font-size-btn {
+  background: none;
+  border: none;
+  border-right: 1px solid var(--border);
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--fg2);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.font-size-btn:last-child {
+  border-right: none;
+}
+
+.font-size-btn:hover {
+  background: var(--surface);
+  color: var(--fg1);
+}
+
+/* Bhajan body */
+.bhajan-body {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neutral-light) var(--neutral-lightest);
+}
+
+.bhajan-body::-webkit-scrollbar {
+  width: 8px;
+  background: var(--neutral-lightest);
+}
+
+.bhajan-body::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-light);
+  border-radius: 10px;
+  border: 2px solid var(--neutral-lightest);
+}
+
+.bhajan-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral);
+}
+
+.bhajan-content {
+  text-align: center;
+  line-height: 1.9;
+  color: var(--fg1);
+}
+
+.bhajan-content .bhajan-line {
+  margin-bottom: 4px;
+}
+
+.bhajan-content em {
+  color: var(--fg2);
+  font-size: 0.92em;
+}
+
+.bhajan-content strong {
+  font-weight: 700;
+}
+
+/* Navigation footer */
+.bhajan-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.bhajan-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--fg2);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  max-width: 220px;
+}
+
+.bhajan-nav-btn:hover {
+  background: var(--bg);
+  color: var(--fg1);
+  border-color: var(--tahiti-gold-light);
+}
+
+.bhajan-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.bhajan-nav-btn:disabled:hover {
+  background: none;
+  color: var(--fg2);
+  border-color: var(--border);
+}
+
+.bhajan-nav-btn .ms {
+  font-size: 18px;
+}
+
+.bhajan-nav-title {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Toast */
+.bhajan-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--neutral-darkest);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+}
+
+.bhajan-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+  .bhajans-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bhajans-sidebar-inner {
+    position: relative;
+    top: 0;
+    max-height: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+  }
+
+  .bhajans-mobile-toggle {
+    display: flex;
+  }
+
+  .bhajans-sidebar-content {
+    display: none;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-height: 60vh;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .bhajans-sidebar-content.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bhajans-content-section {
+    padding-top: 1rem !important;
+  }
+
+  .bhajan-header {
+    padding: 20px 20px 16px;
+  }
+
+  .bhajan-body {
+    padding: 20px;
+  }
+
+  .bhajan-nav {
+    padding: 12px 20px;
+  }
+
+  .bhajan-title {
+    font-size: 1.3rem;
+  }
+
+  .bhajan-title-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bhajan-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .toc-item-btn {
+    padding-left: 36px;
+  }
+
+  .bhajan-nav-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .bhajan-nav-title {
+    max-width: 80px;
+  }
+}
