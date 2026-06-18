@@ -684,6 +684,14 @@
 
   .bhajan-body {
     padding: 20px;
+    overflow-y: visible;
+  }
+
+  .bhajan-card {
+    max-height: none;
+    min-height: auto;
+    overflow: visible;
+    display: block;
   }
 
   .bhajan-nav {
