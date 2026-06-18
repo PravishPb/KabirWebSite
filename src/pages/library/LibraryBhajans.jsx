@@ -82,15 +82,16 @@ export default function LibraryBhajans() {
   }, []);
 
   // Select a bhajan
-  const handleSelect = useCallback((bhajanId) => {
-    setSelectedId(bhajanId);
+  const handleSelect = (id) => {
+    setSelectedId(id);
     setSearch('');
-    setMobileTocOpen(false);
-    // Only scroll on mobile where TOC is stacked above content
-    if (window.innerWidth < 992 && contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // On mobile, just close the sidebar (TOC) without auto-scrolling.
+    // The TOC remembers its state (open details, active selection) because it just gets hidden with CSS.
+    if (window.innerWidth < 992) {
+      setMobileTocOpen(false);
     }
-  }, []);
+  };
 
   // Copy lyrics
   const handleCopy = useCallback(() => {
