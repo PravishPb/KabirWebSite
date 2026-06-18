@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import he from 'he';
 import { Badge, Eyebrow, ChevronLink, AsyncImage, PlaceholderImg } from '../components/ui';
 import { AnimatedSection } from '../components/ui/AnimatedSection';
 import { useApp } from '../context/AppContext';
@@ -33,12 +32,18 @@ export default function BlogPage() {
     navigate(`/blog${f === 'All' ? '' : `?filter=${encodeURIComponent(f)}`}`);
   };
 
+  const decodeHTML = (html) => {
+    const txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+  };
+
   const currentPosts = livePosts.map(p => ({
     id: p.id,
     cat: p.category || 'KAOT',
     read: '5 min read',
-    title: p.title ? he.decode(p.title) : '',
-    excerpt: p.excerpt ? he.decode(p.excerpt) : 'Read more...',
+    title: p.title ? decodeHTML(p.title) : '',
+    excerpt: p.excerpt ? decodeHTML(p.excerpt) : 'Read more...',
     image_url: p.image_url
   }));
 
