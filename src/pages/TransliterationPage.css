@@ -1,107 +1,244 @@
+/* ============================================================
+   TransliterationPage.css
+   ============================================================ */
+
 .transliteration-page {
   padding-top: 40px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 
-.transliteration-intro {
-  max-width: 600px;
-  margin: 0 auto;
+.transliteration-title {
+  margin-bottom: 12px;
 }
 
-.section-title {
-  margin-bottom: 30px;
+.transliteration-subtitle {
+  max-width: 520px;
+  margin: 0 auto 60px auto;
+}
+
+/* ─── Shared Panel Heading ─────────────────────────────────── */
+
+.panel-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-h5);
+  font-weight: 400;
+  letter-spacing: var(--tracking-heading);
   color: var(--tahiti-gold-dark);
+  margin: 0 0 20px 0;
+  text-align: center;
 }
 
-.transliteration-grid {
-  display: grid;
-  gap: 15px;
-  margin-bottom: 40px;
+/* ─── Vowels + Pronunciation Row ───────────────────────────── */
+
+.vowels-row {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 60px;
 }
 
-.vowels-grid {
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+.vowels-panel {
+  flex: 1;
+  min-width: 0;
 }
 
-.consonants-grid {
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+.pronunciation-panel {
+  width: 420px;
+  flex-shrink: 0;
+  background: var(--tahiti-gold-lightest);
+  border: 1px solid var(--tahiti-gold-lighter);
+  border-radius: var(--radius-card);
+  padding: 28px 32px;
 }
 
-.trans-cell {
-  background: var(--surface);
+/* ─── Shared Table Styles ──────────────────────────────────── */
+
+.trans-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.trans-cell:hover:not(.empty) {
-  transform: translateY(-2px);
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
-  border-color: var(--tahiti-gold);
+  background: var(--color-white);
 }
 
-.trans-cell.empty {
-  background: transparent;
-  border-color: transparent;
-}
-
-.trans-cell .hindi {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 600;
-  color: var(--fg1);
-  margin-bottom: 8px;
-}
-
-.trans-cell .eng {
+.trans-table td {
+  padding: 14px 16px;
   font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 500;
+  font-size: var(--text-small);
+  color: var(--fg1);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  vertical-align: middle;
+  transition: background 0.15s ease;
+}
+
+.trans-table td:last-child {
+  border-right: none;
+}
+
+.trans-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Alternating row tint */
+.trans-table tr:nth-child(even) td {
+  background: var(--tahiti-gold-lightest);
+}
+
+/* Hover */
+.trans-table td:hover {
+  background: var(--tahiti-gold-lighter);
+}
+
+/* Empty cells */
+.trans-table td:empty {
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Alt text for Perso-Arabic variants */
+.trans-table .alt {
+  display: block;
+  font-size: 12px;
+  color: var(--fg3);
+  margin-top: 3px;
+}
+
+/* ─── Diphthong Note ───────────────────────────────────────── */
+
+.diphthong-note {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--fg2);
+  line-height: 1.6;
+}
+
+/* ─── Pronunciation Grid ───────────────────────────────────── */
+
+.pro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 30px;
+}
+
+.pro-col p {
+  margin: 0 0 16px 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--fg1);
+  line-height: 1.5;
+}
+
+.pro-col strong {
   color: var(--tahiti-gold-dark);
+  font-weight: 700;
 }
 
-.trans-cell .alt {
-  font-size: 13px;
-  color: var(--fg2);
-  margin-top: 4px;
+/* ─── Consonants Section ───────────────────────────────────── */
+
+.consonants-section {
+  margin-bottom: 60px;
 }
 
-.transliteration-notes {
-  padding: 30px;
-  border-radius: var(--radius-card);
-  margin-top: 60px;
+.consonants-table td {
+  font-size: 15px;
 }
 
-.transliteration-notes ul {
+/* ─── Consonant Pronunciation Section ──────────────────────── */
+
+.consonant-pronunciation {
+  padding: 40px 0 0 0;
+}
+
+.dotted-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dotted-line {
+  flex: 1;
+  border-top: 1px dotted var(--neutral-lighter);
+}
+
+.dotted-title .panel-heading {
   margin: 0;
-  padding-left: 20px;
-  color: var(--fg2);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.transliteration-notes li {
-  margin-bottom: 10px;
+.cons-pro-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
-.transliteration-notes li:last-child {
-  margin-bottom: 0;
+.cons-rule {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  border-left: 3px solid var(--tahiti-gold);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--fg1);
+  line-height: 1.55;
+  transition: background 0.15s ease;
 }
 
-@media (max-width: 768px) {
-  .vowels-grid {
-    grid-template-columns: repeat(2, 1fr);
+.cons-rule:hover {
+  background: var(--tahiti-gold-lightest);
+}
+
+.cons-rule-label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--tahiti-gold-dark);
+  min-width: 36px;
+  flex-shrink: 0;
+}
+
+.cons-rule strong {
+  color: var(--tahiti-gold-dark);
+  font-weight: 700;
+}
+
+.cons-rule-full {
+  margin-top: 14px;
+}
+
+/* ─── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 991px) {
+  .vowels-row {
+    flex-direction: column;
+    gap: 40px;
   }
-  
-  .consonants-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .pronunciation-panel {
+    width: 100%;
   }
-  
-  .trans-cell.empty {
-    display: none;
+  .cons-pro-rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .trans-table td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  .pronunciation-panel {
+    padding: 20px;
+  }
+  .pro-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -206,5 +206,36 @@ export default {
         "quote": "\"धीरे-धीरे रे मना, धीरे सब कुछ होय। माली सींचे सौ घड़ा, ऋतु आए फल होय।\""
       }
     ]
+  },
+  "TransliterationPage": {
+    "title": "लिप्यंतरण (हिंदी से अंग्रेजी)",
+    "subtitle": "अंग्रेजी अक्षरों का उपयोग करके हिंदी वर्णमाला के उच्चारण की एक मार्गदर्शिका।",
+    "vowelsTitle": "स्वर और मात्राएँ",
+    "diphthongNote": "नोट: संयुक्त स्वरों में, प्रत्येक दूसरे स्वर को रेखांकित किया जाता है जैसे \" कोई \" की वर्तनी \"Ko<u>ee</u>\" है",
+    "vowelsProTitle": "उच्चारण (स्वर और मात्राएँ)",
+    "vowelsProRules": [
+      "A जैसे <strong>a</strong>side में",
+      "Aa जैसे m<strong>a</strong>th में",
+      "I जैसे <strong>i</strong>n में",
+      "Ee जैसे k<strong>ee</strong>p में",
+      "U जैसे p<strong>u</strong>ll में",
+      "Oo जैसे p<strong>oo</strong>l में",
+      "E जैसे ob<strong>e</strong>y में",
+      "Ai जैसे t<strong>ai</strong>l में",
+      "O जैसे <strong>o</strong>ver में",
+      "Au जैसे h<strong>au</strong>l में",
+      "<u>N</u>/<u>m</u> जैसे ta<strong>n</strong>gle में"
+    ],
+    "consonantsTitle": "व्यंजन",
+    "consonantsProTitle": "उच्चारण (व्यंजन)",
+    "consonantProRules": {
+      "g": "जैसे <strong>g</strong>oat में, <em>genre</em> में नहीं",
+      "th": "और <strong>th</strong> कठोर 't' की तरह, <strong>th</strong>at या <strong>th</strong>orn की तरह नहीं",
+      "ch": "जैसे <strong>ch</strong>oke में, <em>ch</em>ord में नहीं",
+      "y": "हमेशा एक व्यंजन के रूप में उच्चारित होता है, स्वर के रूप में नहीं। जैसे <strong>y</strong>ell में, l<strong>y</strong>ing में नहीं",
+      "ph": "कठोर 'p' की तरह, dol<strong>ph</strong>in की तरह नहीं",
+      "ySep": "का उपयोग स्वरों को अलग करने के लिए किया जाता है",
+      "vw": "हिंदी में, '<strong>v</strong>' अक्षर का उच्चारण '<strong>w</strong>' भी किया जा सकता है"
+    }
   }
 };

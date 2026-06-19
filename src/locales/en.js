@@ -206,5 +206,36 @@ export default {
         "quote": "\"Slowly, slowly O mind... everything happens at its own pace.\""
       }
     ]
+  },
+  "TransliterationPage": {
+    "title": "Transliteration (Hindi to English)",
+    "subtitle": "A guide to pronouncing the Hindi alphabet using English letters.",
+    "vowelsTitle": "Vowels and Accents",
+    "diphthongNote": "Note: in diphthongs, every second vowel is underlined ex. \" कोई \" is spelled \"Ko<u>ee</u>\"",
+    "vowelsProTitle": "Pronunciation (Vowels and Accents)",
+    "vowelsProRules": [
+      "A as in <strong>a</strong>side",
+      "Aa as in m<strong>a</strong>th",
+      "I as in <strong>i</strong>n",
+      "Ee as in k<strong>ee</strong>p",
+      "U as in p<strong>u</strong>ll",
+      "Oo as in p<strong>oo</strong>l",
+      "E as in ob<strong>e</strong>y",
+      "Ai as in t<strong>ai</strong>l",
+      "O as in <strong>o</strong>ver",
+      "Au as in h<strong>au</strong>l",
+      "<u>N</u>/<u>m</u> as in ta<strong>n</strong>gle"
+    ],
+    "consonantsTitle": "Consonants (Vyanjan)",
+    "consonantsProTitle": "Pronunciation (Consonants)",
+    "consonantProRules": {
+      "g": "as in <strong>g</strong>oat, <em>not</em> as in <strong>g</strong>enre",
+      "th": "and <strong>th</strong> as a hard 't,' not as in <strong>th</strong>at or <strong>th</strong>orn",
+      "ch": "as in <strong>ch</strong>oke, <em>not</em> as in <strong>ch</strong>ord",
+      "y": "always pronounced as a consonant, not a vowel. As in <strong>y</strong>ell, <em>not</em> l<strong>y</strong>ing",
+      "ph": "as a hard 'p,' <em>not</em> as in dol<strong>ph</strong>in",
+      "ySep": "is used to separate vowels",
+      "vw": "In Hindi, the letter '<strong>v</strong>' can also be pronounced '<strong>w</strong>'"
+    }
   }
 };
