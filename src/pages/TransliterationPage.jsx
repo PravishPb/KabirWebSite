@@ -14,7 +14,7 @@ const TransliterationPage = () => {
         </div>
 
         <div className="transliteration-section">
-          <h2 className="h3 section-title text-center">Vowels (Swar)</h2>
+          <h2 className="h3 section-title text-center">Vowels and Accents</h2>
           <div className="transliteration-grid vowels-grid">
             <div className="trans-cell"><span className="hindi">अ</span> <span className="eng">a</span></div>
             <div className="trans-cell"><span className="hindi">आ</span> <span className="eng">aa</span></div>
