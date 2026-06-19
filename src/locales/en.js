@@ -92,7 +92,9 @@ export default {
     "donate": "Donate",
     "donateDesc": "Support our mission with a contribution",
     "dropdownFooter": "Join us for weekly satsang",
-    "dropdownCta": "Plan your visit"
+    "dropdownCta": "Plan your visit",
+    "bhajans": "Bhajans",
+    "prayers": "Prayers and Devotional Hymns"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -236,6 +238,102 @@ export default {
       "ph": "as a hard 'p,' <em>not</em> as in dol<strong>ph</strong>in",
       "ySep": "is used to separate vowels",
       "vw": "In Hindi, the letter '<strong>v</strong>' can also be pronounced '<strong>w</strong>'"
+    }
+  },
+  "PrayersPage": {
+    "eyebrow": "Library",
+    "title": "Prayers and Devotional Hymns",
+    "intro": "Access our collection of sacred prayers, daily recitations, and devotional hymns in both Devanagari (Hindi) and Romanized transliterated (English) scripts.",
+    "downloadBilingual": "Bilingual PDF",
+    "downloadEnglish": "English PDF",
+    "downloadGeneral": "Download PDF",
+    "viewSections": "View Content Sections",
+    "hideSections": "Hide Content Sections",
+    "cards": {
+      "sandhya": {
+        "title": "Sandhya Paath",
+        "description": "The Sandhya Paath (pronounced: Sandhyaa Paath, Hindi: lit. evening recitation) is essentially a compilation of minor Kabir Panthi texts. Many copies have been printed over the years each with their own respective modifications. The following compilation is based mainly on the Mool Sandhya Path published by the Sadguru Kabir Prakatya Dhaam, Lahartara (India, U.P.) and other sources including the Kabir Panth Shabdavali. The contents of the Sandhya Paath provided consists of: gaurees, sandhya saakhee, aaratees, gyaana and vigyaana stotra, daya saagar, chetaawanee, gyaan gudadee, vandanaas, and vinayas. Below is an overview of the contents of the text provided on this website:",
+        "pdfUrl": "Sandhya-Path.pdf",
+        "pdfUrlEng": "Sandhya-Path-English.pdf",
+        "sections": [
+          {
+            "title": "Gauree",
+            "desc": "The first section of the Sandhya Path is a compilation of shabds in raag gauree. Raag gauree (thaat bhairav) is a raag associated with the evening, sung during the sunset; and as such, it kept in the Sandhya Paath. It is thought to evoke an attitude of contemplation, reflection and meditation within devotees; it is also the most popular raag used in Kabir Saheb’s compositions. The shabd provided on this website is the first shabd of gauree in the Sandhya Paath and is the only gauree printed in the Sadguru Kabir Prakatya Dhaam's Mool Sandhya Paath."
+          },
+          {
+            "title": "Sandhyaa Saakhee",
+            "desc": "The Sandhya Saakhee (pronounced: sandhyaa saakhee, Hindi: lit. evening testimony) is a compilation of saakhees. The word saakhee is a derivative of the Hindi word ‘saakshee,’ meaning ‘witness;’ saakhees are a form of testimony. They are composed in the doha structure; in the form of a couplet, both lines of 24 matras. The first verse of the line composed of 11 matras and the second of 13; the second and last verse rhyme. As the name would suggest, the Sandhya Saakhee is generally recited in the evening."
+          },
+          {
+            "title": "Aaratee",
+            "desc": "This section is a compilation of aaratees. The aaratee provided in the pdf is the only one mentioned in the Mool Sandhya Paath. For more aaratees, <a href=\"/library/bhajans\">view the bhajans page</a>."
+          },
+          {
+            "title": "Gyaan and Vigyaan Stotra",
+            "desc": "The Gyaan Stotra and Vigyaan Stotra are generally paired together. A stotra is a hymn of appraisal, the word stotra comes from the Sanskrit root ‘stu,’ meaning ‘praise’ or ‘ode.’ The Gyaana Stotra (Hindi: gyaan, lit. knowledge) and the Vigyaan Stotra (Hindi: vigyaan, lit. science, higher knowledge) are both written in chaupaaee and saakhee structure. Chaupaaees are quatrain verses of two lines, each of 16/16 matra composition and a rhyme. Saakhees are couplets, each line of 11/13 matra composition ending with a rhyme (first line rhyming with second)."
+          },
+          {
+            "title": "Dayaa Saagar Stuti and Adhika Mahimaa",
+            "desc": "The Dayaa Sagar is a stuti written in chhand format. ‘Stuti’ comes from the Sanskrit root ‘stu,’ meaning ‘appraisal’; it is an ode to the Sadguru and his teachings. The chhands are written in rhyming couplets each line of 26 matras divided in three sections; the first two of seven matras and the last of twelve. The Daya Sagar Stuti is an ode attributed to the Sadguru who is described as the Daya Sagar (Hindi: dayaa saagar, lit. 'Ocean of Mercy'); the stuti highlights his merciful and benevolent qualities (i.e. Hindi: dayaa, lit. Mercy/Compassion).\n\nThe Adhika Mahima (Hindi lit. Great Glory/Grace) is a hymn attributed to devotees who bathe in the five metaphorical ponds in order to attain enlightenment (Hindi: Akaha Kunda, lit. the Indescribable pond i.e. salvation) namely:\n• Gyaan Kunda – The pond of Knowledge\n• Rahani Kunda – The pond of Good Conduct\n• Sevaa Kunda – The pond of Service\n• Yuktee Kunda – The pond of Spiritual Union (with the Lord)\n• Vichaar Kunda – The pond of Spiritual Thought"
+          },
+          {
+            "title": "Gyaan Gudadee",
+            "desc": "The gyaan gudadee (pronounced: gyaan gudadeee, Hindi lit. Quilt of Knowledge) is a composition written in chaupaaee structure describing a conversation between Dharamadas and Kabir Saheb. In this text, Kabir Saheb compares the physical body to a gudadi (Hindi lit. quilt), a quilt fashioned out of pieces of worn out rags under which travelers hid their treasures. Kabir Saheb likens this quilt to the body – both being made of different parts and serving as means to contain treasure, which is likened to the soul. This composition is notably sung in times of mourning the loss of loved ones to remind mourners that the deceased has moved on and that death is not the end."
+          },
+          {
+            "title": "Vandanaa Saakhee",
+            "desc": "The vandana saakhee is a collection of saakhees sung in salutation and praise of the Sadguru (Hindi vandanaa, lit. Adoration/Worship/Praise). Saakhees are composed in the doha structure; in the form of a couplet, both lines of 24 matras ending with a rhyme."
+          },
+          {
+            "title": "Vinay Chhand",
+            "desc": "This composition is said to have been Dharamadas’s prayer after Kabir Saheb had departed from this world. The vinaya chhand (Hindi: vinay, lit. Supplication, Plea) is a short prayer written in chhand format – with rhyming couplets of 26 matras each with three sections; the first two of seven matras and the last of 12 matras."
+          },
+          {
+            "title": "Vandanaa",
+            "desc": "A vandanaa is provided in the Mool Sandhya Paath composed in dohaa/chhand format. A vandanaa is a form of salutation or praise of the Sadguru (Hindi vandanaa, lit. Adoration/Worship/Praise). Dohas are couplets, both lines of 24 matras. The first verse of the line being composed of 11 matras and the second of 13; the second and last verse rhyme. Chhands are poetic metres with rhyming couplets of 26 matras each with three sections; the first two of seven matras and the last of 12 matras."
+          }
+        ]
+      },
+      "guru": {
+        "title": "Guru Mahimaa",
+        "description": "The Guru Mahimaa (Hindi: mahimaa, lit. glory, majesty) is a text of two sections composed in chaupaaee and saakhee format in remembrance of the Guru. Chaupaaees are quatrain verses of two lines, each of 16/16 matra composition with a rhyme. Saakhees are couplets, each line of 11/13 matra composition ending with a rhyme (first line rhyming with second). The text outlines the majestic and glorious qualities of the Guru and explains to devotees the importance of having a Guru as explained by Kabir Saheb. It outlines the role of the ideal disciple and relates the importance of being a gurumukh; one who follows the dictates of his/her Guru.",
+        "pdfUrl": "Guru-Mahima.pdf",
+        "pdfUrlEng": "Guru-Mahima-English.pdf"
+      },
+      "path": {
+        "title": "Paath Sangrah",
+        "description": "This pdf file contains a compilation (Hindi: sangrah) of devotional recitations and prayers (Hindi: paath) in both Hindi (Devnagari) and transliterated English (Roman) script. Below is a brief overview of the contents of this document.",
+        "pdfUrl": "Paath-Sangrah.pdf",
+        "sections": [
+          {
+            "title": "Kabeer Chaaleesaa",
+            "desc": "The Kabir Chaaleesaa is a devotional hymn attributed to Kabir Saheb composed of forty verses (Hindi: chaalees, lit. forty). The composition is written in chaupaaee and dohaa format. Chaupaaees are quatrain verses of 16 matras each, each pair of verses (first and last two verses) having a rhyme. Dohaas are written in the form of a couplet, both lines of 24 matras. The first verse of the line composed of 11 matras and the second of 13; the second and last verse rhyme. The composition makes mention of many famous stories of Kabir Saheb, including his encounters with many famous disciples and key events in his life. The last verse of the chaaleesaa tells us that the composition was authored by a poet by the name of ‘Sukhlaal,’ possibly an early Kabir Panth/Sant Mat poet."
+          },
+          {
+            "title": "Prabhaat, Madhyaan and Sandhyaa Saakhee",
+            "desc": "The Prabhaat, Madhyaahn and Sandhya Saakhees are a set of saakhees which are recited in the morning, midday and evening times respectively as part of daily affirmations and prayers. The word saakhee is a derivative of the Hindi word ‘saakshee,’ meaning ‘witness;’ saakhees are a form of testimony. They are composed in the doha structure; in the form of a couplet, both lines of 24 matras. The first verse of the line composed of 11 matras and the second of 13; the second and last verse rhyme. These texts have been compiled mainly from the Kabir Panth Shabdavali."
+          },
+          {
+            "title": "Baarahmaasee, Solah Tithi, and Sat Vaar",
+            "desc": "The Baarahmaasee (Hindi lit: twelve months) is a composition which delivers twelve messages each associated with one of the twelve lunar months of the year based on the Vikram Samvat calendar starting with the month of Aashaadh and ending with the month of Jyesht; the month in which Kabir Saheb appeared. The Solah Tithi is a ramainee in which Kabir Saheb assigns a message to each of the tithis (dates) of the month based on the Indian calendar system starting from the amavasya (dark fortnight) up to the purnima (full-moon day); there are sixteen such tithis in between these (Hindi lit: solah). In another version provided in the Sri Guru Granth Sahib, a text entitled ‘Paandrah Tithi,’ also composed by Kabir Saheb, gives a message about each of the tithis (from ang (page) 343 to 344). The text is associated with raag gauree (thaat bhairav), a raag associated with the evening, thought to evoke an attitude of contemplation, reflection and meditation within devotees. Both of these have been provided in this document.\n\nIn the Sri Guru Granth Sahib, the Pandrah Tithi is followed by the Saat Vaar (i.e. Saat Baar; ang 344-345), a composition in which Kabir Saheb delivers a message on each day of the week based on the Indian seven day system; it is also associated with raag gauree.\n\nIn the Kabeer Granthaawalee, the same composition is listed as the first pad of raag bilaawal, a raag thought to evoke/convey happiness to its listeners. The texts provided in this document (i.e. Pandrah Tithi and Saat Baar) have been compiled with consideration to both of the aforementioned versions; the versions from the Sri Guru Granth Sahib have also been made available in the document in the original Punjabi (Gurmukhi) script."
+          },
+          {
+            "title": "Mangalacharan, Stuti, Ashtak etc.",
+            "desc": "This document also includes a compilation of mangalacharans - invocation prayers, stutis - hymns of praise, and shataks and ashtaks - poems written in lines amounting to multiples of six (Hindi lit: shat) and eight (Hindi lit: asht) respectively."
+          }
+        ]
+      },
+      "teesaa": {
+        "title": "Teesaa Yantra",
+        "description": "The Teesaa Yantra is a selection of 30 (Hindi lit: tees) saakhees each with a message answering a philosophical question. The word saakhee is a derivative of the Hindi word ‘saakshee,’ meaning ‘witness;’ saakhees are form of testimony. They are composed in the doha structure; in the form of a couplet, both lines of 24 matras. The messages contained within the Teesaa Yantra are to be remembered as instructions, serving as guidelines for devotees, hence, they are called yantras (Hindi lit: talisman, instrument). The copy provided on this website is mainly compiled from the Kabir Panth Shabdavali; the addition of a supplementary yantra amounts to a total of 31 instead of 30 yantras.",
+        "pdfUrl": "Teesaa-Yantra.pdf"
+      },
+      "aaratee": {
+        "title": "Aaratee & Vandanaa Sangrah",
+        "description": "This document contains a compilation of hymns called aaratees which are sung during the ceremonial offering of light (also known as aaratee). This document also includes vandanaas, hymns of praise and eulogy generally sung before and/or after the aaratee ceremony.",
+        "pdfUrl": "Aaratee-and-Vandanaa-Sangrah.pdf",
+        "pdfUrlEng": "Aaratee-and-Vandanaa-Sangrah-English.pdf"
+      }
     }
   }
 };

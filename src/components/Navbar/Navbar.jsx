@@ -126,7 +126,7 @@ export default function Navbar() {
               aria-expanded={libraryDropdownOpen}
               aria-haspopup="true"
             >
-              Library
+              {t.library || 'Library'}
               <svg 
                 width="12" 
                 height="12" 
@@ -150,7 +150,10 @@ export default function Navbar() {
                 >
                   <div style={{ padding: '0.5rem' }}>
                     <Link to="/library/bhajans" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
-                      Bhajans
+                      {t.bhajans || 'Bhajans'}
+                    </Link>
+                    <Link to="/library/prayers" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.prayers || 'Prayers and Devotional Hymns'}
                     </Link>
                   </div>
                 </motion.div>
@@ -287,9 +290,10 @@ export default function Navbar() {
                 <Link to="/blog?filter=Dr.+J+Das" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">Blog (Dr. J Das)</Link>
               </div>
 
-              <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>Library</div>
+              <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>{t.library || 'Library'}</div>
               <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
-                <Link to="/library/bhajans" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">Bhajans</Link>
+                <Link to="/library/bhajans" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.bhajans || 'Bhajans'}</Link>
+                <Link to="/library/prayers" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.prayers || 'Prayers and Devotional Hymns'}</Link>
               </div>
 
               <div className="navbar-mobile-divider" />

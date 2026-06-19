@@ -1,0 +1,174 @@
+.prayers-page {
+  padding-bottom: 5rem;
+}
+
+.prayers-intro {
+  margin-top: 1.5rem;
+  max-width: 38rem;
+  margin-inline: auto;
+}
+
+.prayers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 52rem;
+  margin: 3rem auto 0;
+}
+
+.prayer-card {
+  background: var(--merino-lightest);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--tahiti-gold);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prayer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--tahiti-gold-dark);
+}
+
+.prayer-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prayer-card-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  color: var(--tahiti-gold-darker);
+}
+
+.prayer-card-desc {
+  font-size: var(--text-regular);
+  color: var(--fg2);
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  white-space: pre-wrap;
+}
+
+.prayer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-button);
+  font-size: var(--text-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--tahiti-gold);
+  color: var(--tahiti-gold-dark);
+  background: transparent;
+}
+
+.pdf-btn:hover {
+  background: var(--tahiti-gold-lightest);
+  color: var(--tahiti-gold-darkest);
+}
+
+.pdf-btn.primary {
+  background: var(--tahiti-gold);
+  color: #fff;
+  border-color: var(--tahiti-gold);
+}
+
+.pdf-btn.primary:hover {
+  background: var(--tahiti-gold-dark);
+  border-color: var(--tahiti-gold-dark);
+}
+
+.toggle-sections-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--text-small);
+  color: var(--fg2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.toggle-sections-btn:hover {
+  color: var(--tahiti-gold-dark);
+}
+
+.prayer-sections-list {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.prayer-section-item {
+  background: var(--tahiti-gold-lightest);
+  border: 1px solid var(--tahiti-gold-lighter);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.prayer-section-item h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: var(--text-regular);
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--tahiti-gold-darkest);
+}
+
+.prayer-section-item p {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--neutral-dark);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.prayer-section-item p a {
+  color: var(--tahiti-gold-dark);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.prayer-section-item p a:hover {
+  color: var(--tahiti-gold-darkest);
+}
+
+@media (max-width: 768px) {
+  .prayer-card-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .prayer-actions {
+    width: 100%;
+  }
+
+  .toggle-sections-btn {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+  }
+}
