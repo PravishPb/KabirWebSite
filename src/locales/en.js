@@ -397,7 +397,7 @@ export default {
       },
       "multimedia": {
         "title": "Audio and Video Files",
-        "desc": "A set of audio and video files produced or published by the Guru Kabir Association of Canada including lectures, discussions, interviews, and singing (view <a href=\"https://kabirassociationoftoronto.org/audio-and-video-files/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>)."
+        "desc": "A set of audio and video files produced or published by the Guru Kabir Association of Canada including lectures, discussions, interviews, and singing (view <a href=\"/library/audio-video-files\" class=\"theme-link\">here</a>)."
       },
       "essays": {
         "title": "Essays",
@@ -443,6 +443,38 @@ export default {
     "introText": "This page contains a series of short stories on the life of Kabir Saheb prepared by Dr. Jagessar Das of the Guru Kabir Association of Canada (Surrey, B.C., Canada). Stories are complete with pictures taken from The Life Story of Kabir Saheb, published by the Kabir Ashram (Jamnagar, India). Feel free to browse through these stories by navigating through the Table of Contents.",
     "tocTitle": "Table of Contents",
     "note": "It is to be noted that from the time of Kabir Saheb, such stories were transmitted orally and passed down from generation to generation; therefore, there exists many versions of each of these stories. Rather than debating the veracity of these events, it is more important to understand their significance and the teachings which they impart unto their readers (or listeners)."
+  },
+  "AudioVideoFilesPage": {
+    "eyebrow": "Library",
+    "title": "Audio & Video Files",
+    "desc": "This page contains a number of audio and video files recorded and/or published by the Guru Kabir Association of Canada. Files include lectures, discussions, and singing. View audio and video files below.",
+    "audioTitle": "Audio Discourses",
+    "videoTitle": "Video Lectures & Interviews",
+    "audios": [
+      { "title": "Attributes of a Devotee", "filename": "AttributesOfDevotee.mp3" },
+      { "title": "Beating Around Spiritual Bush", "filename": "Beating-Around-Spiritual-Bush.mp3" },
+      { "title": "Pre-Parliament of Parliament of World Religions Conference", "filename": "Pre-Parliament-of-World-RELIGIONS-Talk-2009.mp3" }
+    ],
+    "videos": [
+      { "title": "Kabir Teachings (The 3 “G”s: Guru, Gyan & God)", "presenter": "Dr. J. Das", "videoId": "XtFLqbiya_0" },
+      { "title": "Birth, Life, Death", "presenter": "Dr. J. Das", "videoId": "2y706KjDiKE" },
+      { "title": "Back to God", "presenter": "Dr. J. Das", "videoId": "acqKPbnjSmY" },
+      { "title": "Soul and God", "presenter": "Dr. J. Das", "videoId": "X82DsZpvuzc" },
+      { "title": "Interview (Harpreet Singh Show)", "presenter": "Dr. J. Das", "videoId": "x1B28f8f8gI" },
+      { "title": "Humility", "presenter": "Dr. J. Das", "videoId": "M1tXNpSnLy4" },
+      { "title": "Satguru Kabir the Weaver Saint (Part 1)", "presenter": "Dr. J. Das", "videoId": "0c6reRA9Fh0" },
+      { "title": "Satguru Kabir the Weaver Saint (Part 2)", "presenter": "Dr. J. Das", "videoId": "aHOhGIBr7tA" },
+      { "title": "Satguru Kabir the Weaver Saint (Part 3)", "presenter": "Dr. J. Das", "videoId": "OWWntM4f02I" },
+      { "title": "Dr. J. Das Interview on Kabir", "presenter": "Interview", "videoId": "Hf-4SqLk3WQ" },
+      { "title": "Life and Message of Saint Kabir (Part 1)", "presenter": "Dr. J. Das", "videoId": "4N92F0wpzjY" },
+      { "title": "Life and Message of Saint Kabir (Part 2)", "presenter": "Dr. J. Das", "videoId": "I7mXa8VrqVw" },
+      { "title": "Discourse on Death", "presenter": "Dr. J. Das", "videoId": "llqTTfhmDjI" },
+      { "title": "Marriage based on Spiritual Principles", "presenter": "Dr. J. Das", "videoId": "9WkvdIHzGWA" },
+      { "title": "Work based on Spirituality", "presenter": "Dr. J. Das", "videoId": "2NLjGqGH-HQ" },
+      { "title": "Meditation for Enlightenment", "presenter": "Dr. J. Das", "videoId": "g-fKiXxSlWo" },
+      { "title": "Brahm Nirupan: A Journey to Enlightenment", "presenter": "Dr. J. Das", "videoId": "SK23QRxGaAM" },
+      { "title": "Kabir Chalisa by Devotees at Kabir Centre (B.C.)", "presenter": "Devotees", "videoId": "UwIpc2Ao65U" }
+    ]
   }
 };
 

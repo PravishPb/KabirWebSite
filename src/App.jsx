@@ -25,6 +25,7 @@ const PrayersPage = React.lazy(() => import('./pages/library/PrayersPage'));
 const DrJDasPage = React.lazy(() => import('./pages/library/DrJDasPage'));
 const ReligiousHorizonsPage = React.lazy(() => import('./pages/library/ReligiousHorizonsPage'));
 const PictorialGlimpsesPage = React.lazy(() => import('./pages/library/PictorialGlimpsesPage'));
+const AudioVideoFilesPage = React.lazy(() => import('./pages/library/AudioVideoFilesPage'));
 const TransliterationPage = React.lazy(() => import('./pages/TransliterationPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 
@@ -71,6 +72,7 @@ function PublicLayout() {
                 <Route path="/library/dr-j-das" element={<DrJDasPage />} />
                 <Route path="/library/religious-horizons" element={<ReligiousHorizonsPage />} />
                 <Route path="/library/pictorial-glimpses" element={<PictorialGlimpsesPage />} />
+                <Route path="/library/audio-video-files" element={<AudioVideoFilesPage />} />
                 <Route path="/library/transliteration" element={<TransliterationPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
