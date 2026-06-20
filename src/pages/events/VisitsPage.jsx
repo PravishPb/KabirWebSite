@@ -10,15 +10,25 @@ export default function VisitsPage() {
 
   const renderDrDasP3 = (text) => {
     if (!text) return '';
-    const targetEn = "Kabir Center";
+    const targetEn1 = "Kabir Centre";
+    const targetEn2 = "Kabir Center";
     const targetHi = "कबीर सेंटर";
     
-    if (text.includes(targetEn)) {
-      const parts = text.split(targetEn);
+    if (text.includes(targetEn1)) {
+      const parts = text.split(targetEn1);
       return (
         <>
           {parts[0]}
-          <Link to="/contact"><strong><em><u>{targetEn}</u></em></strong></Link>
+          <Link to="/kabircenter"><strong><em><u>{targetEn1}</u></em></strong></Link>
+          {parts[1]}
+        </>
+      );
+    } else if (text.includes(targetEn2)) {
+      const parts = text.split(targetEn2);
+      return (
+        <>
+          {parts[0]}
+          <Link to="/kabircenter"><strong><em><u>{targetEn2}</u></em></strong></Link>
           {parts[1]}
         </>
       );
@@ -27,7 +37,7 @@ export default function VisitsPage() {
       return (
         <>
           {parts[0]}
-          <Link to="/contact"><strong><em><u>{targetHi}</u></em></strong></Link>
+          <Link to="/kabircenter"><strong><em><u>{targetHi}</u></em></strong></Link>
           {parts[1]}
         </>
       );

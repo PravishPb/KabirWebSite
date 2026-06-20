@@ -37,6 +37,7 @@ const JeevanDarshanCategoryPage = React.lazy(() => import('./pages/satguru/Jeeva
 const ChowkaPage = React.lazy(() => import('./pages/events/ChowkaPage'));
 const PerformancesPage = React.lazy(() => import('./pages/events/PerformancesPage'));
 const VisitsPage = React.lazy(() => import('./pages/events/VisitsPage'));
+const KabirCenterPage = React.lazy(() => import('./pages/events/KabirCenterPage'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -93,6 +94,7 @@ function PublicLayout() {
                 <Route path="/events/chowka" element={<ChowkaPage />} />
                 <Route path="/events/performances" element={<PerformancesPage />} />
                 <Route path="/events/visits" element={<VisitsPage />} />
+                <Route path="/kabircenter" element={<KabirCenterPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </Suspense>

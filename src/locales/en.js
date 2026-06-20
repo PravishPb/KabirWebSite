@@ -777,6 +777,26 @@ export default {
       "trinidadTitle": "Trinidad",
       "trinidadText": "Preceding his recent visits to Canada (2015 and 2017), Hazur Saheb had visited Trinidad where he gave various lectures and sermons at the houses of local Kabir Panthis. To aid in the translation of his teachings (from Hindi to English), members of the association had traveled to Trinidad. Hazur Saheb was able to efficiently spread his message to the local community with the help of the Association’s President, Mht. Jaiparamhans Jaggessur who was accompanied by other satsangees from the association."
     }
+  },
+  "KabirCenterPage": {
+    "eyebrow": "Events",
+    "title": "Kabir Center",
+    "intro": "As of September, 2019, the Kabir Association of Toronto has acquired a unit in which to hold its regular activities, including weekly satsangs held every Sunday, 10:00 AM to 12:00 PM. Our center is located #38-1365, Mid-Way Blvd, Mississauga, ON L5T 2J5 (Canada).",
+    "covidSatsang": "*As a result of the COVID-19 pandemic, all activities at the Kabir Center have been cancelled until further notice. Weekly satsangs have since been moved online and are conducted via Zoom during regular hours (Sundays 10:00 AM to 12:00 PM), if you wish to join our online satsangs feel free to ",
+    "covidSatsang_link": "contact us",
+    "covidSatsang_post": ".",
+    "activities": {
+      "title": "Activities",
+      "yoga": "Yoga sessions are hosted Tuesdays (6:30 PM to 7:30 PM) and Saturdays (8:00 AM to 9:00 AM). Typical exercises include pranayam, hatha yoga, and the practice of various traditional and non-traditional asanas.",
+      "covidYoga": "*As a result of the COVID-19 pandemic, all activities at the Kabir Center have been cancelled until further notice. Yoga classes have since been moved online and are conducted via Skype, if you wish to join our yoga group feel free to ",
+      "covidYoga_link": "contact us",
+      "covidYoga_post": "."
+    },
+    "donations": {
+      "title": "Donations",
+      "desc": "Donations help us to maintain our center and keep our activities running. Please support our Association in promoting the spiritual teachings of Kabir Saheb. The Kabir Association of Toronto Inc. is registered with the Canada Revenue Agency (registration number: 825253719RR0001); tax receipts will be issued to donors for their donations. 100% of donation monies go towards funding the activities of the Association.",
+      "button": "Make your payments with PayPal. It is free, secure, effective."
+    }
   }
 };
 
