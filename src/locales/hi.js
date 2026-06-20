@@ -358,7 +358,7 @@ export default {
     "works": {
       "religiousHorizons": {
         "title": "धार्मिक क्षितिज (Religious Horizons)",
-        "desc": "\"धार्मिक क्षितिज\" पहली बार 1995-1996 में रोजर्स टीवी पर प्रसारित हुआ था। गुरु कबीर एसोसिएशन ऑफ कनाडा के डॉ. जगेश्वर दास द्वारा निर्मित यह 13-भागों की साक्षात्कारों की श्रृंखला, बारह विभिन्न विश्व धर्मों की मान्यताओं की खोज करती है। यह श्रृंखला अंतरधार्मिक सद्भाव को बढ़ावा देने में रुचि रखने वाले सभी लोगों को समर्पित है। पूरी श्रृंखला <a href=\"https://kabirassociationoftoronto.org/religious-horizons/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">यहाँ देखें</a>।"
+        "desc": "\"धार्मिक क्षितिज\" पहली बार 1995-1996 में रोजर्स टीवी पर प्रसारित हुआ था। गुरु कबीर एसोसिएशन ऑफ कनाडा के डॉ. जगेश्वर दास द्वारा निर्मित यह 13-भागों की साक्षात्कारों की श्रृंखला, बारह विभिन्न विश्व धर्मों की मान्यताओं की खोज करती है। यह श्रृंखला अंतरधार्मिक सद्भाव को बढ़ावा देने में रुचि रखने वाले सभी लोगों को समर्पित है। पूरी श्रृंखला <a href=\"/library/religious-horizons\" class=\"theme-link\">यहाँ देखें</a>।"
       },
       "sakhis": {
         "title": "गुरु कबीर की साखियां",
@@ -415,5 +415,26 @@ export default {
         ]
       }
     }
+  },
+  "ReligiousHorizonsPage": {
+    "eyebrow": "पुस्तकालय",
+    "title": "धार्मिक क्षितिज (Religious Horizons)",
+    "desc": "\"धार्मिक क्षितिज\" पहली बार 1995-1996 में रोजर्स टीवी पर प्रसारित हुआ था। गुरु कबीर एसोसिएशन ऑफ कनाडा के डॉ. जगेश्वर दास द्वारा निर्मित यह 13-भागों की साक्षात्कारों की श्रृंखला, बारह विभिन्न विश्व धर्मों की मान्यताओं की खोज करती है। यह श्रृंखला अंतरधार्मिक सद्भाव को बढ़ावा देने में रुचि रखने वाले सभी लोगों को समर्पित है।",
+    "episodesTitle": "वृत्तचित्र श्रृंखला के एपिसोड",
+    "episodes": [
+      { "title": "यहूदी धर्म", "presenter": "रब्बी डेविड मिवासैर", "videoId": "GXp2XQaLDk8" },
+      { "title": "एकेश्वरवाद (Unitarianism)", "presenter": "रेव. ब्रायन कीली", "videoId": "5gbSgISxylc" },
+      { "title": "सिख धर्म", "presenter": "ज्ञानी स्वर्ण सिंह", "videoId": "lswWmiYi7xQ" },
+      { "title": "इस्लाम", "presenter": "इमाम असगर हुसैन", "videoId": "DKWPhNJGAcw" },
+      { "title": "हिंदू धर्म", "presenter": "प्रो. अशोक अक्लुजकर", "videoId": "zZ7PePZhDj8" },
+      { "title": "ईसाई धर्म", "presenter": "डॉ. ब्रायन कोलवेल", "videoId": "DcYe1ZAEWDg" },
+      { "title": "कबीर पंथ", "presenter": "महंत पुरुषोत्तम दास", "videoId": "eY9EjLeCQZs" },
+      { "title": "ताओ धर्म", "presenter": "पॉल क्रो", "videoId": "N4qYksozyjY" },
+      { "title": "जैन धर्म", "presenter": "आनंद जैन", "videoId": "UGCL0vE1mZc" },
+      { "title": "बौद्ध धर्म", "presenter": "योशिहिदा मात्सुबायाशी", "videoId": "utQUoIoiC1Y" },
+      { "title": "बहाई धर्म", "presenter": "मीनू ग्रीनॉल", "videoId": "M0AUrfmkwZo" },
+      { "title": "पारसी धर्म (Zoroastrianism)", "presenter": "सुनू इंजीनियर", "videoId": "kTCD1ehzDzM" }
+    ]
   }
 };
+

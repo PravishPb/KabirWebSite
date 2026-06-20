@@ -358,7 +358,7 @@ export default {
     "works": {
       "religiousHorizons": {
         "title": "Religious Horizons",
-        "desc": "\"Religious Horizons\" first aired on Rogers TV in 1995-1996. This 13-part series of interviews, produced by Dr. Jagessar Das of the Guru Kabir Association of Canada, explores the beliefs of twelve different world religions. This series is dedicated to all people interested in promoting interfaith harmony. View the full series <a href=\"https://kabirassociationoftoronto.org/religious-horizons/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>."
+        "desc": "\"Religious Horizons\" first aired on Rogers TV in 1995-1996. This 13-part series of interviews, produced by Dr. Jagessar Das of the Guru Kabir Association of Canada, explores the beliefs of twelve different world religions. This series is dedicated to all people interested in promoting interfaith harmony. View the full series <a href=\"/library/religious-horizons\" class=\"theme-link\">here</a>."
       },
       "sakhis": {
         "title": "Sakhis of Guru Kabir",
@@ -415,5 +415,26 @@ export default {
         ]
       }
     }
+  },
+  "ReligiousHorizonsPage": {
+    "eyebrow": "Library",
+    "title": "Religious Horizons",
+    "desc": "\"Religious Horizons\" first aired on Rogers TV in 1995-1996. This 13-part series of interviews, produced by Dr. Jagessar Das of the Guru Kabir Association of Canada, explores the beliefs of twelve different world religions. This series is dedicated to all people interested in promoting interfaith harmony.",
+    "episodesTitle": "Documentary Series Episodes",
+    "episodes": [
+      { "title": "Judaism", "presenter": "Rabbi David Mivasair", "videoId": "GXp2XQaLDk8" },
+      { "title": "Unitarianism", "presenter": "Rev. Brian Kiely", "videoId": "5gbSgISxylc" },
+      { "title": "Sikhism", "presenter": "Giani Swaran Singh", "videoId": "lswWmiYi7xQ" },
+      { "title": "Islam", "presenter": "Imam Asgar Husain", "videoId": "DKWPhNJGAcw" },
+      { "title": "Hinduism", "presenter": "Prof. Ashok Aklujkar", "videoId": "zZ7PePZhDj8" },
+      { "title": "Christianity", "presenter": "Dr. Brian Colwell", "videoId": "DcYe1ZAEWDg" },
+      { "title": "Kabir Panth", "presenter": "Mht Purushotam Das", "videoId": "eY9EjLeCQZs" },
+      { "title": "Taoism", "presenter": "Paul Crowe", "videoId": "N4qYksozyjY" },
+      { "title": "Jainism", "presenter": "Anand Jain", "videoId": "UGCL0vE1mZc" },
+      { "title": "Buddhism", "presenter": "Yoshihida Matsubayashi", "videoId": "utQUoIoiC1Y" },
+      { "title": "Bahá'í Faith", "presenter": "Minoo Greenall", "videoId": "M0AUrfmkwZo" },
+      { "title": "Zoroastrianism", "presenter": "Soonoo Engineer", "videoId": "kTCD1ehzDzM" }
+    ]
   }
 };
+
