@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { useBhajans } from '../../hooks/useBhajans';
 import { AnimatedSection } from '../../components/ui/AnimatedSection';
@@ -17,6 +17,7 @@ export default function LibraryBhajans() {
   const [allOpen, setAllOpen] = useState(true);
   const tocRef = useRef(null);
   const contentRef = useRef(null);
+  const location = useLocation();
 
   // Build TOC tree: { topCategory: { subCategory: [bhajans] } }
   const tocData = useMemo(() => {
@@ -41,13 +42,13 @@ export default function LibraryBhajans() {
   // Selected bhajan
   const selectedBhajan = useMemo(() => {
     if (!selectedId || !bhajans) return null;
-    return bhajans.find(b => b.bhajan_id === selectedId) || null;
+    return bhajans.find(b => String(b.bhajan_id) === String(selectedId)) || null;
   }, [selectedId, bhajans]);
 
   // Current index in ordered list
   const currentIndex = useMemo(() => {
     if (!selectedBhajan) return -1;
-    return orderedBhajans.findIndex(b => b.bhajan_id === selectedBhajan.bhajan_id);
+    return orderedBhajans.findIndex(b => String(b.bhajan_id) === String(selectedBhajan.bhajan_id));
   }, [selectedBhajan, orderedBhajans]);
 
   const prevBhajan = currentIndex > 0 ? orderedBhajans[currentIndex - 1] : null;
@@ -131,12 +132,45 @@ export default function LibraryBhajans() {
     return () => window.removeEventListener('keydown', handler);
   }, [prevBhajan, nextBhajan, handleSelect]);
 
-  // Auto-select first bhajan once loaded
+  // Auto-select bhajan from URL hash, or fallback to first bhajan once loaded
   useEffect(() => {
-    if (!selectedId && orderedBhajans.length > 0) {
-      setSelectedId(orderedBhajans[0].bhajan_id);
+    if (orderedBhajans.length > 0) {
+      const hash = location.hash;
+      if (hash && hash.startsWith('#')) {
+        const idFromHash = hash.substring(1);
+        if (idFromHash) {
+          const exists = orderedBhajans.some(b => String(b.bhajan_id) === idFromHash);
+          if (exists) {
+            setSelectedId(idFromHash);
+            // Scroll content into view when deep-linked
+            setTimeout(() => {
+              if (contentRef.current) {
+                contentRef.current.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 100);
+            return;
+          }
+        }
+      }
+      
+      if (!selectedId) {
+        setSelectedId(orderedBhajans[0].bhajan_id);
+      }
     }
-  }, [orderedBhajans, selectedId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [orderedBhajans, location.hash]);
+
+  // Scroll selected TOC item into view
+  useEffect(() => {
+    if (selectedId && tocRef.current) {
+      setTimeout(() => {
+        const activeBtn = tocRef.current.querySelector('.toc-item-btn.active');
+        if (activeBtn) {
+          activeBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [selectedId]);
 
   const isSearching = search.trim().length > 0;
   const totalCount = bhajans ? bhajans.length : 0;
@@ -236,50 +270,56 @@ export default function LibraryBhajans() {
                       )
                     ) : (
                       /* TOC Tree */
-                      Object.keys(tocData).map(top => (
-                        <details key={top} className="toc-top-details" open={allOpen}>
-                          <summary>{top}</summary>
-                          <div className="toc-top-content">
-                            {Object.keys(tocData[top]).sort((a, b) => {
-                              if (a === 'Introduction') return -1;
-                              if (b === 'Introduction') return 1;
-                              if (a === 'General') return -1;
-                              if (b === 'General') return 1;
-                              return a.localeCompare(b);
-                            }).map(sub => {
-                              const items = tocData[top][sub];
-                              const isSub = sub !== top;
+                      Object.keys(tocData).map(top => {
+                        const topContainsSelected = selectedId && Object.values(tocData[top]).some(subItems =>
+                          subItems.some(b => String(b.bhajan_id) === String(selectedId))
+                        );
+                        return (
+                          <details key={top} className="toc-top-details" open={allOpen || !!topContainsSelected}>
+                            <summary>{top}</summary>
+                            <div className="toc-top-content">
+                              {Object.keys(tocData[top]).sort((a, b) => {
+                                if (a === 'Introduction') return -1;
+                                if (b === 'Introduction') return 1;
+                                if (a === 'General') return -1;
+                                if (b === 'General') return 1;
+                                return a.localeCompare(b);
+                              }).map(sub => {
+                                const items = tocData[top][sub];
+                                const isSub = sub !== top;
+                                const subContainsSelected = selectedId && items.some(b => String(b.bhajan_id) === String(selectedId));
 
-                              const itemList = (
-                                <ul className="toc-item-list">
-                                  {items.map(b => (
-                                    <li key={b.id} className="toc-item">
-                                      <button
-                                        className={`toc-item-btn ${selectedId === b.bhajan_id ? 'active' : ''}`}
-                                        onClick={() => handleSelect(b.bhajan_id)}
-                                        title={b.title}
-                                      >
-                                        {b.title}
-                                      </button>
-                                    </li>
-                                  ))}
-                                </ul>
-                              );
-
-                              if (isSub) {
-                                return (
-                                  <details key={sub} className="toc-sub-details" open={allOpen}>
-                                    <summary>{sub}</summary>
-                                    {itemList}
-                                  </details>
+                                const itemList = (
+                                  <ul className="toc-item-list">
+                                    {items.map(b => (
+                                      <li key={b.id} className="toc-item">
+                                        <button
+                                          className={`toc-item-btn ${String(selectedId) === String(b.bhajan_id) ? 'active' : ''}`}
+                                          onClick={() => handleSelect(b.bhajan_id)}
+                                          title={b.title}
+                                        >
+                                          {b.title}
+                                        </button>
+                                      </li>
+                                    ))}
+                                  </ul>
                                 );
-                              }
 
-                              return <React.Fragment key={sub}>{itemList}</React.Fragment>;
-                            })}
-                          </div>
-                        </details>
-                      ))
+                                if (isSub) {
+                                  return (
+                                    <details key={sub} className="toc-sub-details" open={allOpen || !!subContainsSelected}>
+                                      <summary>{sub}</summary>
+                                      {itemList}
+                                    </details>
+                                  );
+                                }
+
+                                return <React.Fragment key={sub}>{itemList}</React.Fragment>;
+                              })}
+                            </div>
+                          </details>
+                        );
+                      })
                     )}
                   </div>
                 </div>

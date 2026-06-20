@@ -97,7 +97,12 @@ export default {
     "prayers": "प्रार्थना और भक्ति गीत",
     "drJDas": "डॉ. जे. दास",
     "sakhis": "साखियाँ",
-    "divyaDrishti": "दिव्य दृष्टि"
+    "divyaDrishti": "दिव्य दृष्टि",
+    "multimedia": "मल्टीमीडिया",
+    "holiSammelan": "होली सम्मेलन",
+    "kabirNight": "कबीर नाइट",
+    "audioVideoFiles": "ऑडियो और वीडियो फाइलें",
+    "religiousHorizons": "धार्मिक क्षितिज"
   },
   "Pillars": {
     "eyebrow": "आधार",
@@ -499,6 +504,119 @@ export default {
     "description": "दिव्य दृष्टि कबीर एसोसिएशन ऑफ़ टोरंटो इंक. द्वारा जारी की जाने वाली वार्षिक समाचार पत्रिका (न्यूज़लेटर) है, जिसमें वर्ष भर की एसोसिएशन की सभी गतिविधियों और प्रमुख उपलब्धियों को शामिल किया जाता है। यह एसोसिएशन द्वारा आयोजित या उपस्थित रहे मुख्य कार्यक्रमों पर एक नज़र डालती है और इसकी सालभर की उपलब्धियों का विवरण प्रस्तुत करती है। इस पत्रिका में बोर्ड के सदस्यों (अध्यक्ष, उपाध्यक्ष और अन्य सदस्यों) और नियमित सत्संगियों द्वारा लिखे गए लेखों के साथ-साथ कार्यक्रमों और गतिविधियों की तस्वीरें और बहुत कुछ शामिल होता है। हमारे वार्षिक न्यूज़लेटर्स नीचे देखें।",
     "viewNewsletter": "समाचार पत्रिका देखें",
     "newsletterTitle": "दिव्य दृष्टि"
+  },
+  "HoliSammelanPage": {
+    "eyebrow": "पुस्तकालय",
+    "title": "होली सम्मेलन",
+    "desc": "भक्ति गीतों, संगीत और सामुदायिक सभाओं के साथ रंगों के त्योहार को मनाना। ग्रेटर टोरंटो क्षेत्र में आयोजित हमारे पिछले होली सम्मेलन कार्यक्रमों की मुख्य झलकियाँ यहाँ देखें।",
+    "videosTitle": "कार्यक्रम की झलकियाँ",
+    "videos": [
+      {
+        "title": "होली सम्मेलन 2018",
+        "host": "हिंदू हेरिटेज सेंटर",
+        "address": "6300 Mississauga Rd, Mississauga, ON L5N 1A7",
+        "videoId": "4hSo9XqwvzA"
+      },
+      {
+        "title": "होली सम्मेलन 2017",
+        "host": "विष्णु मंदिर",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "PpB6d_7WMAo"
+      },
+      {
+        "title": "होली सम्मेलन 2016",
+        "host": "विष्णु मंदिर",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "L4q1j2W-WIw"
+      },
+      {
+        "title": "होली सम्मेलन 2015",
+        "host": "विष्णु मंदिर",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "P2_CR5zKpqk"
+      },
+      {
+        "title": "होली सम्मेलन 2014",
+        "host": "विष्णु मंदिर",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "ipxJPVyc6PA"
+      },
+      {
+        "title": "होली सम्मेलन 2013",
+        "host": "आर्य वैदिक सांस्कृतिक केंद्र",
+        "address": "4349 14th Ave, Markham, ON L3R OJ2",
+        "videoId": "RUprFVOozss"
+      }
+    ]
+  },
+  "KabirNightPage": {
+    "eyebrow": "मल्टीमीडिया",
+    "title": "कबीर नाइट",
+    "desc": "कबीर साहेब के शाश्वत ज्ञान और भक्तिमय भजनों का उत्सव मनाने वाला एक आध्यात्मिक आयोजन। हमारे समुदाय के सदस्यों द्वारा गाए और रचे गए दिव्य भजनों का अनुभव करें।",
+    "videosTitle": "भजन और भक्ति गीत",
+    "lyricsLabel": "भजन के बोल के लिए, यहाँ क्लिक करें",
+    "songs": [
+      {
+        "title": "मोको कहाँ ढूंढे रे बंदे",
+        "singer": "जतिंदर प्रकाश",
+        "videoId": "Qz5zC778lpc",
+        "lyricsBhajanId": 89
+      },
+      {
+        "title": "मुखड़ा क्या देखे दर्पण में",
+        "singer": "पारिजाता",
+        "videoId": "cbfpTrhAtAw",
+        "lyricsBhajanId": 91
+      },
+      {
+        "title": "मन फूला फिरे जगत में",
+        "singer": "महंत जय जगेश्वर",
+        "videoId": "8hyXUyNnVGs",
+        "lyricsBhajanId": 91
+      },
+      {
+        "title": "जनम तेरा बातों ही बीत गयो",
+        "singer": "रेखा जगेश्वर और पारिजाता",
+        "videoId": "-GQMeS5bELU",
+        "lyricsBhajanId": 57
+      },
+      {
+        "title": "चदरिया झीनी रे झीनी",
+        "singer": "देव चक्रवर्ती",
+        "videoId": "1hpn29cP8rg",
+        "lyricsBhajanId": 26
+      },
+      {
+        "title": "भजो रे भैया राम गोविंद हरी",
+        "singer": "पारिजाता",
+        "videoId": "u1kftE_KqLU",
+        "lyricsBhajanId": 19
+      },
+      {
+        "title": "मन लागो मेरो यार फकीरी में",
+        "singer": "रेखा जगेश्वर",
+        "videoId": "W_hDi4WPv00",
+        "lyricsBhajanId": 82
+      },
+      {
+        "title": "मैली चादर ओढ़ के कैसे",
+        "singer": "देव चक्रवर्ती",
+        "videoId": "uO1wMZu6P_o",
+        "lyricsBhajanId": 80
+      },
+      {
+        "title": "अपने पिया की मैं दीवानी",
+        "singer": "जतिंदर प्रकाश",
+        "videoId": "bvZDmNfhMcA",
+        "lyricsBhajanId": null
+      },
+      {
+        "title": "जब साथ में तेरे साहेब है",
+        "singer": "महंत जय जगेश्वर",
+        "videoId": "JVMYmuihbeI",
+        "lyricsBhajanId": 53
+      }
+    ]
   }
 };
 

@@ -31,7 +31,9 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [blogDropdownOpen, setBlogDropdownOpen] = useState(false);
   const [libraryDropdownOpen, setLibraryDropdownOpen] = useState(false);
+  const [multimediaOpen, setMultimediaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileMultimediaOpen, setMobileMultimediaOpen] = useState(false);
   const dropdownRef = useRef(null);
   const blogDropdownRef = useRef(null);
   const libraryDropdownRef = useRef(null);
@@ -46,6 +48,7 @@ export default function Navbar() {
       }
       if (libraryDropdownRef.current && !libraryDropdownRef.current.contains(e.target)) {
         setLibraryDropdownOpen(false);
+        setMultimediaOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -160,9 +163,51 @@ export default function Navbar() {
                     <Link to="/library/dr-j-das" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
                       {t.drJDas || 'Dr. J. Das'}
                     </Link>
-                    <Link to="/library/divya-drishti" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
+                    <Link to="/library/divya-drishti" onClick={() => { setLibraryDropdownOpen(false); setMultimediaOpen(false); }} className="navbar-dropdown-link">
                       {t.divyaDrishti || 'Divya Drishti'}
                     </Link>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setMultimediaOpen(!multimediaOpen);
+                      }}
+                      className="navbar-dropdown-link navbar-dropdown-btn-nested"
+                      style={{ background: 'none', border: 'none', width: '100%', cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+                      aria-expanded={multimediaOpen}
+                    >
+                      <span>{t.multimedia || 'Multimedia'}</span>
+                      <Icon 
+                        name={multimediaOpen ? 'expand_less' : 'expand_more'} 
+                        size={18} 
+                        style={{ marginLeft: 'auto', opacity: 0.8 }}
+                      />
+                    </button>
+                    <AnimatePresence>
+                      {multimediaOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          <div>
+                            <Link to="/library/holi-sammelan" onClick={() => { setLibraryDropdownOpen(false); setMultimediaOpen(false); }} className="navbar-dropdown-link sub-link">
+                              {t.holiSammelan || 'Holi Sammelan'}
+                            </Link>
+                            <Link to="/library/kabir-night" onClick={() => { setLibraryDropdownOpen(false); setMultimediaOpen(false); }} className="navbar-dropdown-link sub-link">
+                              {t.kabirNight || 'Kabir Night'}
+                            </Link>
+                            <Link to="/library/audio-video-files" onClick={() => { setLibraryDropdownOpen(false); setMultimediaOpen(false); }} className="navbar-dropdown-link sub-link">
+                              {t.audioVideoFiles || 'Audio and Video Files'}
+                            </Link>
+                            <Link to="/library/religious-horizons" onClick={() => { setLibraryDropdownOpen(false); setMultimediaOpen(false); }} className="navbar-dropdown-link sub-link">
+                              {t.religiousHorizons || 'Religious Horizons'}
+                            </Link>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </motion.div>
               )}
@@ -306,6 +351,34 @@ export default function Navbar() {
                 <Link to="/library/prayers" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.prayers || 'Prayers and Devotional Hymns'}</Link>
                 <Link to="/library/dr-j-das" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.drJDas || 'Dr. J. Das'}</Link>
                 <Link to="/library/divya-drishti" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.divyaDrishti || 'Divya Drishti'}</Link>
+                
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setMobileMultimediaOpen(!mobileMultimediaOpen);
+                  }}
+                  className="navbar-mobile-link navbar-mobile-sublink navbar-mobile-btn-nested"
+                  style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', color: 'inherit', textAlign: 'left', font: 'inherit', padding: '0.5rem' }}
+                >
+                  <span>{t.multimedia || 'Multimedia'}</span>
+                  <Icon name={mobileMultimediaOpen ? 'expand_less' : 'expand_more'} size={18} style={{ opacity: 0.8 }} />
+                </button>
+                <AnimatePresence>
+                  {mobileMultimediaOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2, ease: 'easeInOut' }}
+                      style={{ overflow: 'hidden', paddingLeft: '0.75rem', display: 'flex', flexDirection: 'column' }}
+                    >
+                      <Link to="/library/holi-sammelan" onClick={() => { setMobileOpen(false); setMobileMultimediaOpen(false); }} className="navbar-mobile-link navbar-mobile-sublink" style={{ fontSize: '0.85rem' }}>{t.holiSammelan || 'Holi Sammelan'}</Link>
+                      <Link to="/library/kabir-night" onClick={() => { setMobileOpen(false); setMobileMultimediaOpen(false); }} className="navbar-mobile-link navbar-mobile-sublink" style={{ fontSize: '0.85rem' }}>{t.kabirNight || 'Kabir Night'}</Link>
+                      <Link to="/library/audio-video-files" onClick={() => { setMobileOpen(false); setMobileMultimediaOpen(false); }} className="navbar-mobile-link navbar-mobile-sublink" style={{ fontSize: '0.85rem' }}>{t.audioVideoFiles || 'Audio and Video Files'}</Link>
+                      <Link to="/library/religious-horizons" onClick={() => { setMobileOpen(false); setMobileMultimediaOpen(false); }} className="navbar-mobile-link navbar-mobile-sublink" style={{ fontSize: '0.85rem' }}>{t.religiousHorizons || 'Religious Horizons'}</Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               <div className="navbar-mobile-divider" />

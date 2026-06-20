@@ -263,3 +263,33 @@
     display: block !important;
   }
 }
+
+.navbar-dropdown-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0.5rem 0.75rem;
+}
+
+.navbar-dropdown-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tahiti-gold, #d98204);
+  padding: 0.5rem 1rem 0.25rem 1rem;
+  font-weight: 700;
+}
+
+.navbar-dropdown-link.sub-link {
+  padding-left: 1.75rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.navbar-mobile-sublink-header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tahiti-gold, #d98204);
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+  font-weight: 700;
+}

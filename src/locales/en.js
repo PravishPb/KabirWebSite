@@ -97,7 +97,12 @@ export default {
     "prayers": "Prayers and Devotional Hymns",
     "drJDas": "Dr. J. Das",
     "sakhis": "Sakhis",
-    "divyaDrishti": "Divya Drishti"
+    "divyaDrishti": "Divya Drishti",
+    "multimedia": "Multimedia",
+    "holiSammelan": "Holi Sammelan",
+    "kabirNight": "Kabir Night",
+    "audioVideoFiles": "Audio and Video Files",
+    "religiousHorizons": "Religious Horizons"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -499,6 +504,119 @@ export default {
     "description": "Divya Drishti is the annual newsletter issued by the Kabir Association of Toronto Inc. encompassing all the activities and major achievements of the Association over the year. It is a look into the main events hosted or attended by the Association offering an overview of the Association’s yearlong accomplishments. The newsletter also features articles authored by the Association’s board members (including President, Vice-President and other members) and regular satsangees, as well as pictures of events and activities, and much more. View our yearly newsletters below.",
     "viewNewsletter": "View Newsletter",
     "newsletterTitle": "Divya Drishti"
+  },
+  "HoliSammelanPage": {
+    "eyebrow": "Library",
+    "title": "Holi Sammelan",
+    "desc": "Celebrating the festival of colors with devotional songs, music, and community gatherings. View highlights from our previous Holi Sammelan events hosted across the Greater Toronto Area.",
+    "videosTitle": "Event Highlights",
+    "videos": [
+      {
+        "title": "Holi Sammelan 2018",
+        "host": "Hindu Heritage Centre",
+        "address": "6300 Mississauga Rd, Mississauga, ON L5N 1A7",
+        "videoId": "4hSo9XqwvzA"
+      },
+      {
+        "title": "Holi Sammelan 2017",
+        "host": "Vishnu Mandir",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "PpB6d_7WMAo"
+      },
+      {
+        "title": "Holi Sammelan 2016",
+        "host": "Vishnu Mandir",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "L4q1j2W-WIw"
+      },
+      {
+        "title": "Holi Sammelan 2015",
+        "host": "Vishnu Mandir",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "P2_CR5zKpqk"
+      },
+      {
+        "title": "Holi Sammelan 2014",
+        "host": "Vishnu Mandir",
+        "address": "8640 Yonge St, Richmond Hill, ON L4C 6Z4",
+        "videoId": "ipxJPVyc6PA"
+      },
+      {
+        "title": "Holi Sammelan 2013",
+        "host": "Arya Vedic Cultural Centre",
+        "address": "4349 14th Ave, Markham, ON L3R OJ2",
+        "videoId": "RUprFVOozss"
+      }
+    ]
+  },
+  "KabirNightPage": {
+    "eyebrow": "Multimedia",
+    "title": "Kabir Night",
+    "desc": "A spiritual gathering celebrating the timeless wisdom and devotional bhajans of Kabir Saheb. Experience the divine melodies sung and composed by our community members.",
+    "videosTitle": "Bhajans & Devotional Songs",
+    "lyricsLabel": "For lyrics, click here",
+    "songs": [
+      {
+        "title": "Moko Kahaan Dhoondhe Re Bande",
+        "singer": "Jatinder Parkash",
+        "videoId": "Qz5zC778lpc",
+        "lyricsBhajanId": 89
+      },
+      {
+        "title": "Mukhadaa Kyaa Dekhe Darpan Men",
+        "singer": "Parijatha",
+        "videoId": "cbfpTrhAtAw",
+        "lyricsBhajanId": 91
+      },
+      {
+        "title": "Man Phoolaa Phire Jagat Men",
+        "singer": "Mahant Jay Jaggessur",
+        "videoId": "8hyXUyNnVGs",
+        "lyricsBhajanId": 91
+      },
+      {
+        "title": "Janam Teraa Baaton Hi Bheet Gayo",
+        "singer": "Reckha Jaggessur and Parijatha",
+        "videoId": "-GQMeS5bELU",
+        "lyricsBhajanId": 57
+      },
+      {
+        "title": "Chadariyaa Jheenee Re Jheenee",
+        "singer": "Dev Chakraberty",
+        "videoId": "1hpn29cP8rg",
+        "lyricsBhajanId": 26
+      },
+      {
+        "title": "Bhajo Re Bhaiyaa Raam Govind Hari",
+        "singer": "Parijatha",
+        "videoId": "u1kftE_KqLU",
+        "lyricsBhajanId": 19
+      },
+      {
+        "title": "Man Laago Mero Yaar Fakeeree Men",
+        "singer": "Reckha Jaggessur",
+        "videoId": "W_hDi4WPv00",
+        "lyricsBhajanId": 82
+      },
+      {
+        "title": "Mailee Chaadar Orh Ke Kaise",
+        "singer": "Dev Chakraberty",
+        "videoId": "uO1wMZu6P_o",
+        "lyricsBhajanId": 80
+      },
+      {
+        "title": "Apane Piyaa Ki Main Diwaanee",
+        "singer": "Jatinder Parkash",
+        "videoId": "bvZDmNfhMcA",
+        "lyricsBhajanId": null
+      },
+      {
+        "title": "Jab Saath Men Tere Saaheb Hai",
+        "singer": "Mahant Jay Jaggessur",
+        "videoId": "JVMYmuihbeI",
+        "lyricsBhajanId": 53
+      }
+    ]
   }
 };
 
