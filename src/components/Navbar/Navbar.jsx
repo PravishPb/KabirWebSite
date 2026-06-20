@@ -118,6 +118,8 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          <Link to="/library/sakhis" className="navbar-link">{t.sakhis || 'Sakhis'}</Link>
+
           {/* Library Dropdown */}
           <div ref={libraryDropdownRef} className="relative">
             <button
@@ -151,6 +153,9 @@ export default function Navbar() {
                   <div style={{ padding: '0.5rem' }}>
                     <Link to="/library/bhajans" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
                       {t.bhajans || 'Bhajans'}
+                    </Link>
+                    <Link to="/library/sakhis" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.sakhis || 'Sakhis'}
                     </Link>
                     <Link to="/library/prayers" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
                       {t.prayers || 'Prayers and Devotional Hymns'}
@@ -293,9 +298,12 @@ export default function Navbar() {
                 <Link to="/blog?filter=Dr.+J+Das" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">Blog (Dr. J Das)</Link>
               </div>
 
+              <Link to="/library/sakhis" onClick={() => setMobileOpen(false)} className="navbar-mobile-link">{t.sakhis || 'Sakhis'}</Link>
+
               <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>{t.library || 'Library'}</div>
               <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
                 <Link to="/library/bhajans" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.bhajans || 'Bhajans'}</Link>
+                <Link to="/library/sakhis" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.sakhis || 'Sakhis'}</Link>
                 <Link to="/library/prayers" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.prayers || 'Prayers and Devotional Hymns'}</Link>
                 <Link to="/library/dr-j-das" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.drJDas || 'Dr. J. Das'}</Link>
               </div>

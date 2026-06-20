@@ -95,7 +95,8 @@ export default {
     "dropdownCta": "Plan your visit",
     "bhajans": "Bhajans",
     "prayers": "Prayers and Devotional Hymns",
-    "drJDas": "Dr. J. Das"
+    "drJDas": "Dr. J. Das",
+    "sakhis": "Sakhis"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -362,7 +363,7 @@ export default {
       },
       "sakhis": {
         "title": "Sakhis of Guru Kabir",
-        "desc": "A compilation of Kabir's sakhis from the book “Kabir Sakhi – Spiritual Gems of Kabir” translated by Mahant Jagdish Das Shastri, edited by Dr. J. Das, and first published by the Guru Kabir Association of Canada in 1987. It was republished by the Kabir Ashram, Jamnagar, Gujarat in 1995 and 2001 (view <a href=\"https://kabirassociationoftoronto.org/sakhis/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>)."
+        "desc": "A compilation of Kabir's sakhis from the book “Kabir Sakhi – Spiritual Gems of Kabir” translated by Mahant Jagdish Das Shastri, edited by Dr. J. Das, and first published by the Guru Kabir Association of Canada in 1987. It was republished by the Kabir Ashram, Jamnagar, Gujarat in 1995 and 2001 (view <a href=\"/library/sakhis\" class=\"theme-link\">here</a>)."
       },
       "pictorial": {
         "title": "Pictorial Glimpses into the Life of Satguru Kabir Saheb",
@@ -475,6 +476,20 @@ export default {
       { "title": "Brahm Nirupan: A Journey to Enlightenment", "presenter": "Dr. J. Das", "videoId": "SK23QRxGaAM" },
       { "title": "Kabir Chalisa by Devotees at Kabir Centre (B.C.)", "presenter": "Devotees", "videoId": "UwIpc2Ao65U" }
     ]
+  },
+  "SakhisPage": {
+    "eyebrow": "Library",
+    "title": "Sakhis",
+    "subtitle": "Sakhis of Guru Kabir",
+    "tocTitle": "Table of Contents",
+    "searchPlaceholder": "Search sakhis...",
+    "noSakhisFound": "No sakhis found for",
+    "meaningLabel": "Meaning",
+    "commentaryLabel": "Commentary",
+    "copyButton": "Copy",
+    "toastCopied": "Sakhi copied to clipboard!",
+    "detailsEmpty": "Select a Sakhi from the table of contents to start reading.",
+    "introText": "The following sakhis are from the book “Kabir Sakhi – Spiritual Gems of Kabir” translated by Mahant Jagdish Das Shastri, edited by Dr. J. Das, and first published by the Kabir Association of Canada in 1987. It was republished by the Kabir Ashram, Jamnagar, Gujarat in 1995 and 2001."
   }
 };
 

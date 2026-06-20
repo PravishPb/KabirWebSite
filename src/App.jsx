@@ -21,6 +21,7 @@ const AboutPage = React.lazy(() => import('./pages/AboutPage'));
 const TeachingsPage = React.lazy(() => import('./pages/TeachingsPage'));
 const BlogPage = React.lazy(() => import('./pages/BlogPage'));
 const LibraryBhajans = React.lazy(() => import('./pages/library/LibraryBhajans'));
+const SakhisPage = React.lazy(() => import('./pages/library/SakhisPage'));
 const PrayersPage = React.lazy(() => import('./pages/library/PrayersPage'));
 const DrJDasPage = React.lazy(() => import('./pages/library/DrJDasPage'));
 const ReligiousHorizonsPage = React.lazy(() => import('./pages/library/ReligiousHorizonsPage'));
@@ -68,6 +69,7 @@ function PublicLayout() {
                 <Route path="/teachings" element={<TeachingsPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/library/bhajans" element={<LibraryBhajans />} />
+                <Route path="/library/sakhis" element={<SakhisPage />} />
                 <Route path="/library/prayers" element={<PrayersPage />} />
                 <Route path="/library/dr-j-das" element={<DrJDasPage />} />
                 <Route path="/library/religious-horizons" element={<ReligiousHorizonsPage />} />
