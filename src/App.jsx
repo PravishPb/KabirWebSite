@@ -32,6 +32,8 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const DivyaDrishtiPage = React.lazy(() => import('./pages/library/DivyaDrishtiPage'));
 const HoliSammelanPage = React.lazy(() => import('./pages/library/HoliSammelanPage'));
 const KabirNightPage = React.lazy(() => import('./pages/library/KabirNightPage'));
+const JeevanDarshanPage = React.lazy(() => import('./pages/satguru/JeevanDarshanPage'));
+const JeevanDarshanCategoryPage = React.lazy(() => import('./pages/satguru/JeevanDarshanCategoryPage'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -82,6 +84,8 @@ function PublicLayout() {
                 <Route path="/library/transliteration" element={<TransliterationPage />} />
                 <Route path="/library/holi-sammelan" element={<HoliSammelanPage />} />
                 <Route path="/library/kabir-night" element={<KabirNightPage />} />
+                <Route path="/satguru/jeevan-darshan" element={<JeevanDarshanPage />} />
+                <Route path="/satguru/jeevan-darshan/:category" element={<JeevanDarshanCategoryPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </Suspense>

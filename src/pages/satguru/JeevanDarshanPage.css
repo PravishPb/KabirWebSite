@@ -1,0 +1,124 @@
+.jeevan-darshan-page {
+  padding-bottom: 5rem;
+}
+
+.jeevan-darshan-intro {
+  margin-top: 1.5rem;
+  max-width: 45rem;
+  margin-inline: auto;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.jeevan-darshan-section {
+  padding: 4rem var(--page-gutter);
+}
+
+.jeevan-darshan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.jeevan-darshan-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.category-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.category-header {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-h5);
+  font-weight: 500;
+  border-bottom: 2px solid var(--tahiti-gold-light);
+  padding-bottom: 0.5rem;
+}
+
+.category-link {
+  color: var(--tahiti-gold-darker);
+  transition: color 0.2s ease;
+}
+
+.category-link:hover {
+  color: var(--tahiti-gold);
+}
+
+.story-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.story-item {
+  font-size: var(--text-medium);
+  line-height: 1.4;
+}
+
+.story-link {
+  color: var(--fg1);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.story-link:hover {
+  color: var(--tahiti-gold);
+  padding-left: 4px;
+}
+
+.footnote-note {
+  margin: 0.5rem 0 0;
+  font-size: var(--text-small);
+  color: var(--fg2);
+  font-style: italic;
+}
+
+.jeevan-darshan-footer-text {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.jeevan-darshan-footer-text p {
+  font-size: var(--text-medium);
+  color: var(--fg1);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.text-underline-link {
+  color: var(--tahiti-gold-darker);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.text-underline-link:hover {
+  color: var(--tahiti-gold);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .jeevan-darshan-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .jeevan-darshan-col {
+    gap: 2.5rem;
+  }
+}

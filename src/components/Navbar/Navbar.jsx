@@ -31,12 +31,14 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [blogDropdownOpen, setBlogDropdownOpen] = useState(false);
   const [libraryDropdownOpen, setLibraryDropdownOpen] = useState(false);
+  const [satguruDropdownOpen, setSatguruDropdownOpen] = useState(false);
   const [multimediaOpen, setMultimediaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileMultimediaOpen, setMobileMultimediaOpen] = useState(false);
   const dropdownRef = useRef(null);
   const blogDropdownRef = useRef(null);
   const libraryDropdownRef = useRef(null);
+  const satguruDropdownRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -49,6 +51,9 @@ export default function Navbar() {
       if (libraryDropdownRef.current && !libraryDropdownRef.current.contains(e.target)) {
         setLibraryDropdownOpen(false);
         setMultimediaOpen(false);
+      }
+      if (satguruDropdownRef.current && !satguruDropdownRef.current.contains(e.target)) {
+        setSatguruDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -73,6 +78,49 @@ export default function Navbar() {
         <div className="navbar-desktop-links">
           <Link to="/" className="navbar-link">{t.home}</Link>
           <Link to="/about" className="navbar-link">{t.about}</Link>
+
+          {/* Satguru Dropdown */}
+          <div ref={satguruDropdownRef} className="relative">
+            <button
+              onClick={() => setSatguruDropdownOpen((v) => !v)}
+              className="navbar-dropdown-btn"
+              aria-expanded={satguruDropdownOpen}
+              aria-haspopup="true"
+            >
+              {t.satguru || 'Satguru'}
+              <svg 
+                width="12" 
+                height="12" 
+                viewBox="0 0 12 12" 
+                fill="currentColor" 
+                className="navbar-dropdown-icon"
+                style={{ transform: satguruDropdownOpen ? 'rotate(180deg)' : 'rotate(0)' }}
+              >
+                <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {satguruDropdownOpen && (
+                <motion.div
+                  variants={dropdownVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="navbar-dropdown-menu left"
+                >
+                  <div style={{ padding: '0.5rem' }}>
+                    <Link to="/satguru/jeevan-darshan" onClick={() => setSatguruDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.jeevanDarshan || 'Kabir Saheb Ke Jeevan Darshan'}
+                    </Link>
+                    <Link to="/library/pictorial-glimpses" onClick={() => setSatguruDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.pictorialGlimpses || 'Pictorial Glimpses'}
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           <Link to="/teachings" className="navbar-link">{t.teachings}</Link>
           
           {/* Blog Dropdown */}
@@ -334,6 +382,12 @@ export default function Navbar() {
             <div className="navbar-mobile-container">
               <Link to="/" onClick={() => setMobileOpen(false)} className="navbar-mobile-link">{t.home}</Link>
               <Link to="/about" onClick={() => setMobileOpen(false)} className="navbar-mobile-link">{t.about}</Link>
+
+              <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>{t.satguru || 'Satguru'}</div>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
+                <Link to="/satguru/jeevan-darshan" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.jeevanDarshan || 'Kabir Saheb Ke Jeevan Darshan'}</Link>
+                <Link to="/library/pictorial-glimpses" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.pictorialGlimpses || 'Pictorial Glimpses'}</Link>
+              </div>
               <Link to="/teachings" onClick={() => setMobileOpen(false)} className="navbar-mobile-link">{t.teachings}</Link>
               
               <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>{t.blog}</div>

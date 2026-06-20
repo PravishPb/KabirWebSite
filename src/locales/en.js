@@ -102,7 +102,10 @@ export default {
     "holiSammelan": "Holi Sammelan",
     "kabirNight": "Kabir Night",
     "audioVideoFiles": "Audio and Video Files",
-    "religiousHorizons": "Religious Horizons"
+    "religiousHorizons": "Religious Horizons",
+    "satguru": "Satguru",
+    "jeevanDarshan": "Kabir Saheb Ke Jeevan Darshan",
+    "pictorialGlimpses": "Pictorial Glimpses"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -615,6 +618,87 @@ export default {
         "singer": "Mahant Jay Jaggessur",
         "videoId": "JVMYmuihbeI",
         "lyricsBhajanId": 53
+      }
+    ]
+  },
+  "JeevanDarshanPage": {
+    "eyebrow": "Satguru",
+    "title": "Kabir Saheb Ke Jeevan Darshan",
+    "tocTitle": "Table of Contents",
+    "desc": "This page is dedicated to Kabir Saheb’s jeevan darshan; a look into Kabir Saheb’s life story. The above is a compilation of many stories which occurred throughout Kabir Saheb’s life. It is important to remember that among all the events which have occurred throughout Kabir Saheb’s life, only those were remembered by his devotees which gave an insight into his teachings and morals. Thus, rather than debating the veracity of these events, it is more important to understand their significance and the teachings which they impart unto their readers (or listeners). Please feel free to browse through the stories which we have provided on this website by navigating through the Table of Contents.",
+    "note": "It is to be noted that from the time of Kabir Saheb, such stories were transmitted orally and passed down from generation to generation; therefore, there exists many versions of each of these stories. We have analyzed and researched many versions of each story from various different sources most notably from the Kabeer Manshoor and the Kabeer Kasautee (amongst other sources). For further information on our sources, please feel free to contact us.",
+    "categories": [
+      {
+        "title": "Life",
+        "url": "/satguru/jeevan-darshan/life",
+        "stories": [
+          { "title": "15th Century Kashi", "url": "/satguru/jeevan-darshan/life#jeevdar1" },
+          { "title": "Pragatya Darshan", "url": "/satguru/jeevan-darshan/life#jeevdar2" },
+          { "title": "Neeru and Neema", "url": "/satguru/jeevan-darshan/life#jeevdar3" },
+          { "title": "The Seven Day Old Calf", "url": "/satguru/jeevan-darshan/life#jeevdar4" },
+          { "title": "Naam Kaaran", "url": "/satguru/jeevan-darshan/life#jeevdar5" },
+          { "title": "Youth", "url": "/satguru/jeevan-darshan/life#jeevdar6" },
+          { "title": "Initiation by Swami Ramanand", "url": "/satguru/jeevan-darshan/life#jeevdar7" },
+          { "title": "Journey to Maghar (the dry Ami River)", "url": "/satguru/jeevan-darshan/life#jeevdar8" },
+          { "title": "Departure from this World", "url": "/satguru/jeevan-darshan/life#jeevdar8.1" }
+        ]
+      },
+      {
+        "title": "Baawan Kasni",
+        "url": "/satguru/jeevan-darshan/baawan-kasni",
+        "stories": [
+          { "title": "Emperor Lodi Summons Kabir Saheb", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar9" },
+          { "title": "Immersion in the Ganges", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar10" },
+          { "title": "Attack By Drunken Wild Elephant", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar11" },
+          { "title": "Death by Canon", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar12" },
+          { "title": "Reviving Kamaal", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar13" },
+          { "title": "Reviving Kamaali", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar14" }
+        ]
+      },
+      {
+        "title": "Short Stories",
+        "url": "/satguru/jeevan-darshan/short-stories",
+        "stories": [
+          { "title": "Swami Ramanand’s Mansik Pooja", "url": "/satguru/jeevan-darshan/short-stories#jeevdar15" },
+          { "title": "Buffalo reads the Vedas", "url": "/satguru/jeevan-darshan/short-stories#jeevdar15" },
+          { "title": "Camels on the Road", "url": "/satguru/jeevan-darshan/short-stories#jeevdar17" },
+          { "title": "The Pundit of Jagnath", "url": "/satguru/jeevan-darshan/short-stories#jeevdar18" },
+          { "title": "Siv (Seu) and Samman", "url": "/satguru/jeevan-darshan/short-stories#jeevdar19" }
+        ]
+      },
+      {
+        "title": "Short Stories (Cont'n)",
+        "url": "/satguru/jeevan-darshan/short-stories-contn",
+        "stories": [
+          { "title": "Rice Offerings to Ancestors", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar20" },
+          { "title": "The Pig", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar21" },
+          { "title": "The Slaughterhouse", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar22" },
+          { "title": "The Temple of Jaganath", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar24" },
+          { "title": "Kabir Saheb’s ‘Bhandara’", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar28" }
+        ]
+      },
+      {
+        "title": "Disciples and Famous Followers",
+        "url": "/satguru/jeevan-darshan/disciples-and-famous-followers",
+        "stories": [
+          { "title": "Dhani Dharmadasji and Amini Mata", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar25" },
+          { "title": "Sarvanand/Sarvajeet (Suratigopal) Saheb", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar27" },
+          { "title": "Madangopal (Madan) Saheb", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar26" },
+          { "title": "Loi Mata", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar30" },
+          { "title": "Kamaal Saheb*", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar13" },
+          { "title": "Kamaali*", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar14" },
+          { "title": "Padmanabh Saheb", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar31" },
+          { "title": "Tattva and Jeeva", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar35" },
+          { "title": "Emperor Sikandar Lodi and Sheikh Taqqi*", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar9" },
+          { "title": "The Baghela (Vaghela) Dynasty", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar32" },
+          { "title": "King of Kashi, Veer Singh Baghela", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar33" },
+          { "title": "King of Bandhogarh, Ram Singh Baghela", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar34" },
+          { "title": "Bijali Khan Pathan of Magahar", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar36" },
+          { "title": "Sultan Ibrahim Addham of Balakh Bokhara", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar37" },
+          { "title": "The Camel Herder", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar38" },
+          { "title": "The Inn", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar39" }
+        ],
+        "footerNote": "*These stories can also be accessed under the heading 'Baawan Kasni'"
       }
     ]
   }

@@ -102,7 +102,10 @@ export default {
     "holiSammelan": "होली सम्मेलन",
     "kabirNight": "कबीर नाइट",
     "audioVideoFiles": "ऑडियो और वीडियो फाइलें",
-    "religiousHorizons": "धार्मिक क्षितिज"
+    "religiousHorizons": "धार्मिक क्षितिज",
+    "satguru": "सद्गुरु",
+    "jeevanDarshan": "कबीर साहेब के जीवन दर्शन",
+    "pictorialGlimpses": "सचित्र झलकियाँ"
   },
   "Pillars": {
     "eyebrow": "आधार",
@@ -615,6 +618,87 @@ export default {
         "singer": "महंत जय जगेश्वर",
         "videoId": "JVMYmuihbeI",
         "lyricsBhajanId": 53
+      }
+    ]
+  },
+  "JeevanDarshanPage": {
+    "eyebrow": "सद्गुरु",
+    "title": "कबीर साहेब के जीवन दर्शन",
+    "tocTitle": "विषय-सूची",
+    "desc": "यह पृष्ठ कबीर साहेब के जीवन दर्शन को समर्पित है; कबीर साहेब की जीवन गाथा पर एक नज़र। उपरोक्त कबीर साहेब के जीवन में घटित हुई कई कहानियों का संकलन है। यह याद रखना महत्वपूर्ण है कि कबीर साहेब के जीवन की सभी घटनाओं में से, उनके भक्तों द्वारा केवल उन्हीं को याद रखा गया जिन्होंने उनकी शिक्षाओं और नैतिकता की अंतर्दृष्टि प्रदान की। इस प्रकार, इन घटनाओं की सच्चाई पर बहस करने के बजाय, उनके महत्व और उन शिक्षाओं को समझना अधिक महत्वपूर्ण है जो वे अपने पाठकों (या श्रोताओं) को प्रदान करती हैं। कृपया इस वेबसाइट पर प्रदान की गई कहानियों को विषय-सूची के माध्यम से देखने के लिए स्वतंत्र महसूस करें।",
+    "note": "यह ध्यान दिया जाना चाहिए कि कबीर साहेब के समय से, ऐसी कहानियों को मौखिक रूप से प्रसारित किया गया था और पीढ़ी दर पीढ़ी आगे बढ़ाया गया था; इसलिए, इनमें से प्रत्येक कहानी के कई संस्करण मौजूद हैं। हमने विभिन्न स्रोतों से प्रत्येक कहानी के कई संस्करणों का विश्लेषण और शोध किया है, विशेष रूप से कबीर मंसूर और कबीर कसौटी (अन्य स्रोतों के बीच) से। हमारे स्रोतों के बारे में अधिक जानकारी के लिए, कृपया हमसे संपर्क करने में संकोच न करें।",
+    "categories": [
+      {
+        "title": "जीवन",
+        "url": "/satguru/jeevan-darshan/life",
+        "stories": [
+          { "title": "15वीं शताब्दी का काशी", "url": "/satguru/jeevan-darshan/life#jeevdar1" },
+          { "title": "प्रकट्य दर्शन", "url": "/satguru/jeevan-darshan/life#jeevdar2" },
+          { "title": "नीरू और नीमा", "url": "/satguru/jeevan-darshan/life#jeevdar3" },
+          { "title": "सात दिन का बछड़ा", "url": "/satguru/jeevan-darshan/life#jeevdar4" },
+          { "title": "नामकरण", "url": "/satguru/jeevan-darshan/life#jeevdar5" },
+          { "title": "युवावस्था", "url": "/satguru/jeevan-darshan/life#jeevdar6" },
+          { "title": "स्वामी रामानंद द्वारा दीक्षा", "url": "/satguru/jeevan-darshan/life#jeevdar7" },
+          { "title": "मगहर की यात्रा (सूखी अमी नदी)", "url": "/satguru/jeevan-darshan/life#jeevdar8" },
+          { "title": "संसार से प्रस्थान", "url": "/satguru/jeevan-darshan/life#jeevdar8.1" }
+        ]
+      },
+      {
+        "title": "बावन कसनी",
+        "url": "/satguru/jeevan-darshan/baawan-kasni",
+        "stories": [
+          { "title": "सम्राट लोदी द्वारा कबीर साहेब को बुलावा", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar9" },
+          { "title": "गंगा में विसर्जन", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar10" },
+          { "title": "मस्त हाथी द्वारा हमला", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar11" },
+          { "title": "तोप से मृत्यु दंड", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar12" },
+          { "title": "कमाल को पुनर्जीवित करना", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar13" },
+          { "title": "कमाली को पुनर्जीवित करना", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar14" }
+        ]
+      },
+      {
+        "title": "लघु कथाएँ",
+        "url": "/satguru/jeevan-darshan/short-stories",
+        "stories": [
+          { "title": "स्वामी रामानंद की मानसिक पूजा", "url": "/satguru/jeevan-darshan/short-stories#jeevdar15" },
+          { "title": "भैंसे द्वारा वेद पाठ", "url": "/satguru/jeevan-darshan/short-stories#jeevdar15" },
+          { "title": "सड़क पर ऊँट", "url": "/satguru/jeevan-darshan/short-stories#jeevdar17" },
+          { "title": "जगन्नाथ के पंडित", "url": "/satguru/jeevan-darshan/short-stories#jeevdar18" },
+          { "title": "शिव (सेऊ) और सम्मन", "url": "/satguru/jeevan-darshan/short-stories#jeevdar19" }
+        ]
+      },
+      {
+        "title": "लघु कथाएँ (क्रमशः)",
+        "url": "/satguru/jeevan-darshan/short-stories-contn",
+        "stories": [
+          { "title": "पूर्वजों को चावल का तर्पण", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar20" },
+          { "title": "सूअर की कहानी", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar21" },
+          { "title": "कसाईखाना", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar22" },
+          { "title": "जगन्नाथ का मंदिर", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar24" },
+          { "title": "कबीर साहेब का भंडारा", "url": "/satguru/jeevan-darshan/short-stories-contn#jeevdar28" }
+        ]
+      },
+      {
+        "title": "शिष्य और प्रसिद्ध अनुयायी",
+        "url": "/satguru/jeevan-darshan/disciples-and-famous-followers",
+        "stories": [
+          { "title": "धनी धर्मदासजी और अमिनी माता", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar25" },
+          { "title": "सर्वानंद/सर्वजीत (सुरतिगोपाल) साहेब", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar27" },
+          { "title": "मदनगोपाल (मदन) साहेब", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar26" },
+          { "title": "लोई माता", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar30" },
+          { "title": "कमाल साहेब*", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar13" },
+          { "title": "कमाली*", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar14" },
+          { "title": "पद्मनाभ साहेब", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar31" },
+          { "title": "तत्त्व और जीव", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar35" },
+          { "title": "सम्राट सिकंदर लोदी और शेख तक्की*", "url": "/satguru/jeevan-darshan/baawan-kasni#jeevdar9" },
+          { "title": "बाघेला (वाघेला) राजवंश", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar32" },
+          { "title": "काशी के राजा, वीर सिंह बाघेला", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar33" },
+          { "title": "बांधवगढ़ के राजा, राम सिंह बाघेला", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar34" },
+          { "title": "मगहर के बिजली खान पठान", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar36" },
+          { "title": "बलख बुखारा के सुल्तान इब्राहिम अधम", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar37" },
+          { "title": "ऊँट चराने वाला", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar38" },
+          { "title": "सराय", "url": "/satguru/jeevan-darshan/disciples-and-famous-followers#jeevdar39" }
+        ],
+        "footerNote": "*ये कहानियाँ 'बावन कसनी' शीर्षक के अंतर्गत भी देखी जा सकती हैं"
       }
     ]
   }
