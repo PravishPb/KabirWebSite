@@ -366,7 +366,7 @@ export default {
       },
       "pictorial": {
         "title": "Pictorial Glimpses into the Life of Satguru Kabir Saheb",
-        "desc": "A series of short stories on the life of Kabir Saheb prepared by Dr. Jagessar Das of the Guru Kabir Association of Canada. Stories are complete with pictures taken from The Life Story of Kabir Saheb, published by the Kabir Ashram (Jamnagar, India; view <a href=\"https://kabirassociationoftoronto.org/pictorial-glimpses/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>)."
+        "desc": "A series of short stories on the life of Kabir Saheb prepared by Dr. Jagessar Das of the Guru Kabir Association of Canada. Stories are complete with pictures taken from The Life Story of Kabir Saheb, published by the Kabir Ashram (Jamnagar, India; view <a href=\"/library/pictorial-glimpses\" class=\"theme-link\">here</a>)."
       },
       "bhajanAmritam": {
         "title": "Kabir Bhajan Amritam",
@@ -435,6 +435,14 @@ export default {
       { "title": "Bahá'í Faith", "presenter": "Minoo Greenall", "videoId": "M0AUrfmkwZo" },
       { "title": "Zoroastrianism", "presenter": "Soonoo Engineer", "videoId": "kTCD1ehzDzM" }
     ]
+  },
+  "PictorialGlimpsesPage": {
+    "eyebrow": "Library",
+    "title": "Pictorial Glimpses",
+    "subtitle": "Pictorial Glimpses into the Life of Satguru Kabir Saheb",
+    "introText": "This page contains a series of short stories on the life of Kabir Saheb prepared by Dr. Jagessar Das of the Guru Kabir Association of Canada (Surrey, B.C., Canada). Stories are complete with pictures taken from The Life Story of Kabir Saheb, published by the Kabir Ashram (Jamnagar, India). Feel free to browse through these stories by navigating through the Table of Contents.",
+    "tocTitle": "Table of Contents",
+    "note": "It is to be noted that from the time of Kabir Saheb, such stories were transmitted orally and passed down from generation to generation; therefore, there exists many versions of each of these stories. Rather than debating the veracity of these events, it is more important to understand their significance and the teachings which they impart unto their readers (or listeners)."
   }
 };
 
