@@ -151,30 +151,21 @@ export default {
     "explore": "Explore"
   },
   "AboutPage": {
-    "eyebrow": "About Us",
-    "title": "Who we are",
-    "body": "The Kabir Association of Toronto is a registered charitable non-profit established in 2011 in Ontario, Canada. We carry forward the teachings of the 15th-century mystic saint-poet Kabir — a weaver by trade, a seeker by calling — whose verses transcend religion, caste, and creed.\n\nOur community gathers weekly for satsang, devotional song (bhajan), and the quiet practice of turning inward. We believe in the oneness of all beings and the transformative power of truth, love, and selfless service.\n\nKabir's message is simple yet profound: look within, question outward rituals, and find the divine in every breath. His poetry, composed in the language of the common people, continues to inspire seekers across the globe — from the banks of the Ganges to the shores of Lake Ontario.",
-    "mission": "Our Mission",
-    "missionText": "To preserve and share the timeless teachings of Saint Kabir, fostering a community of seekers united in devotion, service, and the pursuit of inner truth.",
-    "values": "Our Values",
-    "valueItems": [
-      {
-        "title": "Truth (Satya)",
-        "desc": "We seek truth in all things and encourage honest self-inquiry."
-      },
-      {
-        "title": "Devotion (Bhakti)",
-        "desc": "Love and devotion to the divine form the heart of our practice."
-      },
-      {
-        "title": "Service (Sewa)",
-        "desc": "Selfless service to humanity is our highest calling."
-      },
-      {
-        "title": "Unity (Ekta)",
-        "desc": "We see the divine in all beings, beyond caste, creed, or religion."
-      }
-    ]
+    "title": "About Us",
+    "headerTitle": "Kabir Association of Toronto Inc.",
+    "intro": "The Kabir Association of Toronto was founded in March 2011 as a non-profit organization in Ontario, Canada, and has also been registered as a Charity. Over the past few years, there has been a growing interest from devotees of the Kabir Panth faith and spiritual seekers to have a space for Kabir Saheb’s teachings in the Torontonian community. As a matter of fact there are a number of followers of Kabir Saheb from India, Pakistan, Mauritius, Guyana, Zambia, and Trinidad & Tobago settled in Toronto and the Greater Toronto Area. Moreover, many spiritual seekers from various other parts of the world have also signified their interest in learning more about this faith, and understanding the spiritual teachings of Kabir Saheb. Hence the inspiration for the setting up of the Kabir Association of Toronto.",
+    "activitiesIntro": "The association holds various activities on a regular basis and also responds to requests from interested parties to perform bhajans and satsangs at their homes. The following are regular activities of the association:",
+    "activity1_bold": "Weekly Satsangs",
+    "activity1_text": ", held every Sunday from 10:00 AM to 12:00 PM",
+    "activity2": "Kabir Saheb Pragatya Divas (Kabir Jayanti), celebration of the apparition day of Kabir Saheb in June",
+    "activity3_link": "Chowkaa Aaratees",
+    "activity3_post": "/Satsangs/Lectures, at the request of devotees/interested parties",
+    "activity4": "Bhajan performances, during wakes or other such occasions at the request of interested parties.",
+    "donations": {
+      "title": "Donations",
+      "desc": "Please support our Association in promoting the spiritual teachings of Kabir Saheb. The Kabir Association of Toronto Inc. is registered with the Canada Revenue Agency (registration number: 825253719RR0001); tax receipts will be issued to donors for their donations. 100% of donation monies go towards funding the activities of the Association.",
+      "button": "Make your payments with PayPal. It is free, secure, effective."
+    }
   },
   "BlogPage": {
     "eyebrow": "Writings",
