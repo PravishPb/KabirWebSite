@@ -32,6 +32,7 @@ export default function Navbar() {
   const [blogDropdownOpen, setBlogDropdownOpen] = useState(false);
   const [libraryDropdownOpen, setLibraryDropdownOpen] = useState(false);
   const [satguruDropdownOpen, setSatguruDropdownOpen] = useState(false);
+  const [eventsDropdownOpen, setEventsDropdownOpen] = useState(false);
   const [multimediaOpen, setMultimediaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileMultimediaOpen, setMobileMultimediaOpen] = useState(false);
@@ -39,6 +40,7 @@ export default function Navbar() {
   const blogDropdownRef = useRef(null);
   const libraryDropdownRef = useRef(null);
   const satguruDropdownRef = useRef(null);
+  const eventsDropdownRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -54,6 +56,9 @@ export default function Navbar() {
       }
       if (satguruDropdownRef.current && !satguruDropdownRef.current.contains(e.target)) {
         setSatguruDropdownOpen(false);
+      }
+      if (eventsDropdownRef.current && !eventsDropdownRef.current.contains(e.target)) {
+        setEventsDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -262,6 +267,52 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          {/* Events Dropdown */}
+          <div ref={eventsDropdownRef} className="relative">
+            <button
+              onClick={() => setEventsDropdownOpen((v) => !v)}
+              className="navbar-dropdown-btn"
+              aria-expanded={eventsDropdownOpen}
+              aria-haspopup="true"
+            >
+              {t.events || 'Events'}
+              <svg 
+                width="12" 
+                height="12" 
+                viewBox="0 0 12 12" 
+                fill="currentColor" 
+                className="navbar-dropdown-icon"
+                style={{ transform: eventsDropdownOpen ? 'rotate(180deg)' : 'rotate(0)' }}
+              >
+                <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {eventsDropdownOpen && (
+                <motion.div
+                  variants={dropdownVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="navbar-dropdown-menu left"
+                >
+                  <div style={{ padding: '0.5rem' }}>
+                    <Link to="/events/chowka" onClick={() => setEventsDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.chowka || 'Chowka'}
+                    </Link>
+                    <Link to="/events/performances" onClick={() => setEventsDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.performances || 'Performances'}
+                    </Link>
+                    <Link to="/events/visits" onClick={() => setEventsDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.visits || 'Visits'}
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* More Dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
@@ -433,6 +484,13 @@ export default function Navbar() {
                     </motion.div>
                   )}
                 </AnimatePresence>
+              </div>
+
+              <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>{t.events || 'Events'}</div>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
+                <Link to="/events/chowka" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.chowka || 'Chowka'}</Link>
+                <Link to="/events/performances" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.performances || 'Performances'}</Link>
+                <Link to="/events/visits" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.visits || 'Visits'}</Link>
               </div>
 
               <div className="navbar-mobile-divider" />

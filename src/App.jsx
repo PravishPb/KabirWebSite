@@ -34,6 +34,9 @@ const HoliSammelanPage = React.lazy(() => import('./pages/library/HoliSammelanPa
 const KabirNightPage = React.lazy(() => import('./pages/library/KabirNightPage'));
 const JeevanDarshanPage = React.lazy(() => import('./pages/satguru/JeevanDarshanPage'));
 const JeevanDarshanCategoryPage = React.lazy(() => import('./pages/satguru/JeevanDarshanCategoryPage'));
+const ChowkaPage = React.lazy(() => import('./pages/events/ChowkaPage'));
+const PerformancesPage = React.lazy(() => import('./pages/events/PerformancesPage'));
+const VisitsPage = React.lazy(() => import('./pages/events/VisitsPage'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -86,6 +89,10 @@ function PublicLayout() {
                 <Route path="/library/kabir-night" element={<KabirNightPage />} />
                 <Route path="/satguru/jeevan-darshan" element={<JeevanDarshanPage />} />
                 <Route path="/satguru/jeevan-darshan/:category" element={<JeevanDarshanCategoryPage />} />
+                <Route path="/events" element={<Navigate to="/events/chowka" replace />} />
+                <Route path="/events/chowka" element={<ChowkaPage />} />
+                <Route path="/events/performances" element={<PerformancesPage />} />
+                <Route path="/events/visits" element={<VisitsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </Suspense>

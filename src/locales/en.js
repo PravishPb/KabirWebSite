@@ -105,7 +105,10 @@ export default {
     "religiousHorizons": "Religious Horizons",
     "satguru": "Satguru",
     "jeevanDarshan": "Kabir Saheb Ke Jeevan Darshan",
-    "pictorialGlimpses": "Pictorial Glimpses"
+    "pictorialGlimpses": "Pictorial Glimpses",
+    "chowka": "Chowka",
+    "performances": "Performances",
+    "visits": "Visits"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -701,6 +704,79 @@ export default {
         "footerNote": "*These stories can also be accessed under the heading 'Baawan Kasni'"
       }
     ]
+  },
+  "ChowkaPage": {
+    "eyebrow": "Events",
+    "title": "Chowka",
+    "intro1": "The chowka is a symbolical ritual prescribed by Kabir Saheb to his followers. The association holds an annual chowka ceremony on the Pragtya Divas. The Pragatya Divas falls on the full moon of the jyesht (also jeth i.e. June) month of the Hindu (Vikram Samvat) calendar and marks the appearance of Satguru Kabir Saheb. Many devotees also host chowka ceremonies at their homes which the Association undertakes to perform.",
+    "intro2": "The ceremony involves the preparation of a Bedi, an elevated platform on which the ritual is performed. Above the Bedi hangs the Chandni, a canopy hung over the Bedi. Various items needed to complete the ceremony are placed on the Bedi. Throughout the ceremony, various bhajans and mangals are sung, and offerings are made to the Bedi.",
+    "typesTitle": "Four Types of Chowkas",
+    "typesSubtitle": "Different Chowka ceremonies performed within the Kabir Panth",
+    "contactText": "contact us",
+    "types": {
+      "aanandee": {
+        "title": "Aanandee Chowka",
+        "desc1": "As the name would suggest, the aanandee chowka is held for the celebration of auspicious occasions (Hindi: aanand, lit. bliss, happiness); most notably, on bright fortnights and full moon days (shukla paksh/purnima) and for the event of initiation into the Panth. Aanandee Chowkas are also held for housewarmings and any other milestones. If you wish to have an aanandee chowka performed, please ",
+        "desc2": "."
+      },
+      "chalaawaa": {
+        "title": "Chalaawaa (or Bilaasee) Chowka",
+        "desc1": "Chalaawaa chowkas are an important part of the Kabir Panthi mourning process after the death of loved ones. After the funerary rites are performed and the body is disposed of, the mourning period begins and can last for up to 40 days until a chalaawaa chowka is performed; marking the end of the mourning period. If you wish to have a chalaawa chowka performed, please ",
+        "desc2": "."
+      },
+      "janamautee": {
+        "title": "Janamautee (or Solah Sut/Putra) Chowka",
+        "desc": "The janamautee chowka is a chowka held in celebration of a birth. Traditionally, in Indian culture, post-natal festivities are held only for the birth of sons; however, the janamautee chowka can be held for the birth of any child. This chowka commemorates the creation of the universe as described by Kabir Panthi mythology, beginning with the 16 manifestations of the Sattpurush (Hindi: solah sut/putra, lit. sixteen/16 children/sons)."
+      },
+      "ekotaree": {
+        "title": "Ekotaree Chowka",
+        "desc": "Ekotaree chowkas are grand community events officiated by 101 mahants (Hindi: ekotar, lit: one-hundred and one/101), each representing one of the 101 holy names/titles of the Sattpurush. Such grand ceremonies are often organized and held in India by temples and maths or ashrams (monasteries/hermitages)."
+      }
+    }
+  },
+  "PerformancesPage": {
+    "eyebrow": "Events",
+    "title": "Performances",
+    "intro": "The association has participated in many performances in the community to illustrate and exhibit the teachings of Kabir Saheb.",
+    "clickHere": "click here",
+    "kabirNight": {
+      "title": "Saint Kabir Night",
+      "desc1": "The Saint Kabir Night was presented on the 3rd of May, 2013 at the Maja Prentice Theater (Mississauga, ON). The performance presented the singing of various bhajans and compositions of Kabir Saheb. Hosted by Ms. Jodie Lobana of “The Evolving Creations,” the program exhibited performers from the association who had helped spread the message of Kabir Saheb by singing. To view videos of this event ",
+      "desc2": "."
+    },
+    "holiSammelan": {
+      "title": "Holi Sammelan - Chowtaal",
+      "desc1": "Chowtaal is a style of folk song originating from North-Eastern India that has spread across the West Indies as well as other countries including Mauritius and Fiji. Since 2013, the association has been participating in the Holi Sammelan program hosted by the Indo-Caribbean Golden Age Association (ICGAA), an association dedicated to keeping this tradition alive. The program presents the singing of chowtaals and other Holi songs by various groups and organizations from the Greater Toronto Area (GTA). To view videos of this event ",
+      "desc2": "."
+    },
+    "rediscovering": {
+      "title": "Rediscovering Kabir",
+      "desc": "Rediscovering Kabir was presented on Saturday, May 25th, 2019, at the Chinmaya Mission (8832 Gore Road, Brampton). This programme was hosted to give viewers an insight into the philosophy of Kabir through bhajan singing and reflection. Bhajan performances were prepared by the association’s very own bhajan mandali."
+    },
+    "jhini": {
+      "title": "Jhini Chadariya",
+      "desc": "Jhini Chadariya (The Ethereal Sheet) was held on Saturday, June 8th, 2019 at the Arya Samaj Mandir (405 Watline Avenue, Mississauga) in commemoration of the 621st Kabir Jayanti which was celebrated on Jyesth Purnima (June 16th, 2019). The programme consisted of bhajan performances by the association’s bhajan mandali."
+    }
+  },
+  "VisitsPage": {
+    "eyebrow": "Events",
+    "title": "Visits",
+    "intro": "The Kabir Association of Toronto has been involved in inviting and accommodating for eminent personalities from the Kabir Panth community worldwide. With the help of these influential figures, we have been able to spread our messages more effectively by organising satsangs, lectures and spiritual discourses which have been attended by the public. These personalities include:",
+    "drJDas": {
+      "name": "Dr. Jagessar Das",
+      "p1": "Dr. Jagessar Das of the Kabir Association of Canada (active 1984-2018), based in Vancouver had visited in the summer of 2010 to deliver lectures and spread the message of Kabir Saheb. A pubic lecture had been organised on the 18th of July, 2012 at the Franklin Horner Community Centre (Toronto, ON). The lectured opened by the lighting of the jyot (lamp) followed by the presentation of a lecture by Dr. Das himself as well as Mahants from the Association.",
+      "p2_1": "Dr. Das has also been involved with other comparable organizations helping them attain their goals. As a writer, Dr. Das has written countless essays on the teachings of Kabir Saheb. He has also translated, in English, various scriptures of Kabir Saheb, thus reaching out to the non-Hindi speaking community. In 2014, he had again visited for the launch of his book, The Brahm Nirupan of Kabir; a translation of the original Hindi Brahm Nirupan. The launch was held on Sunday, July 13th at the Viswanath Mandir, 713 Jane St. (Toronto, ON). To view his works, ",
+      "p2_2": ".",
+      "p3": "As of most recent, Dr. Das visited Toronto in September of 2018 to inaugurate the Kabir Centre, located at #38-1365 Mid-Way Blvd, Mississauga, ON L5T 2J5 (Canada).",
+      "viewWorks": "click here"
+    },
+    "hazurSaheb": {
+      "name": "Hazur Ardh Naam Saheb",
+      "p1": "Panth Shri Hazur Ardhnaam Saheb is a very prominent figure in the Kabirpanth community of India not to mention around the world in countries such as Mauritius, Trinidad and Fiji. He is recognised as the leader and head of the Kabir Panth movement based in Lahartara Dhaam, Varanasi (UP, India). He regularly travels across India, and to many other parts of the world, including Canada, to spread his message.",
+      "p2": "Having been graced by his visits, the association has organized satsangs and other events to celebrate the Kabir Panth movement. Visiting in 2010, 2012, 2015 and most recently August of 2017, Hazur Saheb is currently back in India where he continues his holy works of spreading the teachings of Kabir Saheb.",
+      "trinidadTitle": "Trinidad",
+      "trinidadText": "Preceding his recent visits to Canada (2015 and 2017), Hazur Saheb had visited Trinidad where he gave various lectures and sermons at the houses of local Kabir Panthis. To aid in the translation of his teachings (from Hindi to English), members of the association had traveled to Trinidad. Hazur Saheb was able to efficiently spread his message to the local community with the help of the Association’s President, Mht. Jaiparamhans Jaggessur who was accompanied by other satsangees from the association."
+    }
   }
 };
 
