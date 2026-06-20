@@ -155,6 +155,9 @@ export default function Navbar() {
                     <Link to="/library/prayers" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
                       {t.prayers || 'Prayers and Devotional Hymns'}
                     </Link>
+                    <Link to="/library/dr-j-das" onClick={() => setLibraryDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.drJDas || 'Dr. J. Das'}
+                    </Link>
                   </div>
                 </motion.div>
               )}
@@ -294,6 +297,7 @@ export default function Navbar() {
               <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
                 <Link to="/library/bhajans" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.bhajans || 'Bhajans'}</Link>
                 <Link to="/library/prayers" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.prayers || 'Prayers and Devotional Hymns'}</Link>
+                <Link to="/library/dr-j-das" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.drJDas || 'Dr. J. Das'}</Link>
               </div>
 
               <div className="navbar-mobile-divider" />

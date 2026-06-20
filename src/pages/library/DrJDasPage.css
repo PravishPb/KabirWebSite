@@ -1,0 +1,231 @@
+.drjdas-page {
+  padding-bottom: 5rem;
+}
+
+.drjdas-intro {
+  margin-top: 1.5rem;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.drjdas-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  gap: 3.5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.drjdas-portrait-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.drjdas-portrait-img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-image);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.drjdas-portrait-img:hover {
+  transform: scale(1.01);
+}
+
+.drjdas-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.drjdas-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.drjdas-bio p {
+  font-size: var(--text-regular);
+  color: var(--fg2);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.drjdas-contact-card {
+  background: var(--merino-lightest);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--tahiti-gold);
+  border-radius: var(--radius-card);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.drjdas-contact-title {
+  margin: 0 0 1.5rem 0;
+  font-family: var(--font-heading);
+  color: var(--tahiti-gold-darker);
+  font-size: var(--text-h5);
+}
+
+.drjdas-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.drjdas-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.drjdas-contact-item .contact-icon {
+  color: var(--tahiti-gold);
+  margin-top: 2px;
+}
+
+.drjdas-contact-item p {
+  margin: 0;
+  font-size: var(--text-regular);
+  color: var(--fg1);
+}
+
+.drjdas-contact-item a {
+  color: var(--tahiti-gold-dark);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.drjdas-contact-item a:hover {
+  color: var(--tahiti-gold-darkest);
+}
+
+.drjdas-works-section {
+  margin-top: 5rem;
+}
+
+.drjdas-section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  font-family: var(--font-heading);
+  color: var(--tahiti-gold-darker);
+}
+
+.drjdas-works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.drjdas-card {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drjdas-card-header {
+  margin-bottom: 0.85rem;
+}
+
+.drjdas-card-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  color: var(--tahiti-gold-darker);
+  font-size: var(--text-h5);
+}
+
+.drjdas-card-desc {
+  font-size: var(--text-regular);
+  color: var(--fg2);
+  line-height: 1.6;
+  margin: 0 0 1.75rem 0;
+}
+
+.drjdas-card-desc a.theme-link {
+  color: var(--tahiti-gold-dark);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.drjdas-card-desc a.theme-link:hover {
+  color: var(--tahiti-gold-darkest);
+}
+
+.drjdas-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.drjdas-card-sections {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.drjdas-sub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--tahiti-gold-lightest);
+  border: 1px solid var(--tahiti-gold-lighter);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  gap: 1rem;
+}
+
+.drjdas-sub-item span {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--tahiti-gold-darkest);
+}
+
+.sub-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-button);
+  font-size: var(--text-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--tahiti-gold);
+  color: var(--tahiti-gold-dark);
+  background: transparent;
+}
+
+.sub-pdf-btn:hover {
+  background: var(--tahiti-gold);
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .drjdas-works-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .drjdas-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .drjdas-contact-card {
+    order: -1;
+  }
+}

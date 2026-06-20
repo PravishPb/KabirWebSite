@@ -94,7 +94,8 @@ export default {
     "dropdownFooter": "Join us for weekly satsang",
     "dropdownCta": "Plan your visit",
     "bhajans": "Bhajans",
-    "prayers": "Prayers and Devotional Hymns"
+    "prayers": "Prayers and Devotional Hymns",
+    "drJDas": "Dr. J. Das"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -333,6 +334,85 @@ export default {
         "description": "This document contains a compilation of hymns called aaratees which are sung during the ceremonial offering of light (also known as aaratee). This document also includes vandanaas, hymns of praise and eulogy generally sung before and/or after the aaratee ceremony.",
         "pdfUrl": "Aaratee-and-Vandanaa-Sangrah.pdf",
         "pdfUrlEng": "Aaratee-and-Vandanaa-Sangrah-English.pdf"
+      }
+    }
+  },
+  "DrJDasPage": {
+    "eyebrow": "Library",
+    "title": "Dr. J. Das",
+    "subtitle": "Dr. Jagessar Das",
+    "role": "Pioneer of the Kabir Panth movement in the West",
+    "bioParagraphs": [
+      "Born in Guyana to Kabir Panthi parents, Dr. Jagessar Das moved to Canada in 1955 to study medicine. After graduating from the University of British Columbia Medical school with an M. D., he started his medical practice in 1963. His love for Satguru Kabir Saheb and his teachings never faded as he settled in Vancouver, B.C.",
+      "Dr. Das was inspired by Satguru Kabir Saheb’s teachings since he was a child. He has written and published several books in English on the philosophy and teachings of Satguru Kabir Saheb. He has also given a number of lectures and participated in various radio and TV programmes to spread awareness on the Kabir Panth faith. He has spared no efforts to give his time, money, and heart to this noble cause.",
+      "Dr. Das has been the president of the Guru Kabir Association of Canada (active 1984-2018), a past president of the Vancouver Chapter of National Indo-Canadian Council, and is a member of the Multifaith Leaders Fellowship. We salute Dr. Jagessar Das for his courage and exemplary commitment and for leaving an invaluable legacy to the world.",
+      "The Kabir Centre at 38-1365 Mid-Way Boulevard, Mississauga ON L5T 2J5 (Canada) was inaugurated by Dr. Jagessar Das on September 8, 2019."
+    ],
+    "emailLabel": "Email",
+    "worksTitle": "Works of Dr. J. Das",
+    "contactInfoTitle": "Contact Info",
+    "emailVal": "dasj@shaw.ca",
+    "downloadPdf": "Download PDF",
+    "viewHere": "View here",
+    "clickHere": "Click here",
+    "works": {
+      "religiousHorizons": {
+        "title": "Religious Horizons",
+        "desc": "\"Religious Horizons\" first aired on Rogers TV in 1995-1996. This 13-part series of interviews, produced by Dr. Jagessar Das of the Guru Kabir Association of Canada, explores the beliefs of twelve different world religions. This series is dedicated to all people interested in promoting interfaith harmony. View the full series <a href=\"https://kabirassociationoftoronto.org/religious-horizons/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>."
+      },
+      "sakhis": {
+        "title": "Sakhis of Guru Kabir",
+        "desc": "A compilation of Kabir's sakhis from the book “Kabir Sakhi – Spiritual Gems of Kabir” translated by Mahant Jagdish Das Shastri, edited by Dr. J. Das, and first published by the Guru Kabir Association of Canada in 1987. It was republished by the Kabir Ashram, Jamnagar, Gujarat in 1995 and 2001 (view <a href=\"https://kabirassociationoftoronto.org/sakhis/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>)."
+      },
+      "pictorial": {
+        "title": "Pictorial Glimpses into the Life of Satguru Kabir Saheb",
+        "desc": "A series of short stories on the life of Kabir Saheb prepared by Dr. Jagessar Das of the Guru Kabir Association of Canada. Stories are complete with pictures taken from The Life Story of Kabir Saheb, published by the Kabir Ashram (Jamnagar, India; view <a href=\"https://kabirassociationoftoronto.org/pictorial-glimpses/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>)."
+      },
+      "bhajanAmritam": {
+        "title": "Kabir Bhajan Amritam",
+        "desc": "A compilation of bhajans and other devotional songs commonly sung within Kabir Panth communities. Bhajans have been compiled and translated by Dr. J. Das (view <a href=\"/library/bhajans\" class=\"theme-link\">here</a>)."
+      },
+      "bookOfPrayers": {
+        "title": "Book of Prayers",
+        "desc": "A book of prayers and devotional hymns in both Devnagari and romanized Hindi along with English translations by Dr. Jagessar Das.",
+        "pdfUrl": "BookOfPrayers.pdf"
+      },
+      "bijak": {
+        "title": "Bijak of Kabir",
+        "desc": "Selections from the Bijak of Kabir translated by Dr. J. Das.",
+        "sections": [
+          { "title": "Ramainis", "pdfUrl": "Ramainis.pdf" },
+          { "title": "Shabds", "pdfUrl": "Shabdas.pdf" },
+          { "title": "Other Selections", "pdfUrl": "OtherSelections.pdf" }
+        ]
+      },
+      "booksSale": {
+        "title": "Books for Sale",
+        "desc": "Books are available for purchase (click <a href=\"https://kabirassociationoftoronto.org/books/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>)."
+      },
+      "poems": {
+        "title": "Poems of Kabir",
+        "desc": "A selection of some of the works of Kabir translated into English by Dr. J. Das.",
+        "pdfUrl": "Poems-of-Kabir.pdf"
+      },
+      "multimedia": {
+        "title": "Audio and Video Files",
+        "desc": "A set of audio and video files produced or published by the Guru Kabir Association of Canada including lectures, discussions, interviews, and singing (view <a href=\"https://kabirassociationoftoronto.org/audio-and-video-files/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"theme-link\">here</a>)."
+      },
+      "essays": {
+        "title": "Essays",
+        "desc": "A selection of essays published by the Kabir Association of Canada.",
+        "pdfUrl": "ESSAYS.pdf"
+      },
+      "otherReadings": {
+        "title": "Other Readings",
+        "desc": "A collection of other spiritual readings edited or translated by Dr. J. Das.",
+        "sections": [
+          { "title": "Bandagi Bichar", "pdfUrl": "BandagiBichar.pdf" },
+          { "title": "Book of Prayers", "pdfUrl": "BookOfPrayers.pdf" },
+          { "title": "Purnima Katha", "pdfUrl": "Purnima-Katha-Updated.pdf" },
+          { "title": "Selections from the Prakashmani Gita and Brahma Nirupan", "shortTitle": "Prakashmani Gita", "pdfUrl": "Selections-from-the-Prakashmani-Gita-and-Brahm-Nirupan.pdf" }
+        ]
       }
     }
   }

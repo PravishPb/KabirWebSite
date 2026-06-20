@@ -67,7 +67,7 @@ export default function PrayersPage() {
                 return (
                   <motion.div 
                     key={key} 
-                    className="prayer-card"
+                    className="card-container prayer-card"
                     layout="position"
                   >
                     <div className="prayer-card-header">

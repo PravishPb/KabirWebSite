@@ -211,6 +211,23 @@ img {
 .toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px); background: var(--neutral-darkest); color: #fff; padding: 12px 20px; border-radius: 999px; font-size: 14px; font-family: var(--font-body); opacity: 0; pointer-events: none; transition: all .3s ease; z-index: 1000; box-shadow: var(--shadow-md); }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* ─── Card Container ─────────────────────────────────────── */
+.card-container {
+  background: var(--color-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--tahiti-gold);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-container:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--tahiti-gold-dark);
+}
+
 /* --- Utility Classes --- */
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
