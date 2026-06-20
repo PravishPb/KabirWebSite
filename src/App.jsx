@@ -29,6 +29,7 @@ const PictorialGlimpsesPage = React.lazy(() => import('./pages/library/Pictorial
 const AudioVideoFilesPage = React.lazy(() => import('./pages/library/AudioVideoFilesPage'));
 const TransliterationPage = React.lazy(() => import('./pages/TransliterationPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
+const DivyaDrishtiPage = React.lazy(() => import('./pages/library/DivyaDrishtiPage'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -70,6 +71,7 @@ function PublicLayout() {
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/library/bhajans" element={<LibraryBhajans />} />
                 <Route path="/library/sakhis" element={<SakhisPage />} />
+                <Route path="/library/divya-drishti" element={<DivyaDrishtiPage />} />
                 <Route path="/library/prayers" element={<PrayersPage />} />
                 <Route path="/library/dr-j-das" element={<DrJDasPage />} />
                 <Route path="/library/religious-horizons" element={<ReligiousHorizonsPage />} />

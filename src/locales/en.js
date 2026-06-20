@@ -96,7 +96,8 @@ export default {
     "bhajans": "Bhajans",
     "prayers": "Prayers and Devotional Hymns",
     "drJDas": "Dr. J. Das",
-    "sakhis": "Sakhis"
+    "sakhis": "Sakhis",
+    "divyaDrishti": "Divya Drishti"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -490,6 +491,14 @@ export default {
     "toastCopied": "Sakhi copied to clipboard!",
     "detailsEmpty": "Select a Sakhi from the table of contents to start reading.",
     "introText": "The following sakhis are from the book “Kabir Sakhi – Spiritual Gems of Kabir” translated by Mahant Jagdish Das Shastri, edited by Dr. J. Das, and first published by the Kabir Association of Canada in 1987. It was republished by the Kabir Ashram, Jamnagar, Gujarat in 1995 and 2001."
+  },
+  "DivyaDrishtiPage": {
+    "eyebrow": "Library",
+    "title": "Divya Drishti",
+    "subtitle": "Annual Newsletter",
+    "description": "Divya Drishti is the annual newsletter issued by the Kabir Association of Toronto Inc. encompassing all the activities and major achievements of the Association over the year. It is a look into the main events hosted or attended by the Association offering an overview of the Association’s yearlong accomplishments. The newsletter also features articles authored by the Association’s board members (including President, Vice-President and other members) and regular satsangees, as well as pictures of events and activities, and much more. View our yearly newsletters below.",
+    "viewNewsletter": "View Newsletter",
+    "newsletterTitle": "Divya Drishti"
   }
 };
 
