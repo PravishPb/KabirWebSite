@@ -108,7 +108,10 @@ export default {
     "pictorialGlimpses": "Pictorial Glimpses",
     "chowka": "Chowka",
     "performances": "Performances",
-    "visits": "Visits"
+    "visits": "Visits",
+    "contactUs": "Contact us",
+    "contactInfo": "Contact Information",
+    "kabirCenter": "Kabir Center"
   },
   "Pillars": {
     "eyebrow": "Foundation",
@@ -166,6 +169,21 @@ export default {
       "desc": "Please support our Association in promoting the spiritual teachings of Kabir Saheb. The Kabir Association of Toronto Inc. is registered with the Canada Revenue Agency (registration number: 825253719RR0001); tax receipts will be issued to donors for their donations. 100% of donation monies go towards funding the activities of the Association.",
       "button": "Make your payments with PayPal. It is free, secure, effective."
     }
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "intro": "Contact us for more information through any of the following:",
+    "email": "Email",
+    "emailDrDas": "Email (Dr. J. Das)",
+    "phone": "Ph# (Jaiparam Jaggessur)",
+    "address": "Mailing Address",
+    "nameLabel": "Your Name (required)",
+    "emailLabel": "Your Email (required)",
+    "subjectLabel": "Subject",
+    "messageLabel": "Your Message",
+    "sendButton": "Send",
+    "successMessage": "Thank you! Your message has been sent successfully.",
+    "sending": "Sending..."
   },
   "BlogPage": {
     "eyebrow": "Writings",

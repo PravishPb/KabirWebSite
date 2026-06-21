@@ -33,6 +33,7 @@ export default function Navbar() {
   const [libraryDropdownOpen, setLibraryDropdownOpen] = useState(false);
   const [satguruDropdownOpen, setSatguruDropdownOpen] = useState(false);
   const [eventsDropdownOpen, setEventsDropdownOpen] = useState(false);
+  const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
   const [multimediaOpen, setMultimediaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileMultimediaOpen, setMobileMultimediaOpen] = useState(false);
@@ -41,6 +42,7 @@ export default function Navbar() {
   const libraryDropdownRef = useRef(null);
   const satguruDropdownRef = useRef(null);
   const eventsDropdownRef = useRef(null);
+  const contactDropdownRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -59,6 +61,9 @@ export default function Navbar() {
       }
       if (eventsDropdownRef.current && !eventsDropdownRef.current.contains(e.target)) {
         setEventsDropdownOpen(false);
+      }
+      if (contactDropdownRef.current && !contactDropdownRef.current.contains(e.target)) {
+        setContactDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -313,6 +318,49 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
+          {/* Contact us Dropdown */}
+          <div ref={contactDropdownRef} className="relative">
+            <button
+              onClick={() => setContactDropdownOpen((v) => !v)}
+              className="navbar-dropdown-btn"
+              aria-expanded={contactDropdownOpen}
+              aria-haspopup="true"
+            >
+              {t.contactUs || 'Contact us'}
+              <svg 
+                width="12" 
+                height="12" 
+                viewBox="0 0 12 12" 
+                fill="currentColor" 
+                className="navbar-dropdown-icon"
+                style={{ transform: contactDropdownOpen ? 'rotate(180deg)' : 'rotate(0)' }}
+              >
+                <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {contactDropdownOpen && (
+                <motion.div
+                  variants={dropdownVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="navbar-dropdown-menu left"
+                >
+                  <div style={{ padding: '0.5rem' }}>
+                    <Link to="/contact" onClick={() => setContactDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.contactInfo || 'Contact Information'}
+                    </Link>
+                    <Link to="/kabircenter" onClick={() => setContactDropdownOpen(false)} className="navbar-dropdown-link">
+                      {t.kabirCenter || 'Kabir Center'}
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* More Dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
@@ -491,6 +539,12 @@ export default function Navbar() {
                 <Link to="/events/chowka" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.chowka || 'Chowka'}</Link>
                 <Link to="/events/performances" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.performances || 'Performances'}</Link>
                 <Link to="/events/visits" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.visits || 'Visits'}</Link>
+              </div>
+
+              <div className="navbar-mobile-link" style={{ paddingBottom: '0.25rem' }}>{t.contactUs || 'Contact us'}</div>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
+                <Link to="/contact" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.contactInfo || 'Contact Information'}</Link>
+                <Link to="/kabircenter" onClick={() => setMobileOpen(false)} className="navbar-mobile-link navbar-mobile-sublink">{t.kabirCenter || 'Kabir Center'}</Link>
               </div>
 
               <div className="navbar-mobile-divider" />
