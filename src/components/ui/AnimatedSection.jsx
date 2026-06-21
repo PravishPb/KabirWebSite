@@ -21,7 +21,7 @@ const staggerContainer = {
   },
 };
 
-export function AnimatedSection({ children, className = '', style = {}, id }) {
+export function AnimatedSection({ children, className = '', style = {}, id, viewport }) {
   return (
     <motion.div
       id={id}
@@ -29,7 +29,7 @@ export function AnimatedSection({ children, className = '', style = {}, id }) {
       style={style}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 'some', ...viewport }}
       variants={fadeUp}
       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
@@ -38,14 +38,14 @@ export function AnimatedSection({ children, className = '', style = {}, id }) {
   );
 }
 
-export function AnimatedFadeIn({ children, className = '', style = {}, delay = 0 }) {
+export function AnimatedFadeIn({ children, className = '', style = {}, delay = 0, viewport }) {
   return (
     <motion.div
       className={className}
       style={style}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 'some', ...viewport }}
       variants={fadeIn}
       transition={{ duration: 0.8, ease: 'easeOut', delay }}
     >
@@ -54,14 +54,14 @@ export function AnimatedFadeIn({ children, className = '', style = {}, delay = 0
   );
 }
 
-export function StaggerContainer({ children, className = '', style = {} }) {
+export function StaggerContainer({ children, className = '', style = {}, viewport }) {
   return (
     <motion.div
       className={className}
       style={style}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 'some', ...viewport }}
       variants={staggerContainer}
     >
       {children}
