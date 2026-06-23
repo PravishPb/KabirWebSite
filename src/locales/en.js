@@ -121,15 +121,15 @@ export default {
     "pillars": [
       {
         "title": "Satsang",
-        "description": "To keep the company of the truthful. In the gathering of sincere seekers, the teachings come alive and the heart is drawn toward what is real."
+        "description": "Satya and sangati are the root words which combine to form satsang. Literally, these two words mean truth and company, but the deeper significance of satsang is to be in the company of saintly people to gain spiritual wisdom; to be in good company. To attain salvation, it is important that we have the right knowledge and follow the right path. This can only be obtained by being in satsang."
       },
       {
         "title": "Sumiran",
-        "description": "The inner remembrance of the divine. Through quiet devotion we loosen our grip on the outer world and turn, with love, toward the Higher Self."
+        "description": "The only way to connect to God is to embark on an inner journey which detaches us from the world and brings us closer to the Higher Self. Kabir prescribed sahaj samaadhi as the key to unlock the door to God. This process entails surrendering oneself totally, with unconditional love, to the will of God and recognising that whatever we experience in this world is maya (illusion)."
       },
       {
         "title": "Sewa",
-        "description": "Selfless service to all beings. Seeing the divine in everyone, we care for one another and offer ourselves in love, asking nothing in return."
+        "description": "Kabir promoted love as being the religion of mankind. He said that, if we see God in all living beings, then we will realise love and care as being our true nature. Helping the needy, caring for everyone, loving one and all alike… these are our primary duties. By performing sewa (service) we are able to carry out these duties and truly make the world a better place for ourselves and others."
       }
     ]
   },

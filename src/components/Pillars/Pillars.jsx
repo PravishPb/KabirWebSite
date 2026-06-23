@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../ui';
 import { Button, Eyebrow } from '../ui';
 import { useApp } from '../../context/AppContext';
@@ -14,6 +15,7 @@ const PILLAR_IMAGES = [
 export default function Pillars() {
   const { lang, toast } = useApp();
   const t = useTranslation('Pillars');
+  const navigate = useNavigate();
   
   return (
     <section className="scheme-3 pillars-section">
@@ -60,7 +62,7 @@ export default function Pillars() {
 
           {/* Button */}
           <div className="pillars-btn-wrapper">
-            <Button className="pillars-btn">
+            <Button className="pillars-btn" onClick={() => navigate('/satgurukabirsaheb')}>
               {t.button}
             </Button>
           </div>

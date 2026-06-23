@@ -138,7 +138,7 @@ export default function BlogSection() {
           {/* Button */}
           <div className="blog-btn-wrapper">
             <Button
-              onClick={() => toast && toast(t.allWritings)}
+              onClick={() => navigate('/blog')}
               className="blog-btn"
             >
               {t.allWritings}
