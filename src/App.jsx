@@ -10,10 +10,12 @@ import './styles/kit.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-import LoginPage from './pages/LoginPage';
-import AdminLayout from './pages/admin/AdminLayout';
-import AdminBlogs from './pages/admin/AdminBlogs';
 import ProtectedRoute from './components/ProtectedRoute';
+
+// Lazy load admin pages for security and performance
+const LoginPage = React.lazy(() => import('./pages/LoginPage'));
+const AdminLayout = React.lazy(() => import('./pages/admin/AdminLayout'));
+const AdminBlogs = React.lazy(() => import('./pages/admin/AdminBlogs'));
 
 // Lazy load pages for performance optimization
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -112,19 +114,21 @@ export default function App() {
   return (
     <AppProvider>
       <BrowserRouter>
-        <Routes>
-          {/* Public Routes with Navbar/Footer */}
-          <Route path="/*" element={<PublicLayout />} />
-          
-          {/* Admin Routes without public Navbar/Footer */}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/admin" element={<ProtectedRoute />}>
-            <Route element={<AdminLayout />}>
-              <Route index element={<Navigate to="blogs" replace />} />
-              <Route path="blogs" element={<AdminBlogs />} />
+        <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>}>
+          <Routes>
+            {/* Public Routes with Navbar/Footer */}
+            <Route path="/*" element={<PublicLayout />} />
+            
+            {/* Admin Routes without public Navbar/Footer */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin" element={<ProtectedRoute />}>
+              <Route element={<AdminLayout />}>
+                <Route index element={<Navigate to="blogs" replace />} />
+                <Route path="blogs" element={<AdminBlogs />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </AppProvider>
   );

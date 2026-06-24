@@ -134,3 +134,280 @@
   padding: 40px;
   overflow-y: auto;
 }
+
+/* Sidebar navigation button reset */
+button.admin-nav-item {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.admin-sidebar-header-icon {
+  color: var(--tahiti-gold);
+}
+
+.admin-title-bold {
+  font-weight: 600;
+}
+
+.admin-user-email {
+  font-size: 14px;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* MFA Card Settings Styling */
+.admin-mfa-card {
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+}
+
+.admin-mfa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.admin-mfa-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--tahiti-gold-darker);
+}
+
+.admin-mfa-title-icon {
+  color: var(--tahiti-gold);
+}
+
+.admin-mfa-close-btn {
+  background: none;
+  border: none;
+  color: var(--fg3);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  transition: color 0.2s ease;
+}
+
+.admin-mfa-close-btn:hover {
+  color: var(--tahiti-gold);
+}
+
+.admin-mfa-subtitle {
+  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.admin-mfa-setup-title {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.admin-mfa-instruction {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.admin-mfa-qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: fit-content;
+  margin: 0 auto 24px;
+  border: 1px solid var(--border);
+}
+
+.admin-mfa-qr-img {
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+
+.admin-mfa-qr-label {
+  font-size: 0.8rem;
+  color: var(--neutral-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.admin-mfa-secret-code {
+  font-size: 0.85rem;
+  background: var(--neutral-lightest);
+  padding: 4px 8px;
+  border-radius: 4px;
+  word-break: break-all;
+  color: var(--neutral-darker);
+  display: inline-block;
+}
+
+.admin-mfa-form-field {
+  margin-bottom: 20px;
+}
+
+.admin-mfa-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fg2);
+}
+
+.admin-mfa-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--fg1);
+  font-size: 1.25rem;
+  letter-spacing: 0.5em;
+  text-align: center;
+  outline: none;
+  font-family: var(--font-body);
+  transition: border-color 0.2s ease;
+}
+
+.admin-mfa-input:focus {
+  border-color: var(--tahiti-gold);
+}
+
+.admin-mfa-btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-mfa-btn-flex {
+  flex: 1;
+  justify-content: center;
+}
+
+.admin-mfa-status-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.admin-mfa-status-box.active {
+  background: var(--merino-light);
+}
+
+.admin-mfa-status-box.inactive {
+  background: var(--neutral-lightest);
+}
+
+.admin-mfa-status-icon {
+  color: var(--tahiti-gold);
+}
+
+.admin-mfa-status-icon.inactive {
+  color: var(--neutral);
+}
+
+.admin-mfa-status-title {
+  color: var(--tahiti-gold-darker);
+  display: block;
+}
+
+.admin-mfa-status-title.inactive {
+  display: block;
+}
+
+.admin-mfa-status-desc {
+  font-size: 0.875rem;
+  color: var(--fg2);
+}
+
+.admin-mfa-confirm-box {
+  background: var(--merino-light);
+  border: 1px dashed var(--border);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.admin-mfa-confirm-title {
+  color: var(--tahiti-gold-darker);
+  margin-bottom: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-mfa-confirm-desc {
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.admin-mfa-disable-btn {
+  border-color: var(--tahiti-gold);
+  color: var(--tahiti-gold-dark);
+}
+
+.admin-mfa-disable-btn:hover {
+  background: color-mix(in srgb, var(--tahiti-gold), transparent 90%);
+}
+
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.admin-lang-toggle {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--ink-20);
+}
+
+.admin-lang-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  color: var(--fg2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+}
+
+.admin-lang-btn.active {
+  background: var(--tahiti-gold);
+  color: #fff;
+}
+
+.admin-lang-btn.inactive {
+  background: transparent;
+  color: var(--fg3);
+}
+
+.admin-lang-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+

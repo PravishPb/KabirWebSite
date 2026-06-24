@@ -3,9 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useBlogs } from '../../hooks/useBlogs';
 import { useApp } from '../../context/AppContext';
 import { Button, Icon, Badge } from '../../components/ui';
+import { useTranslation } from '../../locales/useTranslation';
+import './AdminBlogs.css';
 
 export default function AdminBlogs() {
   const { toast } = useApp();
+  const t = useTranslation('AdminBlogs');
   const { blogs, loading, addBlog, updateBlog, deleteBlog } = useBlogs();
   
   const [modalOpen, setModalOpen] = useState(false);
@@ -40,8 +43,8 @@ export default function AdminBlogs() {
         category: formData.category,
         excerpt: formData.excerpt
       });
-      if (!error) toast('Blog updated successfully');
-      else toast('Error updating blog');
+      if (!error) toast(t.toastUpdateSuccess);
+      else toast(t.toastUpdateError);
     } else {
       const { error } = await addBlog({
         title: formData.title,
@@ -50,8 +53,8 @@ export default function AdminBlogs() {
         content: '<p>New blog content</p>',
         slug: formData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')
       });
-      if (!error) toast('Blog created successfully');
-      else toast('Error creating blog');
+      if (!error) toast(t.toastCreateSuccess);
+      else toast(t.toastCreateError);
     }
     closeModal();
   };
@@ -59,56 +62,58 @@ export default function AdminBlogs() {
   const confirmDelete = async () => {
     if (deleteConfirmId) {
       const { error } = await deleteBlog(deleteConfirmId);
-      if (!error) toast('Blog deleted successfully');
-      else toast('Error deleting blog');
+      if (!error) toast(t.toastDeleteSuccess);
+      else toast(t.toastDeleteError);
       setDeleteConfirmId(null);
     }
   };
 
   return (
-    <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
-        <div>
-          <h1 className="h4" style={{ marginBottom: '8px' }}>Blog Management</h1>
-          <p className="muted2">Create, edit, and delete public blog posts.</p>
+    <div className="admin-blogs-container">
+      <div className="admin-header-row">
+        <div className="admin-header-text">
+          <h1 className="h4">{t.title}</h1>
+          <p className="muted2">{t.desc}</p>
         </div>
         <Button className="btn btn-default" onClick={() => handleOpenModal()}>
-          <Icon name="add" /> Create Blog
+          <Icon name="add" /> {t.createBlogBtn}
         </Button>
       </div>
 
-      <div style={{ background: 'var(--neutral-darkest)', border: '1px solid var(--ink-20)', borderRadius: '12px', overflow: 'hidden' }}>
+      <div className="admin-table-wrapper">
         {loading ? (
-          <div style={{ padding: '40px', textAlign: 'center', color: 'var(--fg2)' }}>Loading blogs...</div>
+          <div className="admin-table-loading">{t.loading}</div>
         ) : blogs.length === 0 ? (
-          <div style={{ padding: '40px', textAlign: 'center', color: 'var(--fg2)' }}>No blogs found. Create one to get started.</div>
+          <div className="admin-table-empty">{t.emptyMessage}</div>
         ) : (
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <table className="admin-table">
             <thead>
-              <tr style={{ borderBottom: '1px solid var(--ink-20)', backgroundColor: 'rgba(255,255,255,0.02)' }}>
-                <th style={{ padding: '16px 24px', fontWeight: 600, color: 'var(--fg2)', fontSize: '0.875rem' }}>Title</th>
-                <th style={{ padding: '16px 24px', fontWeight: 600, color: 'var(--fg2)', fontSize: '0.875rem' }}>Category</th>
-                <th style={{ padding: '16px 24px', fontWeight: 600, color: 'var(--fg2)', fontSize: '0.875rem', textAlign: 'right' }}>Actions</th>
+              <tr>
+                <th>{t.thTitle}</th>
+                <th>{t.thCategory}</th>
+                <th className="admin-actions-cell">{t.thActions}</th>
               </tr>
             </thead>
             <tbody>
               {blogs.map(blog => (
-                <tr key={blog.id} style={{ borderBottom: '1px solid var(--ink-20)', transition: 'background 0.2s' }}>
-                  <td style={{ padding: '16px 24px', fontWeight: 500 }}>{blog.title}</td>
-                  <td style={{ padding: '16px 24px' }}>
-                    {blog.category ? <Badge>{blog.category}</Badge> : <span style={{color: 'var(--fg3)'}}>—</span>}
+                <tr key={blog.id}>
+                  <td className="admin-table-title">{blog.title}</td>
+                  <td>
+                    {blog.category ? <Badge>{blog.category}</Badge> : <span className="muted2">—</span>}
                   </td>
-                  <td style={{ padding: '16px 24px', textAlign: 'right' }}>
-                    <div style={{ display: 'inline-flex', gap: '8px' }}>
+                  <td className="admin-actions-cell">
+                    <div className="admin-actions-group">
                       <button 
                         onClick={() => handleOpenModal(blog)}
-                        style={{ background: 'transparent', border: 0, color: 'var(--tahiti-gold)', cursor: 'pointer', padding: '4px' }}
+                        className="admin-icon-btn admin-edit-btn"
+                        title={t.modalEditTitle}
                       >
                         <Icon name="edit" size={20} />
                       </button>
                       <button 
                         onClick={() => setDeleteConfirmId(blog.id)}
-                        style={{ background: 'transparent', border: 0, color: '#ff4d4f', cursor: 'pointer', padding: '4px' }}
+                        className="admin-icon-btn admin-delete-btn"
+                        title={t.modalDeleteTitle}
                       >
                         <Icon name="delete" size={20} />
                       </button>
@@ -121,45 +126,56 @@ export default function AdminBlogs() {
         )}
       </div>
 
-      {/* Reusing the generic modal styles from BlogPage.css for now, or creating inline for simplicity */}
+      {/* Blog Create / Edit Modal */}
       <AnimatePresence>
         {modalOpen && (
           <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="admin-modal-overlay"
             onClick={closeModal}
           >
             <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              style={{ background: 'var(--neutral-darkest)', width: '100%', maxWidth: '600px', borderRadius: '16px', padding: '32px', border: '1px solid var(--ink-20)' }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              className="admin-modal-card"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="h5" style={{ marginBottom: '24px' }}>{editingId ? 'Edit Blog' : 'Create Blog'}</h2>
-              <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.875rem', fontWeight: 500, color: 'var(--fg2)' }}>Title</label>
+              <h2 className="h5 admin-modal-title">{editingId ? t.modalEditTitle : t.modalCreateTitle}</h2>
+              <form onSubmit={handleSave} className="admin-form">
+                <div className="admin-form-group">
+                  <label className="admin-form-label">{t.labelTitle}</label>
                   <input 
-                    type="text" required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})}
-                    style={{ width: '100%', padding: '12px 16px', background: 'transparent', border: '1px solid var(--ink-20)', borderRadius: '8px', color: '#fff', fontSize: '1rem', outline: 'none' }}
+                    type="text" 
+                    required 
+                    className="admin-form-input"
+                    value={formData.title} 
+                    onChange={e => setFormData({...formData, title: e.target.value})}
                   />
                 </div>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.875rem', fontWeight: 500, color: 'var(--fg2)' }}>Category</label>
+                <div className="admin-form-group">
+                  <label className="admin-form-label">{t.labelCategory}</label>
                   <input 
-                    type="text" value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}
-                    style={{ width: '100%', padding: '12px 16px', background: 'transparent', border: '1px solid var(--ink-20)', borderRadius: '8px', color: '#fff', fontSize: '1rem', outline: 'none' }}
+                    type="text" 
+                    className="admin-form-input"
+                    value={formData.category} 
+                    onChange={e => setFormData({...formData, category: e.target.value})}
                   />
                 </div>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.875rem', fontWeight: 500, color: 'var(--fg2)' }}>Excerpt</label>
+                <div className="admin-form-group">
+                  <label className="admin-form-label">{t.labelExcerpt}</label>
                   <textarea 
-                    required value={formData.excerpt} onChange={e => setFormData({...formData, excerpt: e.target.value})}
-                    style={{ width: '100%', padding: '12px 16px', background: 'transparent', border: '1px solid var(--ink-20)', borderRadius: '8px', color: '#fff', fontSize: '1rem', outline: 'none', minHeight: '120px', resize: 'vertical' }}
+                    required 
+                    className="admin-form-textarea"
+                    value={formData.excerpt} 
+                    onChange={e => setFormData({...formData, excerpt: e.target.value})}
                   />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginTop: '12px' }}>
-                  <Button type="button" className="btn btn-secondary" onClick={closeModal}>Cancel</Button>
-                  <Button type="submit" className="btn btn-default">{editingId ? 'Save Changes' : 'Create Blog'}</Button>
+                <div className="admin-form-actions">
+                  <Button type="button" className="btn btn-secondary" onClick={closeModal}>{t.btnCancel}</Button>
+                  <Button type="submit" className="btn btn-default">{editingId ? t.btnSaveChanges : t.btnCreateBlog}</Button>
                 </div>
               </form>
             </motion.div>
@@ -167,25 +183,31 @@ export default function AdminBlogs() {
         )}
       </AnimatePresence>
 
-      {/* Delete Modal */}
+      {/* Delete Confirmation Modal */}
       <AnimatePresence>
         {deleteConfirmId && (
           <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="admin-modal-overlay"
             onClick={() => setDeleteConfirmId(null)}
           >
             <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              style={{ background: 'var(--neutral-darkest)', width: '100%', maxWidth: '400px', borderRadius: '16px', padding: '32px', border: '1px solid var(--ink-20)', textAlign: 'center' }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              className="admin-modal-card delete-confirm"
               onClick={(e) => e.stopPropagation()}
             >
-              <div style={{ color: '#ff4d4f', marginBottom: '16px' }}><Icon name="delete" size={48} /></div>
-              <h2 className="h5" style={{ marginBottom: '12px' }}>Delete Blog</h2>
-              <p className="muted2" style={{ marginBottom: '32px' }}>Are you sure you want to delete this blog? This action cannot be undone.</p>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '12px' }}>
-                <Button type="button" className="btn btn-secondary" onClick={() => setDeleteConfirmId(null)}>Cancel</Button>
-                <Button type="button" style={{ background: '#ff4d4f', color: '#fff' }} className="btn" onClick={confirmDelete}>Delete</Button>
+              <div className="admin-delete-icon-wrapper">
+                <Icon name="delete" size={48} />
+              </div>
+              <h2 className="h5 admin-delete-title">{t.modalDeleteTitle}</h2>
+              <p className="muted2 admin-delete-desc">{t.modalDeleteDesc}</p>
+              <div className="admin-delete-actions">
+                <Button type="button" className="btn btn-secondary" onClick={() => setDeleteConfirmId(null)}>{t.btnCancel}</Button>
+                <Button type="button" className="btn admin-delete-confirm-btn" onClick={confirmDelete}>{t.btnDelete}</Button>
               </div>
             </motion.div>
           </motion.div>
