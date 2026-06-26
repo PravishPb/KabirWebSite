@@ -1,6 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection } from '../ui';
-import { Button, Eyebrow, ChevronLink } from '../ui';
+import { Button, Eyebrow } from '../ui';
 import { useApp } from '../../context/AppContext';
 import { useTranslation } from '../../locales/useTranslation';
 import './RitualFeature.css';
@@ -8,6 +9,7 @@ import './RitualFeature.css';
 export default function RitualFeature() {
   const { lang, toast } = useApp();
   const t = useTranslation('RitualFeature');
+  const navigate = useNavigate();
   
   return (
     <section className="scheme-2 ritual-section">
@@ -32,12 +34,11 @@ export default function RitualFeature() {
 
           <div className="ritual-actions">
             <Button
-              onClick={() => toast && toast(t.learn)}
+              onClick={() => navigate('/teachings')}
               className="ritual-btn"
             >
               {t.learn}
             </Button>
-            <ChevronLink to="/teachings">{t.more}</ChevronLink>
           </div>
         </div>
       </AnimatedSection>

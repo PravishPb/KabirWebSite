@@ -1,6 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection } from '../ui';
-import { Button, Eyebrow, ChevronLink } from '../ui';
+import { Button, Eyebrow } from '../ui';
 import { useApp } from '../../context/AppContext';
 import { useTranslation } from '../../locales/useTranslation';
 import './QuoteSection.css';
@@ -8,6 +9,7 @@ import './QuoteSection.css';
 export default function QuoteSection() {
   const { lang, toast } = useApp();
   const t = useTranslation('QuoteSection');
+  const navigate = useNavigate();
   
   return (
     <section
@@ -27,10 +29,9 @@ export default function QuoteSection() {
           </blockquote>
 
           <div className="quote-buttons">
-            <Button className="quote-btn">
-              {t.breathe}
+            <Button className="quote-btn" onClick={() => navigate('/teachings')}>
+              {t.more}
             </Button>
-            <ChevronLink to="/teachings">{t.more}</ChevronLink>
           </div>
         </div>
       </AnimatedSection>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../ui';
 import { Button, Eyebrow } from '../ui';
 import { useApp } from '../../context/AppContext';
@@ -8,6 +9,7 @@ import './WelcomeHeader.css';
 export default function WelcomeHeader() {
   const { lang, toast } = useApp();
   const t = useTranslation('WelcomeHeader');
+  const navigate = useNavigate();
   
   return (
     <section className="scheme-1 welcome-section">
@@ -40,16 +42,10 @@ export default function WelcomeHeader() {
                 </p>
                 <div className="welcome-btn-wrapper">
                   <Button
-                    onClick={() => toast && toast(t.learn)}
+                    onClick={() => navigate('/about')}
                     className="welcome-btn-primary"
                   >
                     {t.learn}
-                  </Button>
-                  <Button
-                    onClick={() => toast && toast(t.explore)}
-                    className="welcome-btn-secondary"
-                  >
-                    {t.explore}
                   </Button>
                 </div>
               </div>

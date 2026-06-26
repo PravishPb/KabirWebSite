@@ -2,13 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Icon from './Icon';
 
-export default function Button({ variant = 'default', children, iconRight, onClick, title }) {
-  const cls = {
+export default function Button({ variant = 'default', children, iconRight, onClick, title, className = '' }) {
+  const baseCls = {
     default: 'btn btn-default',
     alternate: 'btn btn-alt',
     secondary: 'btn btn-secondary',
     link: 'btn btn-link',
   }[variant] || 'btn btn-default';
+
+  const cls = `${baseCls} ${className}`.trim();
 
   return (
     <motion.button

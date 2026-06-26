@@ -185,6 +185,11 @@ export default {
     "successMessage": "Thank you! Your message has been sent successfully.",
     "sending": "Sending..."
   },
+  "EventsPage": {
+    "eyebrow": "Events",
+    "title": "Events and Gatherings",
+    "intro": "Join us for our regular congregations, celebrations, and community programs."
+  },
   "BlogPage": {
     "eyebrow": "Writings",
     "h1": "Sermons and reflections",

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection, StaggerContainer, StaggerItem } from '../ui';
 import { Button, Eyebrow } from '../ui';
 import { useApp } from '../../context/AppContext';
@@ -14,6 +15,7 @@ const GATHERING_IMAGES = [
 export default function Gathering() {
   const { lang, toast } = useApp();
   const t = useTranslation('Gathering');
+  const navigate = useNavigate();
   
   return (
     <section className="scheme-4 gathering-section">
@@ -60,7 +62,7 @@ export default function Gathering() {
 
           {/* Button */}
           <div className="gathering-btn-wrapper">
-            <Button className="gathering-btn">
+            <Button className="gathering-btn" onClick={() => navigate('/events')}>
               {t.button}
             </Button>
           </div>
