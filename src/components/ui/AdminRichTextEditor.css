@@ -1,0 +1,277 @@
+/* ============================================================
+   AdminRichTextEditor.css — Premium WYSIWYG Styling
+   ============================================================ */
+
+.admin-rich-text-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rte--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ─── Editor Wrapper ─────────────────────────────────────── */
+
+.rte-editor-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input, 8px);
+  overflow: hidden;
+  background: var(--surface);
+  transition: border-color 0.2s ease;
+}
+
+.rte-editor-wrap:focus-within {
+  border-color: var(--tahiti-gold);
+  box-shadow: 0 0 0 3px rgba(var(--tahiti-gold-rgb, 218, 145, 51), 0.15);
+}
+
+/* ─── Toolbar ────────────────────────────────────────────── */
+
+.rte-toolbar {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 4px 8px;
+  gap: 2px;
+}
+
+.rte-toolbar-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+/* ─── Toolbar Buttons ────────────────────────────────────── */
+
+.rte-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fg2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.rte-toolbar-btn:hover {
+  background: var(--bg-hover, rgba(128, 128, 128, 0.12));
+  color: var(--fg1);
+}
+
+.rte-toolbar-btn--active {
+  background: var(--tahiti-gold-lightest, rgba(218, 145, 51, 0.15));
+  color: var(--tahiti-gold);
+}
+
+.rte-toolbar-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── Toolbar Selects ────────────────────────────────────── */
+
+.rte-toolbar-select {
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fg1);
+  font-size: 13px;
+  font-family: var(--font-body);
+  padding: 0 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  outline: none;
+  -webkit-appearance: auto;
+}
+
+.rte-toolbar-select:hover {
+  background: var(--bg-hover, rgba(128, 128, 128, 0.12));
+  border-color: var(--border);
+}
+
+.rte-toolbar-select:focus {
+  border-color: var(--tahiti-gold);
+}
+
+.rte-font-family-select {
+  width: 160px;
+  max-width: 160px;
+}
+
+.rte-font-size-select {
+  width: 72px;
+}
+
+.rte-heading-select {
+  width: 120px;
+}
+
+/* ─── Toolbar Divider ────────────────────────────────────── */
+
+.rte-toolbar-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--border);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+/* ─── Color Picker ───────────────────────────────────────── */
+
+.rte-color-picker-wrap {
+  position: relative;
+}
+
+.rte-color-trigger {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 3px 0 0 0;
+  gap: 0;
+}
+
+.rte-color-indicator {
+  width: 16px;
+  height: 3px;
+  border-radius: 1px;
+  display: block;
+  margin-top: -2px;
+}
+
+.rte-color-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  min-width: 230px;
+  animation: rte-dropdown-in 0.15s ease;
+}
+
+@keyframes rte-dropdown-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rte-color-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+}
+
+.rte-color-swatch {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  padding: 0;
+}
+
+.rte-color-swatch:hover {
+  transform: scale(1.25);
+  z-index: 2;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.rte-color-swatch--active {
+  outline: 2px solid var(--tahiti-gold);
+  outline-offset: 1px;
+}
+
+.rte-color-reset {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px 0;
+  border: none;
+  border-top: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg2);
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.15s ease;
+}
+
+.rte-color-reset:hover {
+  color: var(--tahiti-gold);
+}
+
+/* ─── Editor Content Area ────────────────────────────────── */
+
+.rte-content {
+  min-height: 250px;
+}
+
+.rte-content .tiptap {
+  padding: 16px 20px;
+  min-height: 250px;
+  outline: none;
+  color: var(--fg1);
+  font-family: var(--font-body);
+  font-size: var(--text-regular, 16px);
+  line-height: var(--leading-body, 1.7);
+}
+
+.rte-content .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--fg3);
+  opacity: 0.5;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Heading styles inside editor */
+.rte-content .tiptap h1 { font-size: 2em; font-weight: 700; margin: 0.67em 0; }
+.rte-content .tiptap h2 { font-size: 1.5em; font-weight: 600; margin: 0.75em 0; }
+.rte-content .tiptap h3 { font-size: 1.17em; font-weight: 600; margin: 0.83em 0; }
+.rte-content .tiptap h4 { font-size: 1em; font-weight: 600; margin: 1em 0; }
+
+/* Lists */
+.rte-content .tiptap ul,
+.rte-content .tiptap ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.rte-content .tiptap li { margin: 0.25em 0; }
+
+/* Links */
+.rte-content .tiptap a {
+  color: var(--tahiti-gold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Highlight */
+.rte-content .tiptap mark {
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .rte-font-family-select { width: 120px; }
+  .rte-heading-select { width: 100px; }
+  .rte-toolbar { padding: 4px; }
+}

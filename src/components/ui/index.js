@@ -5,4 +5,6 @@ export { default as Eyebrow } from './Eyebrow';
 export { default as ChevronLink } from './ChevronLink';
 export { default as AsyncImage } from './AsyncImage';
 export { default as PlaceholderImg } from './PlaceholderImg';
+export { default as AdminImageUploader } from './AdminImageUploader';
+export { default as AdminRichTextEditor } from './AdminRichTextEditor';
 export { AnimatedSection, AnimatedFadeIn, StaggerContainer, StaggerItem } from './AnimatedSection';

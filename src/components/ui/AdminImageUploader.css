@@ -1,0 +1,135 @@
+.admin-image-uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.uploader-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+  .uploader-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.uploader-preview-frame {
+  width: 180px;
+  height: 120px;
+  border-radius: var(--radius-image, 8px);
+  border: 1px dashed var(--border);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 600px) {
+  .uploader-preview-frame {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+.uploader-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uploader-remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(2, 5, 3, 0.7);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.uploader-remove-btn:hover {
+  background: rgba(255, 77, 79, 0.9);
+}
+
+.uploader-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--fg3);
+}
+
+.placeholder-icon {
+  opacity: 0.5;
+}
+
+.placeholder-text {
+  font-size: var(--text-tiny, 11px);
+  font-weight: 500;
+}
+
+.uploader-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 5, 3, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: var(--text-small);
+  font-weight: 500;
+  z-index: 20;
+}
+
+.uploader-loading-icon {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.uploader-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.uploader-url-group {
+  width: 100%;
+}
+
+.uploader-url-input {
+  width: 100%;
+}
+
+.uploader-file-group {
+  display: flex;
+}
+
+.uploader-upload-btn {
+  font-size: var(--text-small) !important;
+  padding: 8px 16px !important;
+}

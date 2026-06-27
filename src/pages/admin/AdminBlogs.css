@@ -1,5 +1,5 @@
 .admin-blogs-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -114,15 +114,71 @@
   padding: 32px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.admin-modal-card.blog-edit-modal {
+  max-width: 850px;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.admin-form-group.full-width {
+  grid-column: span 2;
+}
+
+.excerpt-textarea {
+  min-height: 80px;
+}
+
+.content-textarea {
+  min-height: 220px;
 }
 
 .admin-modal-card.delete-confirm {
   max-width: 400px;
   text-align: center;
+  position: relative;
+}
+
+.admin-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
 }
 
 .admin-modal-title {
-  margin-bottom: 24px;
+  margin: 0;
+}
+
+.admin-modal-close-btn {
+  background: none;
+  border: none;
+  color: var(--fg3);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.admin-modal-close-btn:hover {
+  background: var(--bg3);
+  color: var(--fg1);
+}
+
+.admin-modal-close-btn.absolute-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 .admin-delete-icon-wrapper {

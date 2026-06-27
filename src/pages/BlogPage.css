@@ -233,15 +233,12 @@
   color: var(--fg2);
 }
 
-/* Force standard font, size, and color to override inline HTML styles from WordPress */
+/* Allow rich text editor styles but provide good defaults */
 .blog-detail-content p,
 .blog-detail-content span,
 .blog-detail-content li,
 .blog-detail-content div {
-  font-family: var(--font-body) !important;
-  font-size: inherit !important;
-  line-height: inherit !important;
-  color: inherit !important;
+  /* Removed !important overrides so Tiptap inline styles work */
 }
 
 .blog-detail-content p {
@@ -255,16 +252,16 @@
 .blog-detail-content h4,
 .blog-detail-content h5,
 .blog-detail-content h6 {
-  font-family: var(--font-heading) !important;
-  color: var(--neutral-darkest) !important;
+  font-family: var(--font-heading);
+  color: var(--neutral-darkest);
   margin: 2.5rem 0 1.25rem 0;
   line-height: 1.3;
 }
 
-.blog-detail-content h1 { font-size: var(--text-h4) !important; }
-.blog-detail-content h2 { font-size: var(--text-h5) !important; }
-.blog-detail-content h3 { font-size: var(--text-h6) !important; }
-.blog-detail-content h4 { font-size: var(--text-large) !important; }
+.blog-detail-content h1 { font-size: var(--text-h4); }
+.blog-detail-content h2 { font-size: var(--text-h5); }
+.blog-detail-content h3 { font-size: var(--text-h6); }
+.blog-detail-content h4 { font-size: var(--text-large); }
 
 /* Keep elements nested inside headings matching the heading font family */
 .blog-detail-content h1 *,
@@ -273,9 +270,9 @@
 .blog-detail-content h4 *,
 .blog-detail-content h5 *,
 .blog-detail-content h6 * {
-  font-family: var(--font-heading) !important;
-  font-size: inherit !important;
-  color: inherit !important;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 .blog-detail-content blockquote {
