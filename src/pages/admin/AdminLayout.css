@@ -412,4 +412,64 @@ button.admin-nav-item {
   color: #fff;
 }
 
+.admin-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--fg2);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
 
+.admin-mobile-toggle:hover {
+  background: var(--ink-5);
+  color: var(--fg1);
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .admin-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .admin-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 9998;
+  }
+  
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100vh;
+    z-index: 9999;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 24px rgba(0,0,0,0.1);
+    width: 280px;
+  }
+  
+  .admin-sidebar.open {
+    transform: translateX(280px);
+  }
+  
+  .admin-content {
+    padding: 20px;
+  }
+}

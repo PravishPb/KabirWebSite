@@ -25,6 +25,7 @@ export default function AdminLayout() {
   const [setupCode, setSetupCode] = useState('');
   const [actionLoading, setActionLoading] = useState(false);
   const [confirmDisable, setConfirmDisable] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const checkMfaStatus = async () => {
     setLoadingFactors(true);
@@ -279,7 +280,10 @@ export default function AdminLayout() {
 
   return (
     <div className="admin-layout scheme-2">
-      <aside className="admin-sidebar">
+      {isMobileMenuOpen && (
+        <div className="admin-sidebar-overlay" onClick={() => setIsMobileMenuOpen(false)} />
+      )}
+      <aside className={`admin-sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
         <div className="admin-sidebar-header">
           <Icon name="admin_panel_settings" size={32} className="admin-sidebar-header-icon" />
           <div className="admin-title">
@@ -291,7 +295,10 @@ export default function AdminLayout() {
           <NavLink 
             to="/admin/blogs" 
             className={({isActive}) => `admin-nav-item ${isActive && !showMfaSettings ? 'active' : ''}`}
-            onClick={() => setShowMfaSettings(false)}
+            onClick={() => {
+              setShowMfaSettings(false);
+              setIsMobileMenuOpen(false);
+            }}
           >
             <Icon name="article" size={20} />
             <span>{t.navBlogs}</span>
@@ -303,6 +310,7 @@ export default function AdminLayout() {
             onClick={() => {
               setShowMfaSettings(true);
               setEnrollStep('idle');
+              setIsMobileMenuOpen(false);
             }}
           >
             <Icon name="security" size={20} />
@@ -336,6 +344,15 @@ export default function AdminLayout() {
 
       <main className="admin-main">
         <div className="admin-topbar">
+          <div className="admin-topbar-left">
+            <button 
+              className="admin-mobile-toggle"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Toggle menu"
+            >
+              <Icon name="menu" size={24} />
+            </button>
+          </div>
           <div className="admin-topbar-right">
             <a href="/" target="_blank" rel="noreferrer" className="admin-view-site">
               <Icon name="open_in_new" size={18} />
