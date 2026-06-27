@@ -188,7 +188,8 @@ export default {
   "EventsPage": {
     "eyebrow": "Events",
     "title": "Events and Gatherings",
-    "intro": "Join us for our regular congregations, celebrations, and community programs."
+    "intro": "Join us for our regular congregations, celebrations, and community programs.",
+    "detailsSoon": "Details of upcoming events and schedule will be added here soon."
   },
   "BlogPage": {
     "eyebrow": "Writings",
@@ -515,7 +516,18 @@ export default {
     "copyButton": "Copy",
     "toastCopied": "Sakhi copied to clipboard!",
     "detailsEmpty": "Select a Sakhi from the table of contents to start reading.",
-    "introText": "The following sakhis are from the book “Kabir Sakhi – Spiritual Gems of Kabir” translated by Mahant Jagdish Das Shastri, edited by Dr. J. Das, and first published by the Kabir Association of Canada in 1987. It was republished by the Kabir Ashram, Jamnagar, Gujarat in 1995 and 2001."
+    "introText": "The following sakhis are from the book “Kabir Sakhi – Spiritual Gems of Kabir” translated by Mahant Jagdish Das Shastri, edited by Dr. J. Das, and first published by the Kabir Association of Canada in 1987. It was republished by the Kabir Ashram, Jamnagar, Gujarat in 1995 and 2001.",
+    "introduction": "Introduction",
+    "startReading": "Start Reading Sakhis"
+  },
+  "LibraryBhajans": {
+    "library": "Library",
+    "title": "Bhajans",
+    "introPart1": "‘Bhajans’ refer to songs which are devotional in nature; this term often refers to religious hymns or prayers. The following is compilation of bhajans and compositions which are common within Kabir Panthi communities. It is to be noted that although some of these bhajans are said to have been composed by Kabir Saheb himself, others are likely works of his disciples, other Sant Mat poets or early/modern Kabir Panthis. Feel free to view our bhajan compilation by navigating through the organizer below (for transliteration guide ",
+    "introPart2": "click here",
+    "introPart3": "). If you wish to have a bhajan translated (or reviewed) please ",
+    "introPart4": "contact us",
+    "introPart5": "."
   },
   "DivyaDrishtiPage": {
     "eyebrow": "Library",
@@ -574,7 +586,11 @@ export default {
     "title": "Kabir Night",
     "desc": "A spiritual gathering celebrating the timeless wisdom and devotional bhajans of Kabir Saheb. Experience the divine melodies sung and composed by our community members.",
     "videosTitle": "Bhajans & Devotional Songs",
-    "lyricsLabel": "For lyrics, click here",
+    "sungAndComposed": "Sung and Composed by: ",
+    "sungBy": "Sung by: ",
+    "lyricsPrefix": "(For lyrics, click ",
+    "lyricsClickHere": "here",
+    "lyricsSuffix": ")",
     "songs": [
       {
         "title": "Moko Kahaan Dhoondhe Re Bande",
@@ -832,7 +848,8 @@ export default {
     "mfaEnterCode": "Please enter a 6-digit code",
     "loginSuccess": "Login successful",
     "showPassword": "Show password",
-    "hidePassword": "Hide password"
+    "hidePassword": "Hide password",
+    "forgotPassword": "Forgot password?"
   },
   "AdminLayout": {
     "title": "KAOT",
@@ -895,6 +912,39 @@ export default {
     "toastCreateError": "Error creating blog",
     "toastDeleteSuccess": "Blog deleted successfully",
     "toastDeleteError": "Error deleting blog"
+  },
+  "ForgotPasswordPage": {
+    "title": "Forgot Password",
+    "subtitle": "Enter your email to receive a password reset link",
+    "emailLabel": "Email Address",
+    "sendLink": "Send Reset Link",
+    "sending": "Sending...",
+    "successTitle": "Check your email",
+    "successDesc": "We have sent a secure password reset link to your email address.",
+    "backToLogin": "Back to Login",
+    "invalidEmail": "Please enter a valid email address.",
+    "errorSending": "Error sending reset link. Please try again."
+  },
+  "ResetPasswordPage": {
+    "title": "Reset Password",
+    "subtitle": "Enter your new password below",
+    "passwordLabel": "New Password",
+    "confirmPasswordLabel": "Confirm New Password",
+    "updatePassword": "Update Password",
+    "updating": "Updating...",
+    "passwordMismatch": "Passwords do not match.",
+    "passwordMinLength": "Password must be at least 6 characters long.",
+    "successMessage": "Password updated successfully. Redirecting to login...",
+    "errorUpdating": "Error updating password. Please try again.",
+    "mfaVerificationRequired": "MFA Verification Required",
+    "mfaSubtitle": "Your account has Two-Factor Authentication active. Please enter your 6-digit authenticator app code to proceed.",
+    "mfaVerifying": "Verifying...",
+    "mfaVerifyBtn": "Verify and Continue",
+    "mfaEnterCodeAlert": "Please enter a 6-digit code",
+    "mfaSuccessAlert": "MFA verification successful",
+    "mfaInvalidCodeAlert": "Invalid verification code. Please try again.",
+    "invalidLinkDesc": "Your password reset link is invalid, expired, or you accessed this page directly.",
+    "requestNewLinkBtn": "Request New Link"
   }
 };
 

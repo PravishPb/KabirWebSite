@@ -177,3 +177,25 @@
   color: var(--tahiti-gold);
 }
 
+.login-forgot-link-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.login-forgot-link {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--fg2);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-family: var(--font-body);
+  padding: 2px 0;
+}
+
+.login-forgot-link:hover {
+  color: var(--tahiti-gold);
+}
+

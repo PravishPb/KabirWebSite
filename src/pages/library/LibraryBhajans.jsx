@@ -1,13 +1,13 @@
 import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useApp } from '../../context/AppContext';
+import { useTranslation } from '../../locales/useTranslation';
 import { useBhajans } from '../../hooks/useBhajans';
 import { AnimatedSection } from '../../components/ui/AnimatedSection';
 import { Eyebrow, Icon } from '../../components/ui';
 import './LibraryBhajans.css';
 
 export default function LibraryBhajans() {
-  const { lang } = useApp();
+  const t = useTranslation('LibraryBhajans');
   const { bhajans, loading } = useBhajans();
   const [selectedId, setSelectedId] = useState(null);
   const [search, setSearch] = useState('');
@@ -181,18 +181,18 @@ export default function LibraryBhajans() {
         <div className="container">
           <AnimatedSection>
             <div className="prose center mx-auto">
-              <Eyebrow>{lang === 'HI' ? 'पुस्तकालय' : 'Library'}</Eyebrow>
-              <h1 className="h2" style={{ marginBottom: '16px' }}>{lang === 'HI' ? 'भजन' : 'Bhajans'}</h1>
+              <Eyebrow>{t.library}</Eyebrow>
+              <h1 className="h2" style={{ marginBottom: '16px' }}>{t.title}</h1>
               <p className="lead muted2" style={{ textAlign: 'justify', fontSize: '1.05rem', lineHeight: '1.7' }}>
-                {lang === 'HI' ? (
-                  <>
-                    ‘भजन’ उन गीतों को कहते हैं जो भक्ति से भरे होते हैं; यह शब्द अक्सर धार्मिक भजनों या प्रार्थनाओं को संदर्भित करता है। निम्नलिखित भजनों और रचनाओं का संकलन है जो कबीर पंथी समुदायों में आम हैं। यह ध्यान दिया जाना चाहिए कि यद्यपि इनमें से कुछ भजन स्वयं कबीर साहेब द्वारा रचित बताए जाते हैं, अन्य संभवतः उनके शिष्यों, अन्य संत मत कवियों या प्रारंभिक/आधुनिक कबीर पंथियों की रचनाएं हैं। बेझिझक नीचे दिए गए व्यवस्थापक के माध्यम से हमारे भजन संकलन को देखें (लिप्यांतरण मार्गदर्शिका के लिए <Link to="/library/transliteration" className="underline" style={{color: 'var(--tahiti-gold)'}}>यहां क्लिक करें</Link>)। यदि आप किसी भजन का अनुवाद (या समीक्षा) करवाना चाहते हैं तो कृपया <Link to="/contact" className="underline" style={{color: 'var(--tahiti-gold)'}}>हमसे संपर्क करें</Link>।
-                  </>
-                ) : (
-                  <>
-                    ‘Bhajans’ refer to songs which are devotional in nature; this term often refers to religious hymns or prayers. The following is compilation of bhajans and compositions which are common within Kabir Panthi communities. It is to be noted that although some of these bhajans are said to have been composed by Kabir Saheb himself, others are likely works of his disciples, other Sant Mat poets or early/modern Kabir Panthis. Feel free to view our bhajan compilation by navigating through the organizer below (for transliteration guide <Link to="/library/transliteration" className="underline" style={{color: 'var(--tahiti-gold)'}}>click here</Link>). If you wish to have a bhajan translated (or reviewed) please <Link to="/contact" className="underline" style={{color: 'var(--tahiti-gold)'}}>contact us</Link>.
-                  </>
-                )}
+                {t.introPart1}
+                <Link to="/library/transliteration" className="underline" style={{color: 'var(--tahiti-gold)'}}>
+                  {t.introPart2}
+                </Link>
+                {t.introPart3}
+                <Link to="/contact" className="underline" style={{color: 'var(--tahiti-gold)'}}>
+                  {t.introPart4}
+                </Link>
+                {t.introPart5}
               </p>
             </div>
           </AnimatedSection>

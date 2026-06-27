@@ -38,9 +38,7 @@ export default function KabirNightPage() {
           <StaggerContainer className="kabir-night-grid">
             {c.songs && c.songs.map((song, idx) => {
               const isComposer = song.videoId === 'JVMYmuihbeI';
-              const singerLabel = isComposer
-                ? (lang === 'HI' ? 'गायक और संगीतकार: ' : 'Sung and Composed by: ')
-                : (lang === 'HI' ? 'गायक: ' : 'Sung by: ');
+              const singerLabel = isComposer ? c.sungAndComposed : c.sungBy;
 
               return (
                 <StaggerItem key={idx} className="card-container kabir-night-card scheme-4">
@@ -62,23 +60,11 @@ export default function KabirNightPage() {
                     </div>
                     {song.lyricsBhajanId && (
                       <div className="video-lyrics-link">
-                        {lang === 'HI' ? (
-                          <>
-                            (भजन के बोल के लिए,{' '}
-                            <Link to={`/library/bhajans#${song.lyricsBhajanId}`} className="lyrics-link">
-                              यहाँ क्लिक करें
-                            </Link>
-                            )
-                          </>
-                        ) : (
-                          <>
-                            (For lyrics, click{' '}
-                            <Link to={`/library/bhajans#${song.lyricsBhajanId}`} className="lyrics-link">
-                              here
-                            </Link>
-                            )
-                          </>
-                        )}
+                        {c.lyricsPrefix}
+                        <Link to={`/library/bhajans#${song.lyricsBhajanId}`} className="lyrics-link">
+                          {c.lyricsClickHere}
+                        </Link>
+                        {c.lyricsSuffix}
                       </div>
                     )}
                   </div>

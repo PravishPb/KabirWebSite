@@ -242,7 +242,7 @@ export default function SakhisPage() {
                             onClick={() => handleSelect('intro')}
                           >
                             <Icon name="info" style={{ fontSize: '16px', marginRight: '6px', verticalAlign: 'middle' }} />
-                            {lang === 'HI' ? 'परिचय' : 'Introduction'}
+                            {t.introduction}
                           </button>
                         </div>
                         {Object.keys(tocData).map(category => (
@@ -285,7 +285,7 @@ export default function SakhisPage() {
                   <div className="sakhi-header" style={{ paddingBottom: '16px', marginBottom: '24px' }}>
                     <div className="sakhi-title-row">
                       <div>
-                        <h2 className="sakhi-title">{lang === 'HI' ? 'परिचय' : 'Introduction'}</h2>
+                        <h2 className="sakhi-title">{t.introduction}</h2>
                         <span className="sakhi-genre">{t.subtitle || 'Sakhis of Guru Kabir'}</span>
                       </div>
                     </div>
@@ -305,7 +305,7 @@ export default function SakhisPage() {
                       onClick={() => orderedSakhis.length > 0 && handleSelect(orderedSakhis[0].sakhi_id)}
                       title={orderedSakhis.length > 0 ? orderedSakhis[0].title : ''}
                     >
-                      <span className="sakhi-nav-title">{lang === 'HI' ? 'साखियाँ शुरू करें' : 'Start Reading Sakhis'}</span>
+                      <span className="sakhi-nav-title">{t.startReading}</span>
                       <Icon name="arrow_forward" />
                     </button>
                   </div>

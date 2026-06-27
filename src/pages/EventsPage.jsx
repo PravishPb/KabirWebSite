@@ -1,11 +1,9 @@
 import React from 'react';
 import { Eyebrow } from '../components/ui';
 import { AnimatedSection } from '../components/ui/AnimatedSection';
-import { useApp } from '../context/AppContext';
 import { useTranslation } from '../locales/useTranslation';
 
 export default function EventsPage() {
-  const { lang } = useApp();
   const t = useTranslation('EventsPage');
 
   return (
@@ -27,9 +25,7 @@ export default function EventsPage() {
           <AnimatedSection>
             <div className="prose" style={{ marginInline: 'auto', maxWidth: '48rem', textAlign: 'center' }}>
               <p className="muted2">
-                {lang === 'HI' 
-                  ? 'आगामी कार्यक्रमों और अनुसूची का विवरण जल्द ही यहां जोड़ा जाएगा।' 
-                  : 'Details of upcoming events and schedule will be added here soon.'}
+                {t.detailsSoon}
               </p>
             </div>
           </AnimatedSection>

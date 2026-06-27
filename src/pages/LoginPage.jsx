@@ -245,6 +245,15 @@ export default function LoginPage() {
                 <Icon name={showPassword ? 'visibility_off' : 'visibility'} size={20} />
               </button>
             </div>
+            <div className="login-forgot-link-wrapper">
+              <button 
+                type="button" 
+                className="login-forgot-link"
+                onClick={() => navigate('/forgot-password')}
+              >
+                {t.forgotPassword}
+              </button>
+            </div>
           </div>
           <Button type="submit" className="btn btn-default login-btn-full" disabled={loading}>
             {loading ? t.signingIn : t.signIn}

@@ -14,6 +14,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 // Lazy load admin pages for security and performance
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
+const ForgotPasswordPage = React.lazy(() => import('./pages/ForgotPasswordPage'));
+const ResetPasswordPage = React.lazy(() => import('./pages/ResetPasswordPage'));
 const AdminLayout = React.lazy(() => import('./pages/admin/AdminLayout'));
 const AdminBlogs = React.lazy(() => import('./pages/admin/AdminBlogs'));
 
@@ -122,6 +124,8 @@ export default function App() {
             
             {/* Admin Routes without public Navbar/Footer */}
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+            <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="/admin" element={<ProtectedRoute />}>
               <Route element={<AdminLayout />}>
                 <Route index element={<Navigate to="blogs" replace />} />
