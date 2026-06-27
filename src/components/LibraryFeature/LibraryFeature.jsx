@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnimatedSection } from '../ui';
-import { Button, Eyebrow, ChevronLink } from '../ui';
+import { Button, Eyebrow } from '../ui';
 import { useApp } from '../../context/AppContext';
 import { useTranslation } from '../../locales/useTranslation';
 import './LibraryFeature.css';
 
 export default function LibraryFeature() {
-  const { lang, toast } = useApp();
+  const { lang } = useApp();
+  const navigate = useNavigate();
   const t = useTranslation('LibraryFeature');
   
   return (
@@ -24,14 +26,11 @@ export default function LibraryFeature() {
             </p>
             <div className="library-actions">
               <Button
-                onClick={() => toast && toast(t.visit)}
+                onClick={() => navigate('/library')}
                 className="library-btn"
               >
-                {t.visit}
-              </Button>
-              <ChevronLink to="/library" className="library-link">
                 {t.more}
-              </ChevronLink>
+              </Button>
             </div>
           </div>
 
