@@ -20,6 +20,7 @@ export default function LoginPage() {
   const [factorId, setFactorId] = useState('');
   const [verifyingMfa, setVerifyingMfa] = useState(false);
   const [checkingSession, setCheckingSession] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   // Verify assurance level to prevent race conditions and infinite loops
   useEffect(() => {
@@ -140,7 +141,7 @@ export default function LoginPage() {
 
   if (step === 'mfa') {
     return (
-      <div className="scheme-1 login-wrapper">
+      <div className="scheme-2 login-wrapper">
         <div className="login-lang-toggle">
           <button 
             type="button"
@@ -191,7 +192,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="scheme-1 login-wrapper">
+    <div className="scheme-2 login-wrapper">
       <div className="login-lang-toggle">
         <button 
           type="button"
@@ -226,11 +227,24 @@ export default function LoginPage() {
           </div>
           <div className="login-field-group">
             <label className="login-label">{t.passwordLabel}</label>
-            <input 
-              type="password" required value={password} onChange={e => setPassword(e.target.value)}
-              className="login-input"
-              placeholder="••••••••"
-            />
+            <div className="login-password-wrapper">
+              <input 
+                type={showPassword ? 'text' : 'password'} 
+                required 
+                value={password} 
+                onChange={e => setPassword(e.target.value)}
+                className="login-input login-password-input"
+                placeholder="••••••••"
+              />
+              <button
+                type="button"
+                className="login-password-toggle"
+                onClick={() => setShowPassword(p => !p)}
+                title={showPassword ? t.hidePassword : t.showPassword}
+              >
+                <Icon name={showPassword ? 'visibility_off' : 'visibility'} size={20} />
+              </button>
+            </div>
           </div>
           <Button type="submit" className="btn btn-default login-btn-full" disabled={loading}>
             {loading ? t.signingIn : t.signIn}

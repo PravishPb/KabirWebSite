@@ -830,7 +830,9 @@ export default {
     "mfaSuccess": "MFA verification successful",
     "mfaInvalidCode": "Invalid verification code. Please try again.",
     "mfaEnterCode": "Please enter a 6-digit code",
-    "loginSuccess": "Login successful"
+    "loginSuccess": "Login successful",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
   },
   "AdminLayout": {
     "title": "KAOT",

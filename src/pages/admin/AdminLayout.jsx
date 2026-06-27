@@ -278,7 +278,7 @@ export default function AdminLayout() {
   };
 
   return (
-    <div className="admin-layout scheme-1">
+    <div className="admin-layout scheme-2">
       <aside className="admin-sidebar">
         <div className="admin-sidebar-header">
           <Icon name="admin_panel_settings" size={32} className="admin-sidebar-header-icon" />

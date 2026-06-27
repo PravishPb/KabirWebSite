@@ -830,7 +830,9 @@ export default {
     "mfaSuccess": "MFA सत्यापन सफल रहा",
     "mfaInvalidCode": "अमान्य सत्यापन कोड। कृपया पुनः प्रयास करें।",
     "mfaEnterCode": "कृपया 6-अंकों का कोड दर्ज करें",
-    "loginSuccess": "लॉगिन सफल रहा"
+    "loginSuccess": "लॉगिन सफल रहा",
+    "showPassword": "पासवर्ड दिखाएं",
+    "hidePassword": "पासवर्ड छिपाएं"
   },
   "AdminLayout": {
     "title": "कबीर एसोसिएशन",

@@ -15,7 +15,7 @@
 }
 
 .admin-table-wrapper {
-  background: var(--neutral-darkest);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -41,7 +41,7 @@
   color: var(--fg2);
   font-size: var(--text-small);
   border-bottom: 1px solid var(--border);
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--ink-5);
 }
 
 .admin-table td {
@@ -54,7 +54,7 @@
 }
 
 .admin-table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.01);
+  background-color: var(--ink-5);
 }
 
 .admin-table-title {
@@ -107,7 +107,7 @@
 }
 
 .admin-modal-card {
-  background: var(--neutral-darker);
+  background: var(--surface);
   width: 100%;
   max-width: 600px;
   border-radius: var(--radius-card);
@@ -164,7 +164,7 @@
   background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--radius-input);
-  color: #fff;
+  color: var(--fg1);
   font-size: var(--text-regular);
   outline: none;
   font-family: var(--font-body);
