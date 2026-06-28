@@ -16,7 +16,9 @@ export default function BlogFilters({
     filterDate, setFilterDate,
     filterEndDate, setFilterEndDate,
     handleResetFilters,
-    categories
+    categories,
+    minDate,
+    maxDate
   } = filters;
 
   const handleChange = (setter) => (e) => {
@@ -96,6 +98,8 @@ export default function BlogFilters({
               className="blog-date-input"
               value={filterDate}
               onChange={handleChange(setFilterDate)}
+              min={minDate}
+              max={maxDate}
             />
           </div>
         )}
@@ -109,6 +113,8 @@ export default function BlogFilters({
                 className="blog-date-input"
                 value={filterDate}
                 onChange={handleChange(setFilterDate)}
+                min={minDate}
+                max={maxDate}
               />
             </div>
             <div className="blog-filter-select-wrapper">
@@ -118,6 +124,8 @@ export default function BlogFilters({
                 className="blog-date-input"
                 value={filterEndDate}
                 onChange={handleChange(setFilterEndDate)}
+                min={minDate}
+                max={maxDate}
               />
             </div>
           </>

@@ -96,6 +96,33 @@ export default function useBlogFilters(posts) {
     });
   }, [posts, selectedCategory, dateOperator, filterDate, filterEndDate, searchQuery]);
 
+  const { minDate, maxDate } = React.useMemo(() => {
+    if (!posts || posts.length === 0) {
+      const todayStr = new Date().toISOString().split('T')[0];
+      return { minDate: '2015-01-01', maxDate: todayStr };
+    }
+    
+    let minTime = Infinity;
+    let maxTime = -Infinity;
+    
+    posts.forEach(p => {
+      const dateStr = p.published_at || p.created_at;
+      if (dateStr) {
+        const time = new Date(dateStr).getTime();
+        if (!isNaN(time)) {
+          if (time < minTime) minTime = time;
+          if (time > maxTime) maxTime = time;
+        }
+      }
+    });
+    
+    // Default fallback dates if no valid dates found
+    const minD = minTime === Infinity ? '2015-01-01' : new Date(minTime).toISOString().split('T')[0];
+    const maxD = maxTime === -Infinity ? new Date().toISOString().split('T')[0] : new Date(maxTime).toISOString().split('T')[0];
+    
+    return { minDate: minD, maxDate: maxD };
+  }, [posts]);
+
   return {
     searchQuery,
     setSearchQuery,
@@ -109,6 +136,8 @@ export default function useBlogFilters(posts) {
     setFilterEndDate,
     handleResetFilters,
     categories,
-    filteredPosts
+    filteredPosts,
+    minDate,
+    maxDate
   };
 }
