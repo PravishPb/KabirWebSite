@@ -139,7 +139,7 @@ export default function BlogPage() {
   // Removed currentPosts from here as it's been moved up
 
   // Extract unique categories dynamically from posts
-  const { filteredPosts } = filters;
+  const { filteredPosts, selectedCategory } = filters;
 
   const selectedPost = currentPosts.find(p => String(p.id) === String(readId));
 
@@ -153,17 +153,6 @@ export default function BlogPage() {
     (safeCurrentPage - 1) * itemsPerPage,
     safeCurrentPage * itemsPerPage
   );
-
-  const handleCategoryChange = (cat) => {
-    setSelectedCategory(cat);
-    const params = new URLSearchParams(location.search);
-    if (cat === 'All') {
-      params.delete('filter');
-    } else {
-      params.set('filter', cat);
-    }
-    navigate(`/blog?${params.toString()}`, { replace: true });
-  };
 
   const handlePageChange = (pageNum) => {
     setCurrentPage(pageNum);
