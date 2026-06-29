@@ -18,6 +18,7 @@ const ForgotPasswordPage = React.lazy(() => import('./pages/ForgotPasswordPage')
 const ResetPasswordPage = React.lazy(() => import('./pages/ResetPasswordPage'));
 const AdminLayout = React.lazy(() => import('./pages/admin/AdminLayout'));
 const AdminBlogs = React.lazy(() => import('./pages/admin/AdminBlogs'));
+const AdminEvents = React.lazy(() => import('./pages/admin/AdminEvents'));
 
 // Lazy load pages for performance optimization
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -132,6 +133,7 @@ export default function App() {
               <Route element={<AdminLayout />}>
                 <Route index element={<Navigate to="blogs" replace />} />
                 <Route path="blogs" element={<AdminBlogs />} />
+                <Route path="events" element={<AdminEvents />} />
               </Route>
             </Route>
           </Routes>

@@ -304,6 +304,18 @@ export default function AdminLayout() {
             <span>{t.navBlogs}</span>
           </NavLink>
 
+          <NavLink 
+            to="/admin/events" 
+            className={({isActive}) => `admin-nav-item ${isActive && !showMfaSettings ? 'active' : ''}`}
+            onClick={() => {
+              setShowMfaSettings(false);
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            <Icon name="event" size={20} />
+            <span>{t.navEvents || 'Events'}</span>
+          </NavLink>
+
           <button 
             type="button"
             className={`admin-nav-item ${showMfaSettings ? 'active' : ''}`}

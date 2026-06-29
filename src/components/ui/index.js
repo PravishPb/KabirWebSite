@@ -7,4 +7,5 @@ export { default as AsyncImage } from './AsyncImage';
 export { default as PlaceholderImg } from './PlaceholderImg';
 export { default as AdminImageUploader } from './AdminImageUploader';
 export { default as AdminRichTextEditor } from './AdminRichTextEditor';
+export { default as EventSearch } from './EventSearch';
 export { AnimatedSection, AnimatedFadeIn, StaggerContainer, StaggerItem } from './AnimatedSection';
