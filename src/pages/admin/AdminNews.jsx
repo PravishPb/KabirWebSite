@@ -251,7 +251,7 @@ export default function AdminNews() {
                             onClick={(e) => { e.stopPropagation(); handleOpenModal(item); }} 
                             className="btn btn-secondary admin-news-btn-action"
                           >
-                            <Icon name="edit" size={16} /> {t.modalEditTitle}
+                            <Icon name="edit" size={16} /> {t.btnEdit || 'Edit'}
                           </Button>
                           <Button 
                             onClick={(e) => { e.stopPropagation(); setDeleteConfirmId(item.id); }} 

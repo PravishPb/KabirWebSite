@@ -1036,6 +1036,7 @@ export default {
     "labelImageUrl": "कवर छवि (आवश्यक)",
     "labelBody": "मुख्य पाठ (समृद्ध पाठ)",
     "btnCancel": "रद्द करें",
+    "btnEdit": "संपादित करें",
     "btnSaveChanges": "परिवर्तन सहेजें",
     "btnCreateNews": "समाचार आइटम जोड़ें",
     "labelSaving": "सहेजा जा रहा है...",

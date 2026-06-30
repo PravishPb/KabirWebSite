@@ -1036,6 +1036,7 @@ export default {
     "labelImageUrl": "Cover Image (Required)",
     "labelBody": "Body Text (Rich Text)",
     "btnCancel": "Cancel",
+    "btnEdit": "Edit",
     "btnSaveChanges": "Save Changes",
     "btnCreateNews": "Add News Item",
     "labelSaving": "Saving...",
