@@ -9,6 +9,7 @@ import './Navbar.css';
 const dropdownItems = [
   { key: 'events', icon: 'event', to: '/events' },
   { key: 'library', icon: 'menu_book', to: '/library' },
+  { key: 'news', icon: 'campaign', to: '/news' },
   { key: 'contact', icon: 'mail', to: '/contact' },
   { key: 'donate', icon: 'favorite', to: '/donate' },
 ];

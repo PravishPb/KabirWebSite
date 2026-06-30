@@ -316,6 +316,18 @@ export default function AdminLayout() {
             <span>{t.navEvents || 'Events'}</span>
           </NavLink>
 
+          <NavLink 
+            to="/admin/news" 
+            className={({isActive}) => `admin-nav-item ${isActive && !showMfaSettings ? 'active' : ''}`}
+            onClick={() => {
+              setShowMfaSettings(false);
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            <Icon name="campaign" size={20} />
+            <span>{t.navNews || 'News'}</span>
+          </NavLink>
+
           <button 
             type="button"
             className={`admin-nav-item ${showMfaSettings ? 'active' : ''}`}

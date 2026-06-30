@@ -19,6 +19,7 @@ const ResetPasswordPage = React.lazy(() => import('./pages/ResetPasswordPage'));
 const AdminLayout = React.lazy(() => import('./pages/admin/AdminLayout'));
 const AdminBlogs = React.lazy(() => import('./pages/admin/AdminBlogs'));
 const AdminEvents = React.lazy(() => import('./pages/admin/AdminEvents'));
+const AdminNews = React.lazy(() => import('./pages/admin/AdminNews'));
 
 // Lazy load pages for performance optimization
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -46,6 +47,8 @@ const PerformancesPage = React.lazy(() => import('./pages/events/PerformancesPag
 const VisitsPage = React.lazy(() => import('./pages/events/VisitsPage'));
 const KabirCenterPage = React.lazy(() => import('./pages/events/KabirCenterPage'));
 const EventsPage = React.lazy(() => import('./pages/EventsPage'));
+const NewsPage = React.lazy(() => import('./pages/NewsPage'));
+const NewsDetailPage = React.lazy(() => import('./pages/NewsDetailPage'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -106,6 +109,8 @@ function PublicLayout() {
                 <Route path="/events/visits" element={<VisitsPage />} />
                 <Route path="/kabircenter" element={<KabirCenterPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/news" element={<NewsPage />} />
+                <Route path="/news/:id" element={<NewsDetailPage />} />
               </Routes>
             </Suspense>
           </motion.div>
@@ -134,6 +139,7 @@ export default function App() {
                 <Route index element={<Navigate to="blogs" replace />} />
                 <Route path="blogs" element={<AdminBlogs />} />
                 <Route path="events" element={<AdminEvents />} />
+                <Route path="news" element={<AdminNews />} />
               </Route>
             </Route>
           </Routes>
